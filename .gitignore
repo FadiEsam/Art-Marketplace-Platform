@@ -1,0 +1,478 @@
+# ============================================================
+
+# Art Marketplace Platform
+
+# Git Ignore Rules
+
+# ============================================================
+
+# ------------------------------------------------------------
+
+# Operating System Files
+
+# ------------------------------------------------------------
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+
+# ------------------------------------------------------------
+
+# IDEs and Editors
+
+# ------------------------------------------------------------
+
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+*.sublime-project
+
+# ------------------------------------------------------------
+
+# Environment and Secrets
+
+# ------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+!.env.sample
+
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+secrets/
+credentials/
+private/
+config/local/
+
+# ------------------------------------------------------------
+
+# Logs
+
+# ------------------------------------------------------------
+
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------
+
+# Temporary and Runtime Files
+
+# ------------------------------------------------------------
+
+tmp/
+temp/
+cache/
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# ------------------------------------------------------------
+
+# PHP
+
+# ------------------------------------------------------------
+
+/vendor/
+composer.lock
+
+# PHP runtime/debug files
+
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# ------------------------------------------------------------
+
+# Node.js / JavaScript / TypeScript
+
+# ------------------------------------------------------------
+
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+*.tsbuildinfo
+
+# Build outputs
+
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.output/
+.svelte-kit/
+
+# ------------------------------------------------------------
+
+# Frontend Framework Caches
+
+# ------------------------------------------------------------
+
+.vite/
+.parcel-cache/
+.turbo/
+.eslintcache
+
+# ------------------------------------------------------------
+
+# Python
+
+# ------------------------------------------------------------
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+.pytest_cache
+
+# ------------------------------------------------------------
+
+# Java
+
+# ------------------------------------------------------------
+
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+.gradle/
+build/
+
+# ------------------------------------------------------------
+
+# Database / Local Development
+
+# ------------------------------------------------------------
+
+*.sqlite
+*.sqlite3
+*.db
+
+# Local database dumps
+
+*.dump
+*.sql.gz
+
+# NOTE:
+
+# Production database backups must NOT be committed.
+
+# Approved schema and seed scripts may be committed under:
+
+# 04-database/schema/
+
+# 04-database/migrations/
+
+# 04-database/seed-data/
+
+# 04-database/scripts/
+
+# ------------------------------------------------------------
+
+# Docker
+
+# ------------------------------------------------------------
+
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Local Docker volumes
+
+.docker/
+docker-data/
+volumes/
+
+# Docker environment files
+
+docker/.env
+infrastructure/docker/.env
+
+# ------------------------------------------------------------
+
+# Local Infrastructure / Deployment
+
+# ------------------------------------------------------------
+
+infrastructure/local/
+infrastructure/secrets/
+deployment/local/
+deployment/secrets/
+
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# ------------------------------------------------------------
+
+# Test and Coverage Outputs
+
+# ------------------------------------------------------------
+
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+
+# ------------------------------------------------------------
+
+# Application Uploads / Generated Files
+
+# ------------------------------------------------------------
+
+uploads/
+storage/
+storage/app/
+storage/logs/
+storage/framework/
+
+# Generated user content
+
+generated/
+artifacts/
+runtime/
+
+# ------------------------------------------------------------
+
+# API / Development Tools
+
+# ------------------------------------------------------------
+
+.postman/
+postman-local/
+*.local.json
+
+# Keep shared Postman collections committed when intentionally added.
+
+# Example:
+
+# 05-api-backend/postman/
+
+# ------------------------------------------------------------
+
+# Certificates / Local HTTPS
+
+# ------------------------------------------------------------
+
+certificates/
+ssl/
+*.csr
+
+# ------------------------------------------------------------
+
+# Generated Documentation
+
+# ------------------------------------------------------------
+
+docs/generated/
+docs/build/
+_site/
+
+# ------------------------------------------------------------
+
+# Generated Diagrams
+
+# ------------------------------------------------------------
+
+# Do not ignore source diagram files such as:
+
+# .drawio
+
+# .puml
+
+# .mmd
+
+#
+
+# Only ignore generated/exported temporary files.
+
+*.drawio.bkp
+*.drawio.tmp
+
+# ------------------------------------------------------------
+
+# Build / Package Artifacts
+
+# ------------------------------------------------------------
+
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Exception:
+
+# Release archives should be generated outside the repository
+
+# or explicitly force-added when required.
+
+# ------------------------------------------------------------
+
+# Local Development Scripts / Configuration
+
+# ------------------------------------------------------------
+
+*.local
+*.local.*
+local/
+.local/
+
+# ------------------------------------------------------------
+
+# OS / Tool Generated Files
+
+# ------------------------------------------------------------
+
+.npmrc.local
+.yarnrc.local
+.babelrc.local
+
+# ------------------------------------------------------------
+
+# Environment-Specific Configuration
+
+# ------------------------------------------------------------
+
+config/*.local.*
+config/local.*
+settings.local.*
+application.local.*
+
+# ------------------------------------------------------------
+
+# Backup Files
+
+# ------------------------------------------------------------
+
+*.old
+*.orig
+*.save
+*~
+.#*
+~$*
+
+# ------------------------------------------------------------
+
+# Security
+
+# ------------------------------------------------------------
+
+# Private keys and credential stores
+
+*.secret
+*.secrets
+*.credentials
+
+# Cloud/provider credential files
+
+credentials.json
+service-account.json
+service-account-key.json
+
+# Local authentication/session data
+
+sessions/
+tokens/
+auth-data/
+
+# ------------------------------------------------------------
+
+# Project-Specific Local Files
+
+# ------------------------------------------------------------
+
+project.local.md
+notes.local.md
+TODO.local.md
+
+# ------------------------------------------------------------
+
+# CI/CD Local Files
+
+# ------------------------------------------------------------
+
+.github/local/
+.github/secrets/
+
+# ------------------------------------------------------------
+
+# Explicitly Keep Important Repository Files
+
+# ------------------------------------------------------------
+
+!.gitignore
+!.env.example
+!.env.sample
+
+# Documentation
+
+!README.md
+!ROADMAP.md
+!CHANGELOG.md
+!LICENSE
+
+# Project documentation
+
+!00-project-foundation/**/*.md
+!01-requirements/**/*.md
+!02-system-design/**/*.md
+!03-ui-ux-design/**/*.md
+!04-database/**/*.md
+!05-api-backend/**/*.md
+!06-web-frontend/**/*.md
+!07-mobile-app/**/*.md
+!08-quality-assurance/**/*.md
+!09-cybersecurity/**/*.md
+!10-deployment/**/*.md
+!11-maintenance/**/*.md
+
+# Learning documentation
+
+!learning/**/*.md
