@@ -2,34 +2,62 @@
 
 ## 1. Scope Overview
 
-This document defines the functional, technical, platform, and product boundaries of the Art Marketplace Platform.
+This document defines the functional, product, platform, and technical boundaries of the Art Marketplace Platform.
 
 It establishes:
 
 * What is included in the MVP.
 * What is excluded from the MVP.
-* What belongs to the broader complete project.
-* What is intentionally reserved for future product development.
-* The main users, capabilities, integrations, and data areas involved in the project.
-* The boundaries that should be respected during requirements, design, implementation, testing, and deployment.
+* What belongs to the complete project.
+* What is reserved for future product development.
+* The primary users and platform capabilities.
+* The supported artwork types.
+* The transaction and commission model.
+* The major external integrations.
+* The main project and product boundaries.
 
-This document defines scope at a foundation level. Detailed business rules, workflows, validation rules, permissions, API contracts, database structures, and implementation details are defined in the appropriate later-phase documentation.
+This document defines scope at a foundation level. Detailed requirements, workflows, validation rules, permissions, API contracts, database structures, UI behavior, and implementation details are defined in the appropriate later phases.
 
-The project follows a **Single Source of Truth** approach. This document defines scope boundaries, while detailed behavior is documented in the relevant requirements and technical documents.
+The project follows a **Single Source of Truth** approach for scope. Detailed documents may expand on an approved capability, but they must not silently introduce functionality that contradicts this document or a later approved project-wide decision.
 
 ---
 
 # 2. Project Scope Model
 
-The project is divided into three scope levels.
+The project is divided into three related scope levels:
+
+1. MVP Scope
+2. Complete Project Scope
+3. Future Product Scope
+
+These levels must remain clearly distinguished.
+
+---
 
 ## 2.1 MVP Scope
 
-The MVP is the first functional version of the platform.
+The MVP is the first functional version of the Art Marketplace Platform.
 
-The MVP is primarily a **Web-based art marketplace** and focuses on establishing the core marketplace, artist onboarding, artwork discovery, digital artwork publishing, customer interaction, moderation, and the initial transaction model.
+The MVP is primarily a **web-based digital art marketplace** focused on:
 
-The MVP does not attempt to implement every capability planned for the complete project.
+* Customer accounts.
+* Artist onboarding and approval.
+* Artist profiles.
+* Digital artwork publishing.
+* Ready-made digital artwork.
+* Custom digital artwork requests and commissions.
+* Artwork discovery.
+* Search and filtering.
+* Dynamic artwork metadata.
+* Limited social interaction.
+* Notifications.
+* Reporting and user blocking.
+* Administrative moderation.
+* Direct customer-to-artist bank transfer.
+* Platform commission tracking and enforcement.
+* Basic artwork, ownership, and marketplace rules.
+
+The MVP intentionally excludes capabilities that are not required for the initial marketplace model.
 
 ---
 
@@ -37,63 +65,78 @@ The MVP does not attempt to implement every capability planned for the complete 
 
 The complete project extends beyond the MVP.
 
-The complete project includes:
+The complete project includes the engineering and product lifecycle required to develop the platform beyond the initial web MVP.
+
+Major areas include:
 
 * Web application.
-* Backend and APIs.
+* Backend and REST APIs.
 * Relational database.
+* Authentication and authorization.
+* File and media handling.
 * Mobile application.
 * Quality assurance and testing.
-* Security and cybersecurity work.
+* Cybersecurity.
 * Deployment and hosting.
 * Monitoring and maintenance.
-* Supporting documentation and project lifecycle activities.
+* Supporting documentation.
+* CI/CD where appropriate.
 
-The Mobile Application is a **core project phase**, not an optional or merely future platform extension. It is planned after the initial Web MVP and depends on the backend/API foundation established earlier.
+The **Mobile Application is a core project phase**.
+
+It is outside the initial MVP, but it is not considered an optional future idea or merely a future product extension.
+
+The intended project progression therefore includes both the Web application and Mobile application.
 
 ---
 
 ## 2.3 Future Product Scope
 
-Some product capabilities are intentionally outside the MVP and may be introduced after the MVP or during later product evolution.
+Some product capabilities are intentionally outside the MVP and may be introduced during later product development.
 
-Examples include:
+Future product capabilities may include:
 
 * Platform-mediated payment processing.
+* Automated payment settlement.
 * Managed physical artwork transactions.
-* Printing-service integrations.
+* Printing and print-on-demand services.
 * Delivery and logistics integrations.
+* Shipment tracking.
 * AI-powered functionality.
-* Other capabilities approved through future scope decisions.
+* Advanced recommendation and personalization.
+* Advanced marketplace capabilities.
+* Additional operational and analytical capabilities.
 
-Future scope must not be treated as MVP scope unless a documented scope change explicitly changes the boundary.
+Future product scope must not be treated as MVP scope unless an approved project decision explicitly changes the scope.
 
 ---
 
 # 3. Product Scope
 
-The Art Marketplace Platform is intended to connect customers with approved artists and provide a structured environment for discovering, presenting, and transacting around artwork.
+The Art Marketplace Platform is intended to connect customers with approved artists and provide a structured environment for discovering, presenting, purchasing, and requesting supported artwork.
 
-The platform supports:
+The MVP supports:
 
 * Customer accounts.
 * Artist capabilities.
 * Artist approval and category validation.
+* Artist profiles.
 * Artwork portfolios and listings.
 * Digital artwork discovery.
 * Ready-made digital artwork.
-* Custom digital artwork requests where included by the approved MVP workflow.
+* Custom digital artwork requests.
 * Search and filtering.
 * Artwork metadata.
-* Social interaction features defined for the MVP.
+* Limited social interaction.
 * Notifications.
-* Reporting and user blocking.
+* Reporting.
+* User blocking.
 * Administrative moderation.
-* The MVP payment model based on direct customer-to-artist bank transfer.
-* Platform commission tracking and enforcement.
-* Basic rights and marketplace rules.
+* Direct customer-to-artist bank transfer.
+* Platform commission tracking.
+* Basic marketplace and rights rules.
 
-The exact workflow and business rules for each capability are defined in the Requirements phase.
+Detailed business workflows and validation rules are defined during the Requirements phase.
 
 ---
 
@@ -103,9 +146,9 @@ The exact workflow and business rules for each capability are defined in the Req
 
 All users begin as **Customers**.
 
-A Customer may later apply to become an Artist.
+A Customer may apply to become an Artist.
 
-Artist capability is associated with the user's existing account rather than requiring a completely separate user identity.
+Artist capabilities are associated with the existing user account rather than requiring a separate identity.
 
 An approved Artist may continue to use the platform as a Customer.
 
@@ -113,7 +156,7 @@ An approved Artist may continue to use the platform as a Customer.
 
 ## 4.2 Artist Application and Approval
 
-The MVP includes an artist approval process.
+The MVP includes an Artist application and approval process.
 
 An applicant must:
 
@@ -127,19 +170,30 @@ An approved Artist may publish artwork within the category for which they were a
 Detailed rules for:
 
 * Application validation.
-* Review.
+* Specialist review.
 * Rejection.
 * Resubmission.
-* Similarity checks.
+* Similarity checking.
 * Category restrictions.
 * Artist status.
-* Suspension or removal.
+* Suspension.
+* Removal.
 
-will be defined in the Requirements and Administration documentation.
+are defined during the Requirements and Administration phases.
 
 ---
 
-## 4.3 Administrator
+## 4.3 Artist Availability
+
+Artists may indicate whether they are available to accept custom artwork requests.
+
+Artist availability is part of the MVP custom-request model.
+
+The exact availability states and business rules are defined during Requirements.
+
+---
+
+## 4.4 Administrator
 
 Administrators are responsible for platform-level management and moderation.
 
@@ -147,36 +201,39 @@ Administrative capabilities may include:
 
 * User management.
 * Artist application review.
+* Artist approval and rejection.
 * Artist status management.
 * Artwork moderation.
+* Category management.
 * Report handling.
-* Account restrictions.
-* Platform rule enforcement.
-* Commission-related enforcement.
-* Audit and administrative records.
+* User restriction.
+* Blocking enforcement.
+* Commission enforcement.
+* Platform configuration.
+* Audit records.
 
-Exact administrative permissions are defined later.
+Detailed permissions are defined in the Requirements and Security phases.
 
 ---
 
 # 5. Artwork Scope
 
-## 5.1 MVP Marketplace Artwork
+## 5.1 MVP Artwork Scope
 
-The MVP marketplace supports **digital artworks that can be represented and displayed as 2D visual content**.
+The MVP supports **digital artworks that can be represented and displayed as 2D visual content**.
 
 Examples include:
 
 * Digital drawings.
 * Digital paintings.
-* Character artwork.
+* Character drawings.
 * Engineering drawings.
-* Nature artwork.
+* Nature drawings.
 * Photography.
 * Arabic calligraphy.
-* Other digital artwork that fits the platform's supported 2D representation.
+* Other digital artwork that fits the supported 2D-display model.
 
-The artwork category and associated metadata determine how the artwork is described and discovered.
+The artwork category determines the relevant metadata and discovery attributes.
 
 ---
 
@@ -184,107 +241,116 @@ The artwork category and associated metadata determine how the artwork is descri
 
 The MVP supports ready-made digital artwork.
 
-A ready-made artwork is an existing work that the Artist has already created and makes available to Customers.
+A ready-made artwork is an existing digital work that an Artist has already created and makes available to Customers.
 
-Its detailed rules include:
+The workflow may include:
 
 * Artwork listing.
 * Availability.
 * Pricing.
-* Purchase workflow.
-* Ownership and usage rights.
-* Delivery of the digital work.
+* Purchase.
+* Payment-related status.
+* Digital delivery.
+* Ownership.
+* Usage rights.
+* Completion.
 
-The detailed rules are defined during Requirements.
+Detailed rules are defined during Requirements.
 
 ---
 
 ## 5.3 Custom Digital Artwork
 
-The project includes the concept of custom artwork/commission requests.
+The MVP supports custom digital artwork requests and commissions.
 
 A Customer may request a new digital artwork from an Artist.
 
-Custom artwork differs from ready-made artwork in areas such as:
+Custom artwork may include:
 
-* Request workflow.
+* Request creation.
 * Requirements.
-* Availability.
+* Artist availability.
 * Pricing.
-* Payment structure.
-* Revisions.
+* Payment-related status.
+* Work progress.
+* Submission.
+* Revision requests.
+* Final approval.
+* Completion.
 * Ownership and usage rights.
-* Completion and approval.
 
-The complete custom-workflow rules must be defined in Requirements before implementation.
-
-If a part of the custom workflow cannot be safely or reliably supported by the MVP's payment and protection model, that part must remain outside the MVP until its requirements are formally approved.
+The exact workflow, state transitions, revision limits, cancellation rules, and protection rules are defined during Requirements.
 
 ---
 
 # 6. Physical Artwork Scope
 
-## 6.1 MVP Marketplace Transactions
+## 6.1 MVP Platform Transactions
 
 Physical artwork is **not supported as a platform-managed marketplace transaction in the MVP**.
 
-The MVP transaction workflow is focused on digital artwork.
+The MVP marketplace transaction model is focused on supported digital artwork.
 
 ---
 
 ## 6.2 Physical Artwork Display
 
-An Artist may be allowed to display or present physical artworks as part of their profile or portfolio.
+The platform may allow an Artist to display physical artwork as part of their profile or portfolio.
 
-Displaying a physical artwork does not mean that the platform supports its marketplace transaction.
+Displaying physical artwork does not mean that the platform manages its sale.
 
-For example, a physical painting may be shown in an Artist's portfolio while remaining outside the platform's managed purchase and delivery workflow.
+For example, an Artist may display a physical painting in their portfolio while arranging any potential sale independently.
 
 ---
 
 ## 6.3 External Physical Sales
 
-If the platform permits an Artist to present a physical artwork and a Customer independently agrees to purchase it:
+If an Artist and Customer independently agree to purchase a physical artwork:
 
-* The transaction is arranged outside the platform.
-* The Customer and Artist are responsible for agreeing on the transaction terms.
+* The transaction occurs outside the platform.
+* The parties are responsible for agreeing on the transaction terms.
+* Payment is arranged outside the platform.
 * Delivery is arranged by the relevant parties.
+* The platform does not manage the physical sale.
 * The platform does not manage physical delivery.
-* The platform does not process the physical sale as an MVP marketplace transaction.
-* The platform does not apply its normal marketplace commission to that external physical sale.
+* The platform does not apply its normal MVP marketplace commission to that external physical sale.
 
-The exact presentation and policy rules are defined separately.
+The detailed presentation and policy rules are defined during Requirements.
 
 ---
 
-## 6.4 Future Physical Marketplace Support
+## 6.4 Future Physical Marketplace
 
 Future versions may support selected physical artworks through a structured marketplace workflow.
 
 Possible future capabilities include:
 
-* Physical artwork transactions.
+* Platform-managed physical artwork transactions.
 * Printing services.
+* Print-on-demand services.
 * Delivery providers.
 * Shipment tracking.
 * Physical-order management.
+* Printing-to-customer logistics.
 
 These capabilities are outside the MVP.
 
-Physical art forms that cannot reasonably be represented as supported 2D-display artwork, such as sculpture, carving, sewing, pottery, and similar three-dimensional or non-2D forms, are outside the current project scope unless a future scope decision explicitly changes this boundary.
+Physical art forms that cannot reasonably be represented as supported 2D-display artwork, including sculpture, carving, sewing, pottery, and similar three-dimensional or non-2D forms, are outside the current project scope unless a future scope decision explicitly changes this boundary.
 
 ---
 
 # 7. Dynamic Artwork Metadata
 
-The MVP may use a dynamic metadata/question flow to improve artwork description and discovery.
+The MVP may use a dynamic artwork metadata/question flow to improve artwork description and discovery.
 
 After an Artist uploads an artwork, the system may present additional optional questions or metadata fields based on:
 
 * Artwork category.
 * Previously selected options.
 * Artwork characteristics.
-* Other predefined rules.
+* Predefined business rules.
+
+Only the artwork category is universally required at the foundation scope level. Additional metadata may become required or optional depending on the selected category and the resulting question flow.
 
 The purpose is to improve:
 
@@ -296,9 +362,9 @@ The purpose is to improve:
 
 This mechanism does **not require AI**.
 
-The Artist remains responsible for reviewing, accepting, or modifying the proposed metadata values.
+The Artist remains responsible for reviewing, accepting, or modifying suggested metadata values.
 
-The exact question structure and implementation will be defined during Requirements and System Design.
+The exact question structure and implementation are defined during Requirements and System Design.
 
 ---
 
@@ -315,26 +381,28 @@ These may include:
 * Artist profile discovery.
 * Artwork metadata-based discovery.
 
-The dynamic metadata system may contribute to filtering and discovery.
+Dynamic artwork metadata may contribute to search and filtering.
 
 AI-powered recommendations, behavioral personalization, and machine-learning recommendation systems are outside the MVP.
+
+Advanced recommendation capabilities may be considered as future product functionality.
 
 ---
 
 # 9. Social Interaction Scope
 
-The MVP includes a limited set of social features intended to support interaction around Artists and artwork.
+The MVP includes a limited set of social features.
 
 The approved MVP social capabilities are:
 
 * Like.
 * Follow.
-* 1–5 star rating.
-* Customizable notifications.
+* 1–5 star Rating.
+* Customizable Notifications.
 * Report.
-* Block user.
+* Block User.
 
-The following are explicitly excluded from the MVP and are not part of the current planned product scope:
+The following are explicitly excluded from the MVP:
 
 * Dislike.
 * Comments.
@@ -350,21 +418,21 @@ The platform is not intended to become a general-purpose social network.
 
 The MVP includes notifications for relevant platform events.
 
-Notifications may cover events such as:
+Notifications may cover:
 
 * Artist application status.
 * Artwork-related events.
 * Follow activity.
 * Rating-related events where applicable.
-* Orders or requests.
+* Orders and requests.
 * Payment-related status.
 * Commission-related status.
 * Administrative actions.
 * Reports or account restrictions where appropriate.
 
-Users should have appropriate control over notification preferences.
+Users should have appropriate control over their notification preferences.
 
-Exact notification channels, triggers, priority, and preference rules are defined during Requirements.
+Exact notification triggers, channels, priorities, and preference rules are defined during Requirements.
 
 ---
 
@@ -372,23 +440,27 @@ Exact notification channels, triggers, priority, and preference rules are define
 
 ## 11.1 MVP Payment Model
 
-The MVP does **not** include platform-mediated payment processing or third-party payment-provider integration.
+The MVP does **not** include platform-mediated payment processing.
 
-Instead, the MVP uses a direct bank-transfer model between Customer and Artist.
+The MVP also does not require third-party payment-provider integration for marketplace payments.
 
-The high-level process is:
+Instead, the MVP uses a **direct bank-transfer model between the Customer and Artist**.
+
+High-level model:
 
 ```text
 Customer
-   ↓
+    ↓
 Direct Bank Transfer
-   ↓
+    ↓
 Artist
-   ↓
+    ↓
 Platform records relevant transaction information
 ```
 
 The platform does not act as the payment processor for the MVP transaction.
+
+The exact confirmation and transaction-recording workflow is defined during Requirements.
 
 ---
 
@@ -396,33 +468,33 @@ The platform does not act as the payment processor for the MVP transaction.
 
 The MVP includes a **15% platform commission** owed by the Artist according to the approved marketplace rules.
 
-The platform should maintain the necessary records to determine:
+The platform should maintain records for:
 
 * Relevant sales.
-* Commission amounts.
+* Commission amount.
 * Outstanding commission.
 * Commission settlement status.
 
 The platform may enforce restrictions when commission obligations remain unpaid.
 
-Examples of possible restrictions include restrictions on:
+Possible restrictions may include:
 
-* Publishing additional artwork.
-* Accepting additional custom requests.
-* Other marketplace capabilities.
+* Restricting publication of additional artwork.
+* Restricting acceptance of additional custom requests.
+* Restricting other marketplace capabilities.
 
-The exact thresholds and enforcement rules must be defined in Requirements.
+Exact thresholds and enforcement rules are defined during Requirements.
 
 ---
 
 ## 11.3 Future Platform-Mediated Payments
 
-A future version may introduce platform-mediated payment through suitable payment providers.
+A future version may introduce platform-mediated payments.
 
-Future payment capabilities may include:
+Possible capabilities include:
 
 * Online payment processing.
-* Platform-held transaction funds where legally and technically appropriate.
+* Payment-provider integration.
 * Automated settlement.
 * Refund handling.
 * Payment protection.
@@ -434,11 +506,11 @@ These capabilities are outside the MVP.
 
 # 12. Order and Custom Workflow Scope
 
-The platform may provide structured workflows for transactions and custom requests that are approved for the MVP.
+The platform may provide structured workflows for approved ready-made transactions and custom requests.
 
-Detailed workflows may include:
+Possible workflow stages include:
 
-* Request creation.
+* Request or purchase creation.
 * Acceptance or rejection.
 * Requirements confirmation.
 * Payment-related status.
@@ -448,9 +520,9 @@ Detailed workflows may include:
 * Final approval.
 * Completion.
 
-The exact state machine, cancellation rules, revision limits, ownership rules, and exception handling must be defined during Requirements.
+The exact state machine, cancellation rules, revision limits, ownership rules, and exception handling are defined during Requirements.
 
-No final workflow should be implemented based solely on this scope document.
+No detailed workflow should be implemented based solely on this foundation-level document.
 
 ---
 
@@ -466,17 +538,17 @@ The MVP includes basic rules governing:
 * Platform responsibilities.
 * User responsibilities.
 
-These rules represent the intended product behavior and are not a substitute for final legal advice.
+These rules represent intended product behavior and are not a substitute for final legal advice.
 
-Before a future public/commercial launch, the rights and legal framework may be reviewed and adjusted with a qualified legal consultant where appropriate.
+Before a future public/commercial launch, the legal and rights framework may be reviewed with a qualified legal consultant where appropriate.
 
-Detailed legal wording and enforceable terms are outside the responsibility of this scope document.
+Detailed legal wording belongs in the relevant legal and requirements documentation.
 
 ---
 
 # 14. Administration and Moderation Scope
 
-The MVP includes platform administration and moderation capabilities necessary to operate the marketplace.
+The MVP includes administration and moderation capabilities required to operate the marketplace.
 
 These may include:
 
@@ -485,19 +557,19 @@ These may include:
 * Artwork moderation.
 * Category management.
 * Report handling.
-* User blocking enforcement.
+* User-block enforcement.
 * Account restrictions.
 * Commission enforcement.
 * Basic audit records.
 * Platform configuration.
 
-The exact permission model and administrative workflows are defined in the Requirements and Security phases.
+Detailed administrative permissions and workflows are defined during Requirements and Security.
 
 ---
 
 # 15. Technical Project Scope
 
-The complete technical project includes the following major areas:
+The complete technical project includes:
 
 * Web application.
 * Backend/API layer.
@@ -509,13 +581,14 @@ The complete technical project includes the following major areas:
 * Testing.
 * Security.
 * Deployment.
+* Hosting.
 * Monitoring.
 * Backup foundations.
-* CI/CD where applicable.
+* CI/CD where appropriate.
 * Mobile application.
 * Maintenance.
 
-The architecture should support the planned progression from the Web MVP to the broader project without requiring an unnecessary redesign of the entire system.
+The architecture should support progression from the Web MVP to the broader project without requiring unnecessary redesign of the entire system.
 
 ---
 
@@ -531,11 +604,11 @@ It provides the initial user-facing marketplace experience and supports the appr
 
 ## 16.2 Mobile Application
 
-The Mobile Application is a **core project phase** and part of the project's intended final form.
+The Mobile Application is a **core project phase** and part of the intended final project.
 
-It is outside the initial MVP but is not considered an optional future extension.
+It is outside the initial MVP, but it is not considered an optional future product extension.
 
-The backend and API architecture should therefore support future Mobile consumption.
+The backend and API architecture should therefore support future mobile consumption.
 
 Detailed mobile requirements and implementation decisions are defined in the Mobile Application phase.
 
@@ -543,26 +616,34 @@ Detailed mobile requirements and implementation decisions are defined in the Mob
 
 # 17. External Integration Scope
 
-The project may eventually integrate with external services where required.
+The project may integrate with external services where required.
 
-Potential integration areas include:
+## 17.1 MVP / Core Infrastructure
 
-### MVP or Core Infrastructure
+Potential infrastructure integrations include:
 
 * Email services.
 * File/object storage.
 * Hosting infrastructure.
 * Other infrastructure services required by approved implementation decisions.
 
-### Outside MVP / Future Product
+These integrations do not automatically represent marketplace features.
 
-* Payment providers.
+---
+
+## 17.2 Future Product Integrations
+
+The following are outside the MVP:
+
+* Payment providers for marketplace payments.
 * Printing providers.
+* Print-on-demand providers.
 * Delivery providers.
 * Logistics services.
+* Shipment tracking services.
 * Other external marketplace services approved through future scope decisions.
 
-An external service must not automatically become part of the project scope merely because it is technically possible.
+An external service must not automatically become part of project scope merely because it is technically possible.
 
 Its inclusion requires an appropriate documented requirement or decision.
 
@@ -572,26 +653,48 @@ Its inclusion requires an appropriate documented requirement or decision.
 
 All AI functionality is currently **outside the MVP**.
 
-This includes, but is not limited to:
+Potential future AI capabilities may include:
 
-* AI-generated artwork.
-* AI artwork recommendations.
-* AI Artist recommendations.
-* AI-generated descriptions.
-* AI automatic pricing.
-* AI moderation.
+* AI-assisted artwork recommendations.
+* AI-assisted Artist recommendations.
+* Personalized discovery.
+* Artist/customer matching.
+* AI-generated artwork descriptions.
+* AI-assisted metadata.
+* Artwork analysis.
+* AI-assisted moderation.
 * AI customer support.
 * AI-assisted artwork creation.
 * AI chat.
-* AI-based marketplace assistance.
+* Other AI-based marketplace assistance.
 
-AI may be reconsidered in future product development.
+These examples describe possible future directions and do not constitute approved MVP requirements.
 
-No AI functionality should be introduced into the MVP unless the scope is formally changed.
+No AI functionality should be introduced into the MVP unless the project scope is formally changed.
+
+The dynamic artwork metadata system described in this document does **not** depend on AI.
 
 ---
 
-# 19. Delivery and Logistics Scope
+# 19. Printing Scope
+
+Printing is outside the MVP.
+
+Future versions may integrate with printing or print-on-demand providers to support capabilities such as:
+
+* Printing digital artwork.
+* Print product creation.
+* Print-order management.
+* Printing physical versions of supported digital artwork.
+* Coordination between Artist, platform, and printing provider.
+
+The exact business model, providers, supported products, pricing, and workflow are future requirements.
+
+Printing must not be treated as an MVP marketplace capability.
+
+---
+
+# 20. Delivery and Logistics Scope
 
 Delivery and logistics are outside the MVP.
 
@@ -607,9 +710,11 @@ The MVP does not include:
 
 Future versions may introduce these capabilities where required by the product model.
 
+A future delivery workflow may involve delivery directly from the Artist or from an external printing provider.
+
 ---
 
-# 20. Enterprise Scope
+# 21. Enterprise Scope
 
 The MVP does not target complex enterprise marketplace functionality.
 
@@ -625,25 +730,25 @@ Such capabilities require separate business requirements before being considered
 
 ---
 
-# 21. Geographic and Localization Scope
+# 22. Geographic and Localization Scope
 
 The platform should avoid unnecessary architectural assumptions that prevent future expansion to additional regions.
 
-Where appropriate, the system should be designed so that the following can be configured or extended:
+Where appropriate, the system should be designed so the following can be configured or extended:
 
 * Currency.
 * Language.
 * Locale.
 * Time zone.
 * Regional business rules.
-* Legal/regulatory requirements.
+* Legal and regulatory requirements.
 * Payment methods.
 
-The initial geographic and localization configuration will be defined by the relevant requirements and implementation decisions.
+The initial geographic and localization configuration is defined during Requirements and System Design.
 
 ---
 
-# 22. Data Scope
+# 23. Data Scope
 
 The project may manage data related to:
 
@@ -657,12 +762,14 @@ The project may manage data related to:
 * Artwork metadata.
 * Artwork categories.
 * Artwork availability.
-* Ready-made artwork transactions.
+* Ready-made artwork.
 * Custom requests.
-* Requirements.
+* Custom requirements.
 * Revisions.
 * Orders where applicable.
-* Payment and commission records.
+* Transaction records.
+* Payment-related status.
+* Commission records.
 * Notifications.
 * Ratings.
 * Likes.
@@ -672,70 +779,135 @@ The project may manage data related to:
 * Administrative actions.
 * Audit-related information.
 
-The final data model is defined during the Database phase.
-
 This list identifies data domains rather than final database tables or schemas.
+
+The final data model is defined during the Database phase.
 
 ---
 
-# 23. Explicit MVP Exclusions
+# 24. Explicit MVP Exclusions
 
-The following capabilities are explicitly outside the MVP:
+The following are explicitly outside the MVP:
 
 1. Platform-mediated payment processing.
 2. Third-party payment-provider integration for marketplace payments.
-3. Managed physical artwork transactions.
-4. Delivery and logistics integration.
-5. Printing-service integration.
-6. AI functionality.
-7. User-to-user chat.
-8. User-to-AI chat.
-9. Comments.
-10. Dislike.
-11. Spam functionality.
-12. Advanced AI or machine-learning recommendations.
-13. Enterprise marketplace functionality.
-14. Other functionality not required by the approved MVP requirements.
+3. Platform-managed physical artwork transactions.
+4. Printing-service integration.
+5. Print-on-demand integration.
+6. Delivery-provider integration.
+7. Shipment tracking.
+8. Physical logistics management.
+9. AI functionality.
+10. AI-powered recommendations.
+11. AI chat.
+12. User-to-user chat.
+13. User-to-AI chat.
+14. Comments.
+15. Dislike.
+16. Spam functionality.
+17. Advanced machine-learning personalization.
+18. Enterprise marketplace functionality.
+19. Auction functionality.
+20. Other functionality not required by the approved MVP requirements.
 
-These exclusions should be treated as explicit boundaries rather than temporary omissions.
+These exclusions are explicit project boundaries rather than merely postponed implementation tasks.
 
 ---
 
-# 24. Complete Project Boundary
+# 25. Complete Project Boundary
 
-The complete project extends beyond the MVP.
+The complete project extends beyond the Web MVP.
 
-The planned lifecycle includes:
+The intended project lifecycle includes:
 
 ```text
-Project Foundation
+00 Project Foundation
         ↓
-Requirements
+01 Requirements
         ↓
-System Design
+02 System Design
         ↓
-Database
+03 UI/UX Design
         ↓
-Web Application
+04 Database
         ↓
-Mobile Application
+05 API / Backend
         ↓
-Quality Assurance
+06 Web Frontend
         ↓
-Cybersecurity
+07 Mobile Application
         ↓
-Deployment
+08 Quality Assurance
         ↓
-Maintenance
+09 Cybersecurity
+        ↓
+10 Deployment
+        ↓
+11 Maintenance
 ```
 
-The complete project therefore represents more than the MVP Web marketplace.
+The Mobile Application is therefore part of the complete project.
 
-The MVP is an important product milestone within the broader project rather than the definition of the entire project.
+The following are **not required to define the complete core project phases** and remain Future Product Scope:
+
+* Platform-mediated payments.
+* Managed physical marketplace transactions.
+* Printing integrations.
+* Delivery integrations.
+* AI capabilities.
+* Advanced marketplace extensions.
+
+The MVP is an important product milestone within the complete project, but it does not define the entire project.
 
 ---
 
-# 25. Scope Change Management
+# 26. Future Product Development
+
+Future product development may extend the platform after the approved MVP and core project foundations.
+
+Future areas may include:
+
+### Payments
+
+* Platform-mediated payments.
+* Payment-provider integrations.
+* Automated settlements.
+* Refunds.
+* Payment protection.
+* Automated commission collection.
+
+### Physical Artwork
+
+* Managed physical-art transactions.
+* Printing and print-on-demand.
+* Physical order management.
+* Delivery and logistics.
+* Shipment tracking.
+
+### AI
+
+* Personalized recommendations.
+* Artist/customer matching.
+* Artwork analysis.
+* AI-assisted metadata.
+* AI-generated descriptions.
+* AI-assisted moderation.
+* AI customer assistance.
+* AI-assisted creation.
+
+### Advanced Marketplace Capabilities
+
+* Advanced discovery.
+* Advanced personalization.
+* Advanced analytics.
+* Expanded operational tooling.
+* Other capabilities approved through future scope decisions.
+
+Future features remain subject to separate requirements, technical evaluation, and project decisions.
+
+---
+
+# 27. Scope Change Management
 
 A significant change to the approved scope should be documented as a project decision.
 
@@ -744,24 +916,26 @@ A scope change should identify, where applicable:
 1. Requested change.
 2. Reason for the change.
 3. Problem or opportunity being addressed.
-4. Effect on MVP or complete-project scope.
-5. Business impact.
-6. Technical impact.
-7. Architecture impact.
-8. Requirements impact.
-9. Testing impact.
-10. Documentation impact.
-11. Dependencies.
-12. Decision.
-13. Decision owner.
+4. Effect on MVP scope.
+5. Effect on complete-project scope.
+6. Effect on future product scope.
+7. Business impact.
+8. Technical impact.
+9. Architecture impact.
+10. Requirements impact.
+11. Testing impact.
+12. Documentation impact.
+13. Dependencies.
+14. Decision.
+15. Decision owner.
 
-When an approved decision changes the scope, all affected documentation should be updated.
+When an approved decision changes the scope, affected documentation should be updated.
 
-Historical decisions should not be silently rewritten. If a previous decision becomes obsolete, it should be marked as superseded and replaced by a new documented decision.
+Historical decisions should not be silently rewritten. If an earlier decision becomes obsolete, it should be marked as **Superseded** and replaced or clarified by the newer approved decision.
 
 ---
 
-# 26. Scope Boundary Test
+# 28. Scope Boundary Test
 
 A proposed capability should be evaluated before being added to the MVP.
 
@@ -773,11 +947,11 @@ Is the capability required for the approved MVP marketplace workflow?
 
 ### 2. User Value
 
-Does the capability solve a meaningful problem for the intended MVP users?
+Does it solve a meaningful problem for the intended MVP users?
 
 ### 3. Dependency
 
-Does it require an external service or capability that is intentionally outside the MVP?
+Does it require an external service or capability intentionally outside the MVP?
 
 ### 4. Complexity
 
@@ -785,17 +959,17 @@ Does it introduce disproportionate architectural, security, operational, or main
 
 ### 5. Timing
 
-Can the capability reasonably be implemented after the MVP without preventing the MVP from achieving its purpose?
+Can the capability reasonably be implemented later without preventing the MVP from achieving its purpose?
 
 ### 6. Existing Scope
 
 Is the capability already explicitly excluded by an approved project decision?
 
-A capability that is useful but not necessary for the MVP should normally remain outside the MVP unless there is a documented reason to change the scope.
+A capability that is useful but not necessary for the MVP should normally remain outside the MVP unless a documented scope change approves its inclusion.
 
 ---
 
-# 27. Scope Completion Criteria
+# 29. Scope Completion Criteria
 
 The Project Scope definition is considered sufficiently established when:
 
@@ -803,25 +977,29 @@ The Project Scope definition is considered sufficiently established when:
 * Complete-project boundaries are identified.
 * Future product scope is distinguished from the complete project.
 * Primary users and account relationships are defined.
+* Artist approval is defined at a foundation level.
 * Artwork boundaries are defined.
 * Physical artwork boundaries are defined.
+* Dynamic artwork metadata is defined.
 * Payment boundaries are defined.
+* Commission boundaries are defined.
 * Social interaction boundaries are defined.
 * AI boundaries are defined.
+* Mobile application scope is defined.
 * Platform boundaries are defined.
 * Major integrations are identified.
 * Major exclusions are explicit.
 * Scope-change rules are established.
 * Detailed requirements can be developed without relying on unresolved scope assumptions.
 
-Detailed requirements may still refine behavior and implementation without changing the established scope boundaries.
+Detailed requirements may refine behavior and implementation without changing the established scope boundaries.
 
 ---
 
-## 28. Scope Authority
+# 30. Scope Authority
 
 This document is the primary foundation-level reference for project scope.
 
 Detailed documents may expand on the behavior of an in-scope capability, but they must not silently introduce functionality that contradicts the approved scope.
 
-If a conflict exists between this document and a later approved project decision, the decision should be recorded in the project-wide `decision-log.md`, and the affected documentation should be updated accordingly.
+If a conflict exists between this document and a later approved project-wide decision, the decision must be recorded in the project-wide `decision-log.md`, and all affected documentation should be updated accordingly.

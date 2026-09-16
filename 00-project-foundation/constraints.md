@@ -21,9 +21,9 @@ A project decision may be influenced by a constraint, but the two should not be 
 
 The project should follow these principles:
 
-1. Constraints must be considered when making requirements and design decisions.
+1. Constraints must be considered when defining requirements and making design decisions.
 2. A constraint should be documented explicitly when it materially affects the project.
-3. A constraint should not be used to introduce an undocumented feature or requirement.
+3. A constraint should not introduce an undocumented feature or requirement.
 4. Technical constraints should not unnecessarily restrict future development.
 5. MVP constraints should not automatically become permanent constraints on the complete project.
 6. When a constraint changes, affected decisions and documentation should be reviewed.
@@ -38,7 +38,7 @@ The project should follow these principles:
 
 The MVP must remain focused on the approved core marketplace functionality.
 
-Features that are not necessary for the MVP should not be introduced merely because they are technically possible.
+Features that are not necessary for the MVP must not be introduced merely because they are technically possible.
 
 This constraint exists to prevent unnecessary scope expansion and premature complexity.
 
@@ -48,17 +48,26 @@ This constraint exists to prevent unnecessary scope expansion and premature comp
 
 The initial MVP is delivered primarily through the Web application.
 
-The Mobile Application is outside the MVP but remains a core part of the complete project.
+The Mobile Application is outside the MVP, but it remains a core part of the complete project.
 
-Therefore, MVP implementation should not require full Mobile Application implementation before the Web MVP can be completed.
+Therefore, MVP implementation must not require the complete Mobile Application to be implemented before the Web MVP can be completed.
 
 ---
 
 ## C-P03 — Digital Marketplace Focus
 
-The MVP marketplace is focused on supported digital artwork.
+The MVP marketplace is focused on supported digital artwork intended for digital/2D display.
 
-The platform may present certain physical artworks for portfolio/display purposes, but this does not make physical artwork a supported MVP marketplace transaction.
+The MVP supports digital works such as, where applicable:
+
+* Character drawings.
+* Engineering drawings.
+* Nature drawings.
+* Photography.
+* Arabic calligraphy.
+* Other approved digital artwork categories that fit the project's supported representation.
+
+Physical artwork may be displayed or listed for portfolio purposes under approved product behavior, but physical artwork is not a platform-managed marketplace transaction in the MVP.
 
 ---
 
@@ -68,11 +77,13 @@ Artwork supported by the MVP marketplace must be representable through the platf
 
 The ability to upload or display an image of an object does not automatically mean that the underlying physical art form is supported as a marketplace product.
 
+Three-dimensional or non-2D-display art forms are outside the approved marketplace model unless the project scope is explicitly changed.
+
 ---
 
 # 4. Payment Constraints
 
-## C-P01 — No Platform-Mediated Payment in MVP
+## C-PAY01 — No Platform-Mediated Payment in MVP
 
 The MVP must not depend on integrated platform-mediated payment processing.
 
@@ -86,28 +97,32 @@ This constraint means that MVP workflows must not assume that the platform can:
 * Automatically refund funds through a payment provider.
 * Depend on a payment-provider API for marketplace transactions.
 
+Platform-mediated payment is a future product capability and must be introduced only through explicit future requirements and design decisions.
+
 ---
 
-## C-P02 — Payment-Related Workflows Must Respect External Payment
+## C-PAY02 — Payment-Related Workflows Must Respect External Payment
 
-Because the MVP payment occurs outside the platform's payment-processing infrastructure, the system must clearly distinguish between:
+Because MVP payment occurs outside the platform's payment-processing infrastructure, the system must clearly distinguish between:
 
 * Payment information recorded by the platform.
-* Payment actually processed by an external bank.
+* Payment actually processed through the external bank.
 * Payment confirmation or verification.
 * Marketplace transaction state.
 
-The exact verification mechanism must be defined during Requirements and Security analysis.
+The exact verification and recording mechanism must be defined during Requirements, System Design, and Cybersecurity analysis where applicable.
 
 ---
 
-## C-P03 — Commission Must Be Trackable
+## C-PAY03 — Commission Must Be Trackable
 
-The MVP must support the project's approved commission model without requiring a payment gateway.
+The MVP must support the approved commission model without requiring a payment gateway.
 
 The platform must be capable of recording applicable commission obligations and their settlement status.
 
-The detailed enforcement mechanism belongs in Requirements.
+The approved project commission is **15%** where applicable.
+
+The detailed enforcement mechanism belongs in Requirements and System Design.
 
 ---
 
@@ -125,6 +140,7 @@ Validation requirements may include:
 * Upload permissions.
 * Storage rules.
 * Security restrictions.
+* Appropriate access and visibility rules.
 
 Exact limits and validation rules are defined during Requirements and System Design.
 
@@ -134,7 +150,13 @@ Exact limits and validation rules are defined during Requirements and System Des
 
 Artwork and media files must not be stored or served through an architecture that unnecessarily exposes private or protected content.
 
-Access to media must respect the applicable artwork ownership, visibility, and marketplace rules.
+Access to media must respect applicable:
+
+* Artwork ownership.
+* Visibility.
+* Publishing.
+* Marketplace.
+* User authorization rules.
 
 ---
 
@@ -142,7 +164,7 @@ Access to media must respect the applicable artwork ownership, visibility, and m
 
 Artwork files may consume substantially more storage than ordinary application data.
 
-The architecture must therefore avoid assuming that all media should be stored directly inside the primary relational database.
+The architecture should therefore avoid assuming that all media must be stored directly inside the primary relational database.
 
 The final storage mechanism is a technical design decision.
 
@@ -150,7 +172,7 @@ The final storage mechanism is a technical design decision.
 
 # 6. User and Account Constraints
 
-## C-U01 — User Identity Model
+## C-U01 — Unified User Identity Model
 
 The project uses a unified user-account model.
 
@@ -158,13 +180,22 @@ A user does not need to create a completely separate account merely to become an
 
 Artist capabilities are associated with the user's existing account.
 
+All users initially enter the platform as Customers and may apply for Artist status through the approved process.
+
 ---
 
 ## C-U02 — Artist Approval Is Required
 
 A user must not receive unrestricted Artist publishing capabilities before completing the approved Artist application and review process.
 
-The Artist approval process includes submission of five samples of the applicant's own work and specialist review.
+The Artist approval process includes:
+
+1. Selecting an applicable art category.
+2. Submitting five samples of the applicant's own work.
+3. Specialist review of the submitted samples.
+4. Approval or rejection according to the defined review rules.
+
+Detailed rejection, resubmission, and similarity rules belong in the appropriate Requirements and System Design documentation.
 
 ---
 
@@ -186,11 +217,44 @@ The backend must enforce authorization for sensitive operations such as:
 * Protected user data.
 * Commission information.
 * Reports.
+* User restrictions.
 * Other restricted resources.
 
 ---
 
-# 7. Social Feature Constraints
+# 7. Artwork Metadata Constraints
+
+## C-MD01 — Category Is the Core Required Classification
+
+Artwork category is the fundamental classification required for supported artwork.
+
+Other artwork metadata may be collected according to the selected category and applicable answers.
+
+---
+
+## C-MD02 — Dynamic Metadata Must Remain Rule-Based
+
+The MVP may use a dynamic metadata/question mechanism in which additional fields or questions depend on:
+
+* The selected artwork category.
+* Previous answers.
+* Applicable product rules.
+
+This mechanism must be implementable through predefined application rules.
+
+It must not require AI functionality.
+
+---
+
+## C-MD03 — Optional Metadata Must Not Become an Unnecessary Barrier
+
+Additional artwork metadata should support search, discovery, filtering, and clearer artwork information without unnecessarily preventing Artists from publishing valid artwork.
+
+Only fields explicitly defined as required by the applicable product rules should be mandatory.
+
+---
+
+# 8. Social Feature Constraints
 
 ## C-S01 — Limited Social Scope
 
@@ -231,25 +295,27 @@ These are outside the current product scope.
 
 ---
 
-# 8. AI Constraints
+# 9. AI Constraints
 
 ## C-AI01 — No AI in MVP
 
 The MVP must not depend on AI functionality.
 
-This includes AI-based:
+AI-based capabilities are future product possibilities rather than MVP requirements.
+
+Potential future AI capabilities may include:
 
 * Recommendations.
-* Artwork generation.
-* Description generation.
-* Pricing.
-* Moderation.
-* Customer support.
-* Artwork analysis.
-* Chat.
 * Personalization.
+* Artwork analysis.
+* Metadata or description assistance.
+* Customer assistance.
+* Moderation assistance.
+* Matching and discovery.
+* AI-assisted creation.
+* Other explicitly approved AI capabilities.
 
-The dynamic artwork metadata mechanism must therefore be designed as a predefined/rule-based capability rather than an AI dependency.
+Listing these possibilities does not constitute approval to implement them.
 
 ---
 
@@ -257,11 +323,13 @@ The dynamic artwork metadata mechanism must therefore be designed as a predefine
 
 Future AI functionality must not be introduced into the MVP architecture simply to solve a problem that can be handled through ordinary application logic.
 
-Future AI capabilities require explicit requirements and scope approval.
+The dynamic artwork metadata mechanism must therefore remain rule-based within the MVP.
+
+Future AI capabilities require explicit requirements, scope approval, and appropriate technical decisions.
 
 ---
 
-# 9. Physical Artwork Constraints
+# 10. Physical Artwork Constraints
 
 ## C-PH01 — No Managed Physical Transactions in MVP
 
@@ -285,7 +353,10 @@ However, display capability must not be interpreted as support for:
 
 * Platform-managed purchase.
 * Platform-managed delivery.
+* Platform-managed fulfillment.
 * Platform commission on an external physical sale.
+
+Physical artwork may therefore exist as a portfolio/display context without becoming an MVP-managed marketplace transaction.
 
 ---
 
@@ -297,7 +368,7 @@ The project must not prematurely build complete physical-commerce infrastructure
 
 ---
 
-# 10. Delivery and Logistics Constraints
+# 11. Delivery and Logistics Constraints
 
 ## C-D01 — Delivery Is Outside MVP
 
@@ -317,9 +388,11 @@ This includes:
 
 The system may be designed so that future delivery integration is possible, but the MVP should not implement unnecessary delivery infrastructure.
 
+Future delivery services may be introduced when physical transactions or other approved product capabilities require them.
+
 ---
 
-# 11. Printing Constraints
+# 12. Printing Constraints
 
 ## C-PR01 — Printing Is Outside MVP
 
@@ -332,11 +405,17 @@ The MVP must not depend on:
 * Automated print fulfillment.
 * Print-provider shipping.
 
-Future printing capabilities may be considered when physical artwork or printed products become an active project requirement.
+---
+
+## C-PR02 — Future Printing Must Be Explicitly Introduced
+
+Future printing capabilities may be considered when printed products or physical artwork services become an active project requirement.
+
+Printing must not become an implicit MVP dependency.
 
 ---
 
-# 12. Rights and Legal Constraints
+# 13. Rights and Legal Constraints
 
 ## C-L01 — Platform Rules Must Respect Applicable Law
 
@@ -358,7 +437,7 @@ Ownership, licensing, usage, intellectual-property, privacy, and marketplace res
 
 ---
 
-# 13. Privacy Constraints
+# 14. Privacy Constraints
 
 ## C-PRV01 — Personal Data Must Be Minimized
 
@@ -383,11 +462,11 @@ must receive appropriate access controls and security protections.
 
 ## C-PRV03 — Data Access Must Follow Least Privilege
 
-Users, Artists, administrators, and other system actors should only have access to the information required for their authorized activities.
+Users, Artists, administrators, and other system actors should only have access to information required for their authorized activities.
 
 ---
 
-# 14. Security Constraints
+# 15. Security Constraints
 
 ## C-SE01 — Security Cannot Depend Only on the Client
 
@@ -431,11 +510,11 @@ Security considerations must extend into:
 
 ---
 
-# 15. Technical Architecture Constraints
+# 16. Technical Architecture Constraints
 
 ## C-T01 — Backend Must Support Web and Mobile
 
-The backend/API architecture should support both the Web application and the future Mobile Application.
+The backend/API architecture should support both the Web application and the Mobile Application.
 
 The Mobile Application must not require a completely separate business-logic backend merely because it uses a different client platform.
 
@@ -472,7 +551,7 @@ Future scalability should be considered, but MVP architecture should remain prop
 
 ---
 
-# 16. Development Constraints
+# 17. Development Constraints
 
 ## C-DEV01 — Requirements Before Implementation
 
@@ -516,7 +595,7 @@ A document may summarize or reference a rule defined elsewhere, but conflicting 
 
 ---
 
-# 17. Project Lifecycle Constraints
+# 18. Project Lifecycle Constraints
 
 ## C-LC01 — Project Is Developed Incrementally
 
@@ -528,7 +607,7 @@ The complete project must be developed through defined phases rather than requir
 
 Completion of the MVP does not mean that the entire project is complete.
 
-The complete project continues into:
+The complete project continues beyond the MVP through its defined core lifecycle, including:
 
 * Mobile Application.
 * Quality Assurance.
@@ -542,11 +621,28 @@ The complete project continues into:
 
 The Mobile Application is a core part of the complete project.
 
-It is outside the MVP but must not be treated as an optional feature that can simply be removed from the project's intended lifecycle without an explicit scope decision.
+It is outside the MVP, but it must not be treated as an optional future feature that can simply be removed from the intended project lifecycle without an explicit scope decision.
 
 ---
 
-# 18. Operational Constraints
+## C-LC04 — Future Product Capabilities Are Separate From Core Project Phases
+
+Future product capabilities must not be confused with the project's defined core development lifecycle.
+
+Examples include:
+
+* Platform-mediated payment.
+* Expanded physical-artwork marketplace support.
+* Printing services.
+* Delivery and logistics integrations.
+* AI-powered capabilities.
+* Other advanced marketplace capabilities approved later.
+
+These may extend the product after or alongside the core project, but they do not automatically become requirements of the current MVP or core phase sequence.
+
+---
+
+# 19. Operational Constraints
 
 ## C-O01 — External Services Must Be Justified
 
@@ -564,6 +660,7 @@ This is particularly relevant to future:
 * Storage providers.
 * Printing providers.
 * Delivery providers.
+* AI providers.
 * Other infrastructure services.
 
 ---
@@ -585,7 +682,7 @@ Exact deployment requirements are defined during the Deployment and Cybersecurit
 
 ---
 
-# 19. Educational Project Constraints
+# 20. Educational Project Constraints
 
 ## C-E01 — The Project Must Provide Practical Learning Value
 
@@ -617,7 +714,7 @@ Technology choices should be documented through the appropriate architecture or 
 
 ---
 
-# 20. Constraint Priority
+# 21. Constraint Priority
 
 When constraints conflict, the project should generally consider them in the following order:
 
@@ -635,7 +732,7 @@ This priority is a planning principle rather than a replacement for case-specifi
 
 ---
 
-# 21. Constraint Review
+# 22. Constraint Review
 
 Constraints should be reviewed when:
 
@@ -644,8 +741,9 @@ Constraints should be reviewed when:
 * The architecture changes significantly.
 * The project moves into a new major lifecycle stage.
 * The MVP boundary changes.
-* The project approaches public/commercial deployment.
+* The project approaches public or commercial deployment.
 * Legal or security requirements change.
+* A previously future-only capability is formally approved for implementation.
 
 A constraint should not remain in this document indefinitely if it is no longer valid.
 
@@ -653,7 +751,7 @@ When a constraint is removed or changed, affected requirements, decisions, archi
 
 ---
 
-# 22. Relationship to Other Foundation Documents
+# 23. Relationship to Other Foundation Documents
 
 ### Project Charter
 
@@ -687,19 +785,25 @@ Constraints should inform these documents without becoming a replacement for the
 
 ---
 
-# 23. Constraint Completion Criteria
+# 24. Constraint Completion Criteria
 
 The constraint definition is considered sufficiently established when:
 
 * Major product boundaries are understood.
 * MVP limitations are explicit.
 * Payment limitations are explicit.
+* Artist approval and publishing boundaries are explicit.
+* Artwork and media limitations are explicit.
 * Physical-artwork limitations are explicit.
 * Delivery and printing limitations are explicit.
 * AI limitations are explicit.
+* Dynamic metadata is explicitly separated from AI functionality.
+* Social feature boundaries are explicit.
 * Security and privacy boundaries are identified.
 * Technical architecture constraints are understood.
 * Documentation constraints are established.
 * Lifecycle constraints are clear.
+* Mobile Application is correctly identified as a core project phase outside the MVP.
+* Future product capabilities are distinguishable from the core project lifecycle.
 * Future expansion is possible without requiring premature implementation.
 * No major known constraint is hidden inside an assumption or undocumented decision.
