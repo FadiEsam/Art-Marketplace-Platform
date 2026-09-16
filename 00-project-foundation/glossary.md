@@ -2,417 +2,669 @@
 
 ## 1. Purpose
 
-This glossary defines the key terms used throughout the Art Marketplace Platform project.
+This glossary defines the terminology used throughout the Art Marketplace Platform project.
 
-The purpose of this document is to establish consistent terminology across:
+Its purpose is to maintain consistent terminology across:
 
-* Business requirements
-* Functional and non-functional requirements
-* System design
-* Database design
-* API design
-* UI/UX design
-* Testing
-* Security
-* Deployment
-* Project documentation
+* Project documentation.
+* Requirements.
+* System design.
+* Database design.
+* API design.
+* UI/UX design.
+* Web application.
+* Mobile application.
+* Testing.
+* Security.
+* Deployment.
+* Maintenance.
 
-Definitions in this document describe the intended meaning of terms **within this project**. Where a concept has not yet been finalized, the definition intentionally avoids establishing a final business rule.
+Definitions in this document describe the intended meaning of terms **within this project**.
+
+This glossary does not replace detailed requirements, business rules, legal definitions, or technical specifications.
+
+Where a term represents a concept whose detailed behavior has not yet been finalized, this glossary defines the concept without inventing unresolved rules.
 
 ---
 
-# 2. Business and Product Terms
+# 2. Project and Product Terms
 
 ## 2.1 Art Marketplace Platform
 
-The software platform being developed to connect customers with artists and allow customers to discover, purchase, or commission artwork through structured marketplace workflows.
+The software project and resulting platform intended to provide a structured marketplace for discovering, presenting, and transacting around supported artwork.
 
-The platform is initially focused on a web-based MVP, with mobile applications considered as a future extension.
+The platform includes a Web application and, as part of the complete project, a Mobile Application supported by shared backend/API services.
 
 ---
 
 ## 2.2 Marketplace
 
-A platform that facilitates interactions and transactions between multiple independent parties, primarily customers and artists.
+A platform that enables interactions and transactions between independent parties.
 
-In this project, the platform facilitates the discovery of artwork and services, requests, orders, payments, delivery, approval, and related communication or notifications.
+In this project, the marketplace primarily connects Customers with approved Artists and supports the discovery and transaction of supported artwork.
 
 ---
 
 ## 2.3 MVP — Minimum Viable Product
 
-The smallest complete version of the platform that provides the core marketplace value and allows the primary business workflow to be validated.
+The first complete version of the product that provides the approved core marketplace functionality.
 
-The MVP is intentionally controlled and does not include advanced features that are not necessary to validate the core product.
-
----
-
-## 2.4 Artwork
-
-A creative work created or offered by an artist through the platform.
-
-Artwork may represent a finished work available for purchase or another type of creative product supported by the platform.
-
-The exact supported artwork categories and formats are subject to the requirements phase.
+The MVP is primarily Web-based and intentionally excludes capabilities such as platform-mediated payment, managed physical-artwork transactions, delivery integration, printing integration, and AI functionality.
 
 ---
 
-## 2.5 Service
+## 2.4 Complete Project
 
-An offering published by an artist describing a type of creative work that the artist is willing to provide to customers.
+The broader project extending beyond the MVP.
 
-A service may contain information such as:
+The complete project includes:
 
-* Title
-* Description
-* Price
-* Expected delivery time
-* Included deliverables
-* Revision conditions
-* Additional requirements
+* Web application.
+* Backend and APIs.
+* Database.
+* Mobile Application.
+* Quality Assurance.
+* Cybersecurity.
+* Deployment.
+* Maintenance.
 
-The final service model will be defined during requirements analysis.
-
----
-
-## 2.6 Commission
-
-A customer-specific creative work requested from an artist according to requirements agreed between the parties.
-
-A commission differs from a predefined artwork because the final work is created according to customer requirements rather than being an already completed item.
+The complete project is therefore broader than the MVP.
 
 ---
 
-## 2.7 Listing
+## 2.5 Future Product Scope
 
-A published marketplace item that can be discovered by users.
+Capabilities intentionally outside the current MVP and potentially introduced later as the product evolves.
 
-Depending on the final product model, a listing may represent an artwork, service, or another marketplace offering.
+Examples include:
+
+* Platform-mediated payment.
+* Managed physical-artwork transactions.
+* Printing integrations.
+* Delivery integrations.
+* AI functionality.
+
+Future scope is not automatically part of the complete project until the relevant capability is formally included.
 
 ---
 
-## 2.8 Portfolio
+## 2.6 Artwork
 
-A collection of an artist's selected works used to present their skills, style, and previous work to potential customers.
+A creative work presented through the platform.
 
-A portfolio is primarily intended for discovery and evaluation and does not necessarily represent items currently available for purchase.
+Within the MVP marketplace, supported artwork focuses on digital artwork that can be represented and displayed as 2D visual content.
+
+An artwork may be:
+
+* Ready-made.
+* Custom-created through an approved custom-workflow.
 
 ---
 
-## 2.9 Discovery
+## 2.7 Digital Artwork
 
-The process through which customers find artists, artworks, services, or other marketplace offerings.
+Artwork created or represented in digital form and suitable for the platform's supported digital/2D presentation model.
+
+Examples may include:
+
+* Digital drawings.
+* Digital paintings.
+* Character artwork.
+* Engineering drawings.
+* Photography.
+* Nature artwork.
+* Arabic calligraphy.
+
+The exact supported file formats and technical limits are defined elsewhere.
+
+---
+
+## 2.8 Physical Artwork
+
+An artwork whose original form is physical rather than purely digital.
+
+Examples include:
+
+* Paper drawings.
+* Paintings.
+* Physical illustrations.
+* Other physical 2D artwork.
+
+Physical artwork may be displayed in an Artist's portfolio where permitted, but physical marketplace transactions are outside the MVP.
+
+---
+
+## 2.9 Supported Artwork
+
+Artwork that satisfies the platform's current technical, category, policy, and marketplace requirements.
+
+Being technically displayable does not automatically mean that an artwork is eligible for marketplace transactions.
+
+---
+
+## 2.10 Ready-Made Artwork
+
+An existing artwork that has already been created by the Artist and is offered to a Customer.
+
+A ready-made artwork is different from a Custom Artwork because the work does not need to be created from a new Customer request.
+
+---
+
+## 2.11 Custom Artwork
+
+Artwork created by an Artist according to requirements provided by a Customer.
+
+Custom Artwork differs from Ready-Made Artwork in areas such as:
+
+* Request workflow.
+* Requirements.
+* Availability.
+* Payment structure.
+* Revisions.
+* Ownership and usage rights.
+
+The exact workflow is defined in the Requirements documentation.
+
+---
+
+## 2.12 Portfolio
+
+A collection of works presented by an Artist to demonstrate their artistic work, style, or experience.
+
+A portfolio item does not automatically represent an artwork available for marketplace purchase.
+
+A physical artwork may be shown in a portfolio without becoming a supported MVP marketplace transaction.
+
+---
+
+## 2.13 Listing
+
+A published marketplace representation of an artwork or other approved marketplace offering.
+
+A Listing contains the information necessary for users to discover and evaluate the associated offering.
+
+The exact Listing structure is defined in Requirements.
+
+---
+
+## 2.14 Discovery
+
+The process through which users find Artists or artwork.
 
 Discovery may include:
 
-* Browsing
-* Search
-* Filtering
-* Artist profiles
-* Artwork pages
-* Service pages
-* Categories or other classification mechanisms
+* Browsing.
+* Search.
+* Filtering.
+* Categories.
+* Artist profiles.
+* Artwork metadata.
+
+---
+
+## 2.15 Category
+
+A classification used to organize artwork and/or Artist capabilities.
+
+Artist approval is associated with an approved artistic category.
+
+The exact category structure is defined during Requirements.
+
+---
+
+## 2.16 Dynamic Artwork Metadata
+
+A rule-based mechanism that presents optional artwork information fields or questions based on the artwork category and previous selections.
+
+Its purpose is to improve:
+
+* Artwork descriptions.
+* Search.
+* Filtering.
+* Discovery.
+
+Dynamic Artwork Metadata does not require AI.
 
 ---
 
 # 3. User and Stakeholder Terms
 
-## 3.1 Customer
+## 3.1 User
 
-A platform user who discovers artwork or services and may purchase artwork or request creative work from an artist.
+A person with an account on the platform.
 
-A customer may create and manage orders and interact with the platform according to the permissions assigned to the customer role.
-
----
-
-## 3.2 Artist
-
-A platform user who presents artwork, maintains a portfolio, publishes services, receives customer requests, and manages relevant orders.
-
-An artist is responsible for producing and delivering the agreed creative work.
+Every new account begins as a Customer.
 
 ---
 
-## 3.3 Administrator
+## 3.2 Customer
 
-A privileged platform user responsible for managing platform-level operations.
+A platform user who can discover Artists and artwork and participate in the marketplace according to the permissions and capabilities available to the account.
+
+A Customer may also become an Artist.
+
+---
+
+## 3.3 Artist
+
+A platform user who has completed the required Artist approval process and is authorized to perform Artist-specific activities.
+
+An Artist may:
+
+* Maintain an Artist profile.
+* Present a portfolio.
+* Publish eligible artwork.
+* Receive applicable custom requests.
+* Participate in approved marketplace workflows.
+
+An Artist remains capable of acting as a Customer.
+
+---
+
+## 3.4 Artist Application
+
+The process through which a Customer requests Artist status.
+
+The application includes:
+
+* Selection of an artistic category.
+* Submission of five samples of the applicant's own work.
+* Specialist review.
+
+---
+
+## 3.5 Artist Reviewer
+
+A specialist responsible for reviewing Artist applications and determining whether an applicant satisfies the platform's Artist approval requirements.
+
+Detailed reviewer rules are defined in Requirements.
+
+---
+
+## 3.6 Administrator
+
+A privileged platform user responsible for administrative and moderation operations.
 
 Administrative capabilities may include:
 
-* User management
-* Content moderation
-* Order oversight
-* Platform configuration
-* Security-related administration
-* Review of operational records
-
-The exact administrator permissions will be defined during authorization design.
-
----
-
-## 3.4 Platform Owner / Business Owner
-
-The person or organization responsible for the business direction, ownership, and commercial decisions of the platform.
-
-The Platform Owner is a business stakeholder rather than necessarily a technical system role.
+* User management.
+* Artist application review.
+* Artwork moderation.
+* Report handling.
+* Account restrictions.
+* Commission-related enforcement.
+* Platform configuration.
 
 ---
 
-## 3.5 Stakeholder
+## 3.7 Stakeholder
 
-Any person, organization, or external system that has an interest in, interacts with, influences, or is affected by the project or platform.
-
-Examples include:
-
-* Customers
-* Artists
-* Administrators
-* Platform Owner
-* Development Team
-* Payment Provider
-* Hosting Provider
-* Regulatory or legal stakeholders
+A person, organization, or external system that has an interest in, interacts with, influences, or is affected by the project or platform.
 
 ---
 
-# 4. Marketplace Transaction Terms
+# 4. Marketplace Interaction Terms
 
 ## 4.1 Request
 
-A customer's initiation of a request for an artist's service or custom creative work before it becomes a confirmed order.
+An initiated Customer request for a Custom Artwork or another approved marketplace action that has not yet reached the relevant confirmed transaction state.
 
-A request may require additional information, clarification, pricing, or agreement before an order is created.
-
-The exact request-to-order workflow is subject to final requirements.
+A Request is not automatically an Order.
 
 ---
 
 ## 4.2 Order
 
-A structured transaction record representing an agreed piece of work or marketplace purchase between a customer and an artist.
+A structured marketplace transaction record representing an approved purchase or agreed piece of work between a Customer and an Artist.
 
-An order may contain:
+An Order may contain information such as:
 
-* Customer
-* Artist
-* Service or artwork
-* Requirements
-* Deliverables
-* Price
-* Deadline
-* Revision terms
-* Payment information
-* Delivery information
-* Approval status
-* Order status
+* Customer.
+* Artist.
+* Artwork.
+* Requirements.
+* Price.
+* Transaction status.
+* Payment-related information.
+* Completion information.
+
+The exact Order structure depends on the approved workflow.
 
 ---
 
 ## 4.3 Order Lifecycle
 
-The sequence of states through which an order progresses from initiation to completion.
+The sequence of states through which an Order progresses.
 
-The conceptual lifecycle is:
+The exact lifecycle differs according to the transaction type and must be defined in Requirements.
 
-**Request/Purchase → Order → Payment → Production/Delivery → Review → Revision or Approval → Completion**
-
-The final state names, transitions, and allowed actions will be defined during requirements and system design.
+The project should not assume that Ready-Made and Custom Artwork use identical workflows.
 
 ---
 
-## 4.4 Requirement
+## 4.4 Order Status
 
-A specific description of what the artist is expected to produce or provide as part of an order.
+A value describing the current operational state of an Order.
 
 Examples may include:
 
-* Required dimensions
-* Style
-* Content
-* Format
-* References
-* Deliverables
-* Deadline
-* Special conditions
+* Pending.
+* Accepted.
+* In Progress.
+* Completed.
+* Cancelled.
+* Rejected.
 
-Order requirements should be sufficiently clear to support production, delivery, review, and acceptance.
+The final states and transitions are defined in Requirements.
 
 ---
 
-## 4.5 Deliverable
+## 4.5 Requirement — Artwork Requirement
 
-A specific output that the artist is required to provide as part of an order.
+A specific condition or specification describing what an Artist is expected to create or provide for a Custom Artwork request.
 
-A deliverable may be a file, artwork, design, document, or another agreed output.
+Examples may include:
 
----
+* Dimensions.
+* Style.
+* Subject.
+* Content.
+* Format.
+* References.
+* Required deliverables.
 
-## 4.6 Deadline
-
-The agreed date or time by which an order or deliverable is expected to be completed.
-
-Deadline rules, extensions, and consequences of delays are subject to the final business requirements.
-
----
-
-## 4.7 Delivery
-
-The act of making the completed work or deliverables available to the customer through the platform or another approved mechanism.
-
-Delivery does not necessarily mean that the order is completed.
+This term should not be confused with a **Software Requirement**.
 
 ---
 
-## 4.8 Customer Approval
+## 4.6 Deliverable
 
-The customer's explicit acceptance of the delivered work according to the agreed requirements and contract/order conditions.
+An output that an Artist is required to provide as part of an approved artwork workflow.
 
-Customer approval is an important condition for completion of applicable orders.
-
----
-
-## 4.9 Completion
-
-The final state of an order after the applicable delivery, review, revision, and approval conditions have been satisfied.
-
-Completion rules will be formally defined in the requirements and business rules.
+For digital artwork, a Deliverable may be a digital file or other agreed digital output.
 
 ---
 
-## 4.10 Revision
+## 4.7 Revision
 
-A modification to delivered work requested by the customer within the revision conditions agreed for the order.
+A permitted modification to Custom Artwork requested by the Customer according to the applicable revision rules.
 
-A revision is not automatically considered a new order.
-
----
-
-## 4.11 Included Revision
-
-A revision that is covered by the original order according to its agreed revision terms.
+The exact revision limits and conditions are defined in Requirements.
 
 ---
 
-## 4.12 Additional Revision
+## 4.8 Completion
 
-A revision requested beyond the number or conditions included in the original order.
+The state in which the applicable requirements for a marketplace workflow have been satisfied and the transaction is considered complete according to its defined rules.
 
-Whether an additional revision creates an additional charge or requires another agreement is a business rule to be defined later.
-
----
-
-## 4.13 Cancellation
-
-The termination of an order before its normal completion.
-
-Cancellation rules, eligibility, responsibility, timing, and financial consequences are **TBD** during the requirements phase.
+Completion is not automatically equivalent to Delivery.
 
 ---
 
-## 4.14 Refund
+## 4.9 Cancellation
 
-The return of some or all of a customer's payment according to applicable business rules and payment-provider capabilities.
+The termination of a Request or Order before its normal completion.
 
-The MVP refund policy is **TBD**.
-
----
-
-## 4.15 Dispute
-
-A disagreement between parties regarding an order, payment, delivery, requirements, revisions, approval, or another marketplace matter.
-
-A complete dispute-resolution system is outside the controlled MVP scope unless requirements later establish a minimal necessary workflow.
+Eligibility, responsibility, timing, and financial consequences are defined in Requirements.
 
 ---
 
-# 5. Payment Terms
+## 4.10 Dispute
+
+A disagreement between parties concerning a marketplace matter.
+
+Examples may include disagreements involving:
+
+* Artwork.
+* Requirements.
+* Payment.
+* Rights.
+* Completion.
+* Cancellation.
+
+A complete dispute-resolution system is not automatically part of the MVP.
+
+---
+
+# 5. Payment and Commission Terms
 
 ## 5.1 Payment
 
-A financial transaction initiated by a customer to pay for an order.
+The transfer of money associated with a marketplace transaction.
 
-Payments are expected to be processed through a third-party payment service provider.
-
----
-
-## 5.2 Payment Service Provider (PSP)
-
-An external service that processes payments on behalf of the platform.
-
-The final payment provider is **TBD**.
-
-The platform must not implement its own proprietary payment-processing infrastructure.
+In the MVP, payment is made directly from the Customer to the Artist through bank transfer rather than through platform-mediated payment processing.
 
 ---
 
-## 5.3 Payment Status
+## 5.2 Direct Bank Transfer
 
-The state describing the financial status of a payment.
+A payment method in which the Customer transfers funds directly to the Artist's bank account outside the platform's own payment-processing infrastructure.
 
-Examples may include:
-
-* Pending
-* Authorized
-* Paid
-* Failed
-* Refunded
-* Cancelled
-
-The final set of statuses depends on the selected payment provider and business requirements.
+The platform may record relevant transaction information without acting as the payment processor.
 
 ---
 
-## 5.4 Order Status
+## 5.3 Platform-Mediated Payment
 
-The state describing the operational/business progress of an order.
+A future payment model in which the platform uses a payment provider or other approved payment infrastructure to process marketplace payments.
 
-Order status and payment status are separate concepts.
-
-For example, an order may be in production while its payment record has a separate financial status.
+Platform-mediated payment is outside the MVP.
 
 ---
 
-## 5.5 Platform Fee / Commission
+## 5.4 Payment Provider
 
-A fee retained by the platform from a marketplace transaction, if such a business model is adopted.
+An external service capable of processing payments on behalf of the platform.
 
-The platform's commission model is currently **TBD**.
+A Payment Provider is relevant to future platform-mediated payment functionality.
 
----
-
-## 5.6 Payment Processing Fee
-
-A fee charged by the payment provider for processing a transaction.
-
-This fee is different from any platform commission.
+The MVP does not depend on a Payment Provider for marketplace payment processing.
 
 ---
 
-## 5.7 Fund Holding / Escrow-like Model
+## 5.5 Payment Status
 
-A payment arrangement in which customer funds are retained or controlled until specific conditions are satisfied.
+A value describing the payment-related state recorded by the platform.
 
-The platform may require an escrow-like business concept, such as linking release of funds to delivery and customer approval.
+Because MVP payments occur externally, the platform's recorded payment state must not automatically be interpreted as proof that a bank has successfully processed the transfer.
 
-However, this does **not** imply that the platform will legally operate an escrow service.
-
-The feasibility, legal status, regulatory requirements, and payment-provider capabilities must be validated before implementation.
+The exact MVP payment-status model is defined in Requirements.
 
 ---
 
-# 6. Authentication and Authorization
+## 5.6 Platform Commission
 
-## 6.1 Authentication
+The amount owed to the platform by an Artist according to the marketplace commission rules.
+
+The current MVP commission rate is **15%**.
+
+The commission is separate from any external bank or payment-processing fee.
+
+---
+
+## 5.7 Commission Obligation
+
+The amount of platform commission that an Artist is required to settle.
+
+---
+
+## 5.8 Commission Settlement
+
+The process through which an Artist fulfills an outstanding platform commission obligation.
+
+The exact settlement mechanism is defined in Requirements.
+
+---
+
+## 5.9 Commission Enforcement
+
+Restrictions that may be applied when applicable commission obligations remain unpaid.
+
+The exact thresholds and restrictions are defined in Requirements.
+
+---
+
+## 5.10 Payment Processing Fee
+
+A fee charged by an external payment provider or financial institution for processing a payment.
+
+This is distinct from the platform's commission.
+
+---
+
+## 5.11 Escrow
+
+A legal and financial arrangement in which funds are held by an appropriate party until defined conditions are satisfied.
+
+The MVP does **not** implement a platform escrow model.
+
+The term should not be used to describe the MVP's direct bank-transfer model.
+
+---
+
+# 6. Social Interaction Terms
+
+## 6.1 Like
+
+A user action indicating appreciation or positive interaction with an eligible artwork or supported platform object.
+
+---
+
+## 6.2 Follow
+
+A user action allowing one user to follow another supported account or Artist.
+
+---
+
+## 6.3 Rating
+
+A numerical evaluation assigned according to the platform's approved rating system.
+
+The MVP uses a **1–5 star rating** model.
+
+---
+
+## 6.4 Notification
+
+A system-generated message informing a user about a relevant platform event.
+
+Users may have control over applicable notification preferences.
+
+---
+
+## 6.5 Report
+
+A user-submitted report indicating that another user, artwork, or platform activity may violate platform rules.
+
+---
+
+## 6.6 Block
+
+A user-controlled action that restricts specified interactions between users according to platform rules.
+
+---
+
+## 6.7 Comment
+
+A public textual response associated with an artwork or other platform content.
+
+Comments are outside the current project scope.
+
+---
+
+## 6.8 Dislike
+
+A negative reaction feature separate from the approved Like and Rating mechanisms.
+
+Dislike is outside the current project scope.
+
+---
+
+## 6.9 Spam
+
+Unwanted or abusive content or behavior.
+
+A dedicated Spam feature is outside the current project scope.
+
+---
+
+## 6.10 User-to-User Chat
+
+Direct conversational messaging between platform users.
+
+User-to-user Chat is outside the current MVP scope.
+
+---
+
+## 6.11 User-to-AI Chat
+
+Conversational interaction between a platform user and an AI system.
+
+User-to-AI Chat is outside the current MVP scope.
+
+---
+
+# 7. Rights and Intellectual Property Terms
+
+## 7.1 Intellectual Property — IP
+
+Legal rights associated with creative works, designs, software, trademarks, and other intellectual creations.
+
+---
+
+## 7.2 Ownership
+
+The legal relationship determining who owns a creative work or associated intellectual property.
+
+Technical ownership of a database record does not automatically determine legal ownership of the underlying artwork.
+
+---
+
+## 7.3 License
+
+A permission granted to another party describing how a work may be used.
+
+Licensing rules depend on the applicable business and legal requirements.
+
+---
+
+## 7.4 Usage Rights
+
+The permissions governing how a Customer may use an artwork after obtaining it.
+
+Usage Rights may include restrictions such as:
+
+* Personal use.
+* Commercial use.
+* Reproduction.
+* Modification.
+* Redistribution.
+
+Exact rules depend on the applicable artwork and legal requirements.
+
+---
+
+## 7.5 Artist Rights
+
+Rights and protections applicable to Artists and their creative works.
+
+---
+
+## 7.6 Customer Rights
+
+Rights and permissions applicable to Customers in relation to artwork and marketplace transactions.
+
+---
+
+# 8. Authentication and Authorization Terms
+
+## 8.1 Authentication
 
 The process of verifying the identity of a user.
 
-Example:
-
-> Confirming that a person attempting to access an account is the legitimate account holder.
-
 ---
 
-## 6.2 Authorization
+## 8.2 Authorization
 
 The process of determining what an authenticated user is allowed to access or perform.
 
@@ -426,96 +678,162 @@ Authorization answers:
 
 ---
 
-## 6.3 Role
+## 8.3 Role
 
-A defined category of permissions assigned to a user.
+A defined category of permissions or responsibilities associated with a user or system actor.
 
-Primary roles in the platform are:
+Project roles may include:
 
-* Customer
-* Artist
-* Administrator
+* Customer.
+* Artist.
+* Administrator.
 
----
-
-## 6.4 RBAC — Role-Based Access Control
-
-An authorization model in which permissions are associated with roles rather than being independently assigned to every user.
-
-For example:
-
-```text
-Customer → Customer permissions
-
-Artist → Artist permissions
-
-Administrator → Administrative permissions
-```
+Artist is a capability associated with a user's account rather than necessarily a separate account identity.
 
 ---
 
-## 6.5 Resource
+## 8.4 Permission
 
-A system entity or object that can be accessed or manipulated.
+An authorization rule allowing an actor to perform a specific action or access a specific resource.
+
+---
+
+## 8.5 RBAC — Role-Based Access Control
+
+An authorization approach in which permissions are associated with roles.
+
+The project may use RBAC or a more detailed authorization model where required by the system design.
+
+---
+
+## 8.6 Resource
+
+A system entity or object that can be accessed, viewed, created, modified, or deleted.
 
 Examples include:
 
-* User
-* Artist profile
-* Artwork
-* Service
-* Order
-* Payment
-* Review
-* File
+* User.
+* Artist profile.
+* Artwork.
+* Order.
+* Request.
+* Payment record.
+* Commission record.
+* Report.
+* File.
 
 ---
 
-## 6.6 Resource Ownership
+## 8.7 Resource Ownership
 
-The relationship determining which user or entity owns or controls a particular resource.
-
-Ownership checks are required when access to private resources is restricted.
+The relationship between a resource and the user or entity that owns or controls it.
 
 ---
 
-## 6.7 Audit Log
+## 8.8 Audit Log
 
 A record of important system or administrative actions.
 
-An audit log may contain:
+An Audit Log may contain:
 
-* Actor
-* Action
-* Target resource
-* Timestamp
-* Relevant metadata
+* Actor.
+* Action.
+* Target.
+* Timestamp.
+* Relevant metadata.
 
-Auditability requirements will determine which actions must be recorded.
-
----
-
-# 7. Technical Terms
-
-## 7.1 API — Application Programming Interface
-
-A defined interface through which software components communicate with each other.
-
-The platform backend will expose APIs that can be consumed by the web application and, in the future, a mobile application.
+The exact events that require auditing are defined in Requirements and Security.
 
 ---
 
-## 7.2 REST API
+# 9. Artwork Metadata Terms
+
+## 9.1 Metadata
+
+Structured information describing an artwork or other system entity.
+
+---
+
+## 9.2 Required Metadata
+
+Metadata that must be provided before an artwork can satisfy the relevant publication requirements.
+
+---
+
+## 9.3 Optional Metadata
+
+Metadata that may be provided but is not universally required.
+
+---
+
+## 9.4 Category-Specific Metadata
+
+Metadata that becomes relevant only to certain artwork categories.
+
+---
+
+## 9.5 Dynamic Metadata Question
+
+An optional question presented based on predefined rules such as artwork category or previous answers.
+
+---
+
+# 10. Technical Terms
+
+## 10.1 Frontend
+
+The client-side software through which users interact with the platform.
+
+The initial frontend is the Web application.
+
+---
+
+## 10.2 Web Application
+
+The browser-based application that provides the primary MVP user experience.
+
+---
+
+## 10.3 Mobile Application
+
+The mobile client developed as a core post-MVP project phase.
+
+The Mobile Application consumes the backend/API services and is part of the complete project.
+
+---
+
+## 10.4 Backend
+
+The server-side part of the platform responsible for:
+
+* Business logic.
+* API processing.
+* Authentication.
+* Authorization.
+* Data access.
+* Integration with external services.
+
+---
+
+## 10.5 API — Application Programming Interface
+
+A defined interface through which software components communicate.
+
+The platform backend exposes APIs for the Web application and future Mobile Application.
+
+---
+
+## 10.6 REST API
 
 An API designed around resources and HTTP operations following REST architectural principles.
 
-REST is the current API direction for the project.
+REST is the current API direction of the project unless changed through a documented technical decision.
 
 ---
 
-## 7.3 Endpoint
+## 10.7 Endpoint
 
-A specific API URL and HTTP operation used to access or manipulate a resource or perform an operation.
+A specific API route and HTTP operation used to access or manipulate a resource or perform an operation.
 
 Example:
 
@@ -525,193 +843,135 @@ GET /api/v1/artworks
 
 ---
 
-## 7.4 Backend
-
-The server-side part of the platform responsible for business logic, data access, authentication, authorization, API processing, and integration with external services.
-
----
-
-## 7.5 Frontend
-
-The client-side application through which users interact with the platform.
-
-The initial frontend is a web application.
-
----
-
-## 7.6 Client
-
-An application that consumes the backend API.
-
-Examples include:
-
-* Web application
-* Future mobile application
-* Potential future integrations
-
----
-
-## 7.7 Business Logic
+## 10.8 Business Logic
 
 Rules and processes that define how the platform operates.
 
-Examples include:
-
-* Who can create an order
-* Which order transitions are allowed
-* Which users can access an order
-* When a revision is allowed
-* When an order can be completed
-
-Business logic must not depend exclusively on frontend enforcement.
+Business logic should be enforced by trusted backend components where appropriate.
 
 ---
 
-## 7.8 Relational Database
+## 10.9 Relational Database
 
-A database that stores structured information using tables and relationships between them.
+A database that stores structured data using tables and relationships.
 
-A relational database is the current database direction for the project.
+The project uses a relational-database direction.
 
 ---
 
-## 7.9 PostgreSQL
+## 10.10 PostgreSQL
 
 The current preferred relational database technology for the project.
 
-The final technology decision will be documented through the appropriate architecture decision process.
+Any final technology decision should be documented through the appropriate technical decision process.
 
 ---
 
-## 7.10 Schema
+## 10.11 Database Schema
 
-The logical structure defining database objects such as:
+The logical structure of database objects such as:
 
-* Tables
-* Columns
-* Relationships
-* Constraints
-* Indexes
+* Tables.
+* Columns.
+* Relationships.
+* Constraints.
+* Indexes.
 
 ---
 
-## 7.11 Migration
+## 10.12 Migration
 
 A version-controlled change to the database structure.
 
-Migrations allow database schema changes to be applied consistently across environments.
-
 ---
 
-## 7.12 Seed Data
+## 10.13 Seed Data
 
-Initial or controlled sample data inserted into a database for development, testing, or demonstration purposes.
+Controlled initial or sample data used for development, testing, or demonstration.
 
 Seed data must not contain real sensitive production information.
 
 ---
 
-## 7.13 Object Storage
+## 10.14 Object Storage
 
-External storage designed for files and large binary objects.
+Storage designed for files and large binary objects.
 
-Artwork files and other large media are expected to use object/file storage rather than being tightly coupled to relational database storage.
-
-The final provider is **TBD**.
+Artwork and other large media may use object/file storage rather than being stored directly inside the relational database.
 
 ---
 
-## 7.14 Environment
+## 10.15 Environment
 
-A distinct technical setup in which the application operates.
+A distinct technical setup in which the system operates.
 
-The project considers at least:
+Common environments include:
 
-* Development
-* Testing
-* Production
-
----
-
-## 7.15 Development Environment
-
-The environment used by developers to implement and locally test the system.
+* Development.
+* Testing.
+* Production.
 
 ---
 
-## 7.16 Testing Environment
+## 10.16 Development Environment
 
-An environment used to verify application behavior before production deployment.
+An environment used to develop and locally test the system.
 
 ---
 
-## 7.17 Production Environment
+## 10.17 Testing Environment
+
+An environment used to verify the system before production deployment.
+
+---
+
+## 10.18 Production Environment
 
 The live environment used by real users.
 
-Production requires stronger security, monitoring, backup, access control, and operational procedures than development environments.
+Production requires stronger security, access control, monitoring, backup, and operational controls than development environments.
 
 ---
 
-# 8. Software Engineering Terms
+# 11. Software Engineering Terms
 
-## 8.1 SDLC — Software Development Life Cycle
+## 11.1 SDLC — Software Development Life Cycle
 
-The structured process used to develop and maintain the system.
+The structured process used to develop, test, deploy, and maintain the system.
 
-For this project, the major phases include:
-
-1. Project Foundation
-2. Requirements
-3. System Design
-4. UI/UX Design
-5. Database
-6. API/Backend
-7. Web Frontend
-8. Quality Assurance
-9. Cybersecurity
-10. Deployment
-11. Maintenance
+The project lifecycle includes the major phases represented in the project roadmap.
 
 ---
 
-## 8.2 Functional Requirement
+## 11.2 Functional Requirement
 
-A requirement describing what the system must do.
-
-Example:
-
-> The system shall allow an artist to publish a service.
+A requirement describing a behavior or capability that the system must provide.
 
 ---
 
-## 8.3 Non-Functional Requirement
+## 11.3 Non-Functional Requirement
 
-A requirement describing a quality, constraint, or characteristic of the system rather than a specific business function.
+A requirement describing a quality, characteristic, or constraint of the system.
 
 Examples include:
 
-* Security
-* Performance
-* Availability
-* Accessibility
-* Maintainability
+* Security.
+* Performance.
+* Availability.
+* Accessibility.
+* Maintainability.
 
 ---
 
-## 8.4 Business Rule
+## 11.4 Business Rule
 
-A rule defining how the business or marketplace operates.
+A rule defining how the marketplace or business process operates.
 
-Example:
-
-> A customer may request a revision only when the order is within its allowed revision conditions.
-
-Business rules should be enforceable by the backend where applicable.
+Business rules should be enforceable by the backend where appropriate.
 
 ---
 
-## 8.5 User Story
+## 11.5 User Story
 
 A short description of a desired capability from a user's perspective.
 
@@ -721,21 +981,21 @@ Typical structure:
 
 ---
 
-## 8.6 Use Case
+## 11.6 Use Case
 
-A structured description of an interaction between an actor and the system to achieve a specific goal.
+A structured description of an interaction between an actor and the system to achieve a goal.
 
 ---
 
-## 8.7 Acceptance Criterion
+## 11.7 Acceptance Criterion
 
 A condition that must be satisfied for a requirement or user story to be considered successfully implemented.
 
 ---
 
-## 8.8 Traceability
+## 11.8 Traceability
 
-The ability to trace a requirement through the development lifecycle.
+The ability to connect requirements with their design, implementation, and testing artifacts.
 
 A typical relationship is:
 
@@ -755,436 +1015,489 @@ Result
 
 ---
 
-## 8.9 Gate
+## 11.9 Gate
 
-A formal checkpoint at the end of a project phase.
-
-A phase should not be considered complete merely because its files exist. The phase must satisfy its defined Gate criteria before the project progresses.
+A formal checkpoint used to determine whether a project phase satisfies its defined completion criteria.
 
 ---
 
-## 8.10 Scope Change
+## 11.10 Scope Change
 
-A modification that adds, removes, or significantly changes an agreed project requirement, feature, constraint, or deliverable.
+A modification that adds, removes, or significantly changes an approved project scope element.
 
-Scope changes should be evaluated before implementation to prevent uncontrolled MVP growth.
-
----
-
-# 9. Architecture and Design Terms
-
-## 9.1 System Architecture
-
-The high-level structure of the system, including major components, their responsibilities, communication mechanisms, and external dependencies.
+Significant scope changes should be documented through the project's decision-management process.
 
 ---
 
-## 9.2 Component
+# 12. Architecture and Design Terms
+
+## 12.1 System Architecture
+
+The high-level structure of the system, including major components, responsibilities, communication mechanisms, data flows, and external dependencies.
+
+---
+
+## 12.2 Component
 
 A distinct software or infrastructure unit with a defined responsibility.
 
-Examples may include:
+Examples include:
 
-* Web frontend
-* Backend API
-* Database
-* Object storage
-* Payment integration
-
----
-
-## 9.3 Architecture Decision
-
-A documented technical decision that has a meaningful impact on system structure or future development.
+* Web application.
+* Backend API.
+* Database.
+* Object storage.
+* Notification service.
 
 ---
 
-## 9.4 ADR — Architecture Decision Record
+## 12.3 Architecture Decision
 
-A document used to record an important architectural decision, including:
-
-* Context
-* Decision
-* Alternatives
-* Consequences
+A documented technical choice that has a meaningful impact on system structure or future development.
 
 ---
 
-## 9.5 UML — Unified Modeling Language
+## 12.4 ADR — Architecture Decision Record
 
-A standardized modeling language used to represent and communicate aspects of software systems.
+A document used to record an important architecture decision, including:
 
-This project may use UML diagrams including:
-
-* Use Case
-* Class
-* Sequence
-* Activity
-* State
-* Component
-* Deployment
+* Context.
+* Problem.
+* Decision.
+* Alternatives.
+* Consequences.
 
 ---
 
-# 10. Security Terms
+## 12.5 UML — Unified Modeling Language
 
-## 10.1 HTTPS
+A standardized modeling language used to communicate aspects of a software system.
+
+Possible diagrams include:
+
+* Use Case.
+* Class.
+* Sequence.
+* Activity.
+* State.
+* Component.
+* Deployment.
+
+---
+
+# 13. Security Terms
+
+## 13.1 HTTPS
 
 HTTP communication protected using TLS encryption.
 
-HTTPS is mandatory for production environments.
+HTTPS is required for production environments.
 
 ---
 
-## 10.2 Secret
+## 13.2 Secret
 
 Sensitive information used to authenticate or authorize access to systems or services.
 
 Examples include:
 
-* API keys
-* Passwords
-* Tokens
-* Database credentials
-* Encryption keys
+* API keys.
+* Passwords.
+* Tokens.
+* Database credentials.
+* Encryption keys.
 
 Secrets must not be committed to source control.
 
 ---
 
-## 10.3 Personal Data
+## 13.3 Personal Data
 
-Information that can identify or relate to an individual.
+Information that identifies or relates to an individual.
 
-Examples may include:
-
-* Name
-* Email address
-* Phone number
-* Account information
-
-The exact personal-data classification and applicable legal requirements depend on the deployment context.
+The exact legal classification depends on the deployment context and applicable law.
 
 ---
 
-## 10.4 Threat
+## 13.4 Threat
 
-A potential cause of harm to the confidentiality, integrity, or availability of the system or its data.
-
----
-
-## 10.5 Vulnerability
-
-A weakness that could potentially be exploited to compromise the system.
+A potential cause of harm to the confidentiality, integrity, or availability of a system or its data.
 
 ---
 
-## 10.6 Risk
+## 13.5 Vulnerability
+
+A weakness that could potentially be exploited to compromise a system.
+
+---
+
+## 13.6 Risk
 
 The potential impact resulting from a threat exploiting a vulnerability.
 
-Risk assessment may consider factors such as:
+Risk analysis may consider:
 
-* Likelihood
-* Impact
-* Exposure
-* Existing controls
+* Likelihood.
+* Impact.
+* Exposure.
+* Existing controls.
 
 ---
 
-## 10.7 Threat Model
+## 13.7 Threat Model
 
 A structured analysis of potential threats, attack surfaces, assets, and security controls.
 
 ---
 
-# 11. Testing and Quality Terms
+# 14. Testing and Quality Terms
 
-## 11.1 Test Case
+## 14.1 Test Case
 
-A defined set of conditions, inputs, actions, and expected results used to verify a specific system behavior.
+A defined set of conditions, inputs, actions, and expected results used to verify system behavior.
 
 ---
 
-## 11.2 Integration Test
+## 14.2 Unit Test
+
+A test that verifies a small isolated unit of application logic.
+
+---
+
+## 14.3 Integration Test
 
 A test verifying that multiple components work correctly together.
 
 ---
 
-## 11.3 End-to-End Test
+## 14.4 End-to-End Test
 
-A test that validates a complete user or system workflow from beginning to end.
-
----
-
-## 11.4 System Test
-
-A test performed against the complete system to verify that the integrated product satisfies its requirements.
+A test that validates a complete user or system workflow.
 
 ---
 
-## 11.5 Regression Testing
+## 14.5 System Test
 
-Testing performed after changes to verify that previously working functionality has not been unintentionally broken.
+A test performed against the integrated system to verify that it satisfies its requirements.
 
 ---
 
-## 11.6 Bug
+## 14.6 Regression Testing
+
+Testing performed after changes to verify that existing functionality has not been unintentionally broken.
+
+---
+
+## 14.7 Bug
 
 A defect or unexpected behavior in the software.
 
 ---
 
-## 11.7 Quality Assurance
+## 14.8 Quality Assurance
 
-The systematic activities used to ensure that the system meets defined requirements and quality expectations.
+Systematic activities used to verify and improve software quality.
 
 ---
 
-# 12. Deployment and Operations Terms
+# 15. Deployment and Operations Terms
 
-## 12.1 Deployment
+## 15.1 Deployment
 
 The process of making a software version available in a target environment.
 
 ---
 
-## 12.2 Docker
+## 15.2 Docker
 
-A containerization technology that can be used to package applications and their dependencies into reproducible environments.
+A containerization technology used to package applications and dependencies into reproducible environments.
 
-Docker is part of the project's technical learning and deployment direction but does not imply that every component must necessarily be containerized.
+Docker may be used where appropriate but does not imply that every project component must be containerized.
 
 ---
 
-## 12.3 CI/CD
+## 15.3 CI/CD
 
 Continuous Integration and Continuous Delivery/Deployment practices used to automate activities such as:
 
-* Building
-* Testing
-* Validation
-* Packaging
-* Deployment
+* Building.
+* Testing.
+* Validation.
+* Packaging.
+* Deployment.
 
 ---
 
-## 12.4 Monitoring
+## 15.4 Monitoring
 
-The continuous observation of system health, availability, performance, errors, and relevant operational metrics.
-
----
-
-## 12.5 Backup
-
-A copy of data or system configuration maintained so that information can be restored after loss, corruption, or failure.
+Continuous observation of system health, availability, performance, errors, and relevant operational metrics.
 
 ---
 
-## 12.6 Restore
+## 15.5 Backup
+
+A copy of data or configuration maintained for recovery after loss, corruption, or failure.
+
+---
+
+## 15.6 Restore
 
 The process of recovering data, configuration, or system functionality from a backup or other recovery source.
 
 ---
 
-## 12.7 Deployment Runbook
+## 15.7 Deployment Runbook
 
 A documented sequence of steps required to deploy, verify, troubleshoot, or roll back the system.
 
 ---
 
-# 13. Documentation Terms
+# 16. Documentation Terms
 
-## 13.1 Project Charter
+## 16.1 Project Charter
 
-A document establishing the project's purpose, high-level scope, objectives, stakeholders, and overall direction.
-
----
-
-## 13.2 Project Scope
-
-The defined boundaries of what the project includes and excludes.
+A document establishing the project's purpose, vision, high-level scope, objectives, stakeholders, and overall direction.
 
 ---
 
-## 13.3 Assumption
+## 16.2 Project Scope
 
-A condition believed to be true for planning purposes but not yet fully validated.
-
----
-
-## 13.4 Constraint
-
-A limitation that restricts project decisions, implementation, resources, technology, schedule, or scope.
+A document defining the boundaries of what the project includes and excludes.
 
 ---
 
-## 13.5 Decision Log
+## 16.3 Objective
 
-A record of important project decisions and the reasoning behind them.
-
----
-
-## 13.6 Change Log
-
-A chronological record of significant changes made to the project, documentation, or software.
+A defined outcome that the project intends to achieve.
 
 ---
 
-## 13.7 Roadmap
+## 16.4 Assumption
 
-A high-level representation of planned future work, features, improvements, or project phases.
-
-A roadmap is not necessarily a commitment to implement every listed item.
+A condition temporarily treated as true for planning or design purposes but not yet fully validated.
 
 ---
 
-# 14. External Service Terms
+## 16.5 Constraint
 
-## 14.1 Third-Party Service
-
-An external system operated by another organization that the platform depends on for a particular capability.
-
-Examples include:
-
-* Payment processing
-* Email delivery
-* Notifications
-* File/object storage
-* Hosting
+A limitation that restricts project decisions, implementation, resources, technology, or scope.
 
 ---
 
-## 14.2 Integration
+## 16.6 Decision
 
-The technical connection between the platform and an external system or internal component.
+A formally established project choice.
+
+Important project-wide decisions are recorded in the project-wide Decision Log.
 
 ---
 
-## 14.3 Provider
+## 16.7 Decision Log
+
+A record of important project-wide decisions and their context.
+
+The Decision Log belongs at the project root because project-wide decisions may affect multiple phases.
+
+---
+
+## 16.8 Change Log
+
+A chronological record of significant changes to the project, documentation, or software.
+
+---
+
+## 16.9 Roadmap
+
+A high-level representation of planned project phases, capabilities, or future work.
+
+A roadmap should not be interpreted as a guarantee that every future item will be implemented exactly as originally described.
+
+---
+
+# 17. External Service Terms
+
+## 17.1 Third-Party Service
+
+An external system operated by another organization that provides a capability used by the platform.
+
+Examples may include:
+
+* Email.
+* Storage.
+* Hosting.
+* Payment.
+* Printing.
+* Delivery.
+
+---
+
+## 17.2 Integration
+
+A technical connection between the platform and an external system or internal component.
+
+---
+
+## 17.3 Provider
 
 An external organization or service responsible for supplying a technical capability.
 
-Examples:
+---
 
-* Payment provider
-* Hosting provider
-* Storage provider
-* Notification provider
+## 17.4 Payment Provider
 
-The specific providers used by the final system may be selected later.
+An external organization providing payment-processing capabilities.
+
+Payment Provider integration is outside the MVP.
 
 ---
 
-# 15. Intellectual Property Terms
+## 17.5 Printing Provider
 
-## 15.1 Intellectual Property (IP)
+An external service capable of producing physical printed versions of eligible artwork.
 
-Legal rights associated with creative works, designs, trademarks, software, and other intellectual creations.
-
-The platform may involve intellectual-property considerations because artists upload and sell or license creative works.
+Printing integration is outside the MVP.
 
 ---
 
-## 15.2 Ownership Rights
+## 17.6 Delivery Provider
 
-The rights determining who legally owns a creative work or other intellectual property.
+An external service capable of transporting physical products.
 
-Ownership rules for artwork created or sold through the platform are business/legal matters and must not be assumed solely from the technical implementation.
-
----
-
-## 15.3 License
-
-A permission defining how a customer may use an artwork or other creative work.
-
-Licensing terms are subject to business and legal requirements.
+Delivery integration is outside the MVP.
 
 ---
 
-# 16. Status and State Terms
+# 18. Status and State Terms
 
-## 16.1 State
+## 18.1 State
 
 A defined condition of a system entity at a particular point in time.
 
 Examples:
 
 ```text
-Order → In Production
-
-Payment → Paid
+Artist Application → Under Review
 
 Artwork → Published
+
+Order → Completed
 ```
 
 ---
 
-## 16.2 State Transition
+## 18.2 State Transition
 
 A valid change from one state to another.
 
 Example:
 
 ```text
-In Production → Delivered
+Artist Application → Under Review → Approved
 ```
 
-State transitions should be explicitly defined so that invalid transitions can be prevented.
+State transitions should be explicitly defined so invalid transitions can be prevented.
 
 ---
 
-## 16.3 Status History
+## 18.3 Status History
 
 A record of changes to the status of an entity over time.
 
-Status history may be required for important entities such as orders and payments.
+Status history may be required for important entities such as:
+
+* Artist applications.
+* Artwork.
+* Orders.
+* Commission obligations.
+* Administrative actions.
 
 ---
 
-# 17. Project-Specific Terminology Principles
+# 19. Project-Specific Terminology Principles
 
-The following principles apply throughout the project:
+The following terminology principles apply throughout the project:
 
-1. **Order Status and Payment Status must remain separate concepts.**
-2. **Authentication and Authorization must not be treated as the same mechanism.**
-3. **A Request is not automatically an Order.**
-4. **Delivery is not automatically Completion.**
-5. **Customer Approval is distinct from Delivery.**
-6. **A Revision is governed by the order's revision conditions.**
-7. **Additional Revision does not automatically imply a specific price or workflow until defined by business rules.**
-8. **Platform Commission and Payment Processing Fees are separate concepts.**
-9. **Fund holding must not be described as legal escrow unless the legal and payment model explicitly supports that terminology.**
-10. **Technology choices marked as TBD are not considered final architectural decisions.**
-11. **Future features such as advanced AI, recommendation systems, and social-network capabilities must not be treated as MVP requirements unless formally added through scope change.**
-12. **The frontend must not be considered the authoritative enforcement point for security or business rules.**
-13. **Business-critical rules must be enforceable by the backend.**
-14. **Terms in this glossary should be used consistently across requirements, design, implementation, and testing documentation.**
+1. **Customer and Artist are capabilities associated with the same user-account model.**
+2. **Every new user begins as a Customer.**
+3. **Artist status requires the approved Artist application and review process.**
+4. **An Artist may continue to act as a Customer.**
+5. **Ready-Made Artwork and Custom Artwork are distinct concepts.**
+6. **Digital artwork being displayable does not automatically mean that every transaction type is supported.**
+7. **Physical Artwork display is not the same as a managed physical marketplace transaction.**
+8. **MVP marketplace transactions focus on supported digital artwork.**
+9. **MVP payment uses direct Customer-to-Artist bank transfer.**
+10. **Platform-mediated payment is a future capability, not an MVP dependency.**
+11. **Platform Commission and external Payment Processing Fees are separate concepts.**
+12. **The current MVP commission rate is 15%.**
+13. **Payment Status must not be interpreted as proof of bank-side payment unless the applicable verification process establishes that fact.**
+14. **User-to-user Chat and User-to-AI Chat are outside the current scope.**
+15. **Comments, Dislike, and Spam are outside the current scope.**
+16. **AI functionality is outside the MVP.**
+17. **Dynamic Artwork Metadata is rule-based and does not require AI.**
+18. **Delivery and Printing integrations are outside the MVP.**
+19. **Mobile Application is outside the MVP but is a core phase of the complete project.**
+20. **Authentication and Authorization are separate concepts.**
+21. **Frontend restrictions must not be treated as sufficient backend authorization.**
+22. **A Request is not automatically an Order.**
+23. **Order Status and Payment Status are separate concepts.**
+24. **Completion and Delivery are not automatically equivalent.**
+25. **Ownership and technical database ownership are not automatically equivalent.**
+26. **Technical implementation must not be used to infer legal rights.**
+27. **Project-wide decisions belong in the project-wide Decision Log.**
+28. **TBD information must not be treated as a finalized technical or business decision.**
+29. **Terms should be used consistently across requirements, design, implementation, testing, and deployment documentation.**
 
 ---
 
-# 18. Terms Marked as TBD
+# 20. Terms That Must Not Be Used as Current MVP Concepts
 
-The following concepts remain intentionally undecided at this stage:
+The following terms may appear in future-oriented documentation but should not be described as active MVP capabilities unless the scope is formally changed:
 
-* Final payment provider
-* Payment split model
-* Fund-holding mechanism
-* Platform commission model
-* Refund policy
-* Cancellation policy
-* Dispute-resolution workflow
-* Geographic launch scope
-* Supported currencies
-* Supported languages
-* Final storage provider
-* Final notification provider
-* Final hosting provider
-* Final technology stack
-* Mobile application technology
-* Exact artwork categories
-* Exact service model
-* Licensing and intellectual-property rules
+* Platform-Mediated Payment.
+* Payment Provider Integration.
+* Escrow.
+* Managed Physical Artwork Transaction.
+* Delivery Integration.
+* Printing Integration.
+* AI Recommendation.
+* AI Artwork Generation.
+* AI Chat.
+* User-to-User Chat.
+* Comments.
+* Dislike.
+* Spam.
 
-These decisions must be formally defined during the relevant project phase before they become implementation assumptions.
+Their presence in this glossary does not mean that the corresponding functionality is currently implemented or included in the MVP.
+
+---
+
+# 21. Terminology Maintenance
+
+The glossary should be updated when:
+
+* A new project-wide term is introduced.
+* A term changes meaning.
+* A formal decision changes an established concept.
+* A requirement introduces terminology that will be reused across phases.
+* A technical term becomes important to multiple project areas.
+* A previously used term becomes obsolete.
+
+Terminology changes should be reviewed for consistency across existing documentation.
+
+A term should not be redefined differently in another project-wide document without a documented reason.
+
+---
+
+# 22. Source of Authority
+
+The glossary defines terminology, but it does not independently establish:
+
+* Detailed business rules.
+* Detailed functional requirements.
+* Database structures.
+* API contracts.
+* Legal contracts.
+* Security controls.
+* Implementation details.
+
+When a glossary definition conflicts with an approved project decision or detailed requirement, the relevant authoritative document must be reviewed and the glossary updated to restore consistency.

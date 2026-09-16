@@ -2,477 +2,709 @@
 
 ## 1. Purpose
 
-This document records the current technology direction of the Art Marketplace Platform.
+This document defines the project's technology direction and foundational technical choices.
 
-Its purpose is to:
+It establishes the technologies, platforms, architectural direction, and technical principles that guide the development of the Art Marketplace Platform.
 
-* Document technologies that have been selected or are currently preferred.
-* Distinguish confirmed decisions from technologies still under evaluation.
-* Provide a baseline for later architecture and implementation decisions.
-* Avoid premature technology commitments before requirements and system design are completed.
+This document is intentionally maintained at the foundation level.
 
-This document may be updated as the project progresses and technical decisions become more concrete.
+It does not replace detailed system architecture, database design, API contracts, implementation specifications, deployment configuration, or technology-specific development documentation.
 
 ---
 
-## 2. Technology Selection Principles
+# 2. Technology Direction
 
-Technology selection should be based on:
+The project follows a layered web and mobile application architecture supported by a centralized backend API and relational database.
 
-1. Project requirements.
-2. Security requirements.
-3. Maintainability.
-4. Scalability appropriate to the expected project size.
-5. Developer productivity.
-6. Community and ecosystem support.
-7. Integration capabilities.
-8. Deployment and operational requirements.
-9. Long-term suitability for the platform.
-10. Avoiding unnecessary complexity.
-
-Technology should not be selected solely because it is popular or technically advanced.
-
----
-
-## 3. Current Technology Direction
-
-| Area                       | Current Direction              | Status             |
-| -------------------------- | ------------------------------ | ------------------ |
-| Primary Platform           | Web Application                | Selected           |
-| Backend Architecture       | API-based Backend              | Selected           |
-| API Style                  | REST API                       | Selected           |
-| Database Type              | Relational Database            | Selected           |
-| Database                   | PostgreSQL                     | Preferred          |
-| Frontend                   | React + TypeScript             | Preferred          |
-| Backend Framework          | TBD                            | Under Evaluation   |
-| Mobile Application         | TBD                            | Future             |
-| Object/File Storage        | External Object Storage        | Selected Direction |
-| Payment Processing         | Third-Party Payment Provider   | Selected Direction |
-| Authentication             | Backend-managed Authentication | Selected Direction |
-| Authorization              | Server-side RBAC               | Selected Direction |
-| Containerization           | Docker                         | Planned            |
-| CI/CD                      | CI/CD Pipeline                 | Planned            |
-| Web Server / Reverse Proxy | TBD                            | Under Evaluation   |
-| Cloud / Hosting Provider   | TBD                            | Under Evaluation   |
-| Notification Provider      | TBD                            | Under Evaluation   |
-| Monitoring                 | TBD                            | Planned            |
-| Testing Tools              | TBD                            | Under Evaluation   |
-
----
-
-## 4. Application Architecture Direction
-
-The platform is expected to follow an API-centered architecture.
+The general direction is:
 
 ```text
-Web Frontend
-     |
-     v
-Backend API
-     |
-     +------------------> Relational Database
-     |
-     +------------------> Object/File Storage
-     |
-     +------------------> Payment Provider
-     |
-     +------------------> Notification Provider
+Web Application
+        │
+        ├──────────────┐
+        │              │
+Mobile Application    │
+        │              │
+        └───────┬──────┘
+                │
+             Backend
+             REST API
+                │
+        ┌───────┴────────┐
+        │                │
+    PostgreSQL       File Storage
+        │
+        └────────────────
 ```
 
-The backend API is expected to contain the primary business logic and enforce authentication, authorization, validation, and resource ownership rules.
-
-The frontend should not be responsible for enforcing business rules that require server-side trust.
+The exact architecture and infrastructure configuration will be refined in the relevant later phases.
 
 ---
 
-## 5. Frontend
+# 3. Technology Status
 
-### Preferred Direction
+Technology choices in this document use the following categories:
 
-**React + TypeScript**
+| Status        | Meaning                                                                             |
+| ------------- | ----------------------------------------------------------------------------------- |
+| **Selected**  | Chosen as the current project technology.                                           |
+| **Planned**   | Intended for a later project phase but may require implementation-level refinement. |
+| **Preferred** | Preferred direction, subject to technical validation.                               |
+| **TBD**       | Not yet sufficiently determined and must be evaluated later.                        |
+| **Future**    | Relevant to future product scope rather than the MVP.                               |
 
-The web frontend is expected to use a component-based architecture.
-
-Potential responsibilities include:
-
-* User interface rendering.
-* Client-side navigation.
-* Form handling.
-* API communication.
-* User interaction.
-* Client-side state management where necessary.
-* Presentation of order, payment, delivery, and account information.
-
-The final frontend architecture will be defined during the System Design and Web Frontend phases.
-
-### Status
-
-**Preferred, not yet final.**
+A technology being listed in this document does not automatically mean that every related library, service, version, or implementation detail has been finalized.
 
 ---
 
-## 6. Backend
+# 4. Application Platforms
 
-The backend will provide the central application API and business logic.
+## 4.1 Web Application
 
-Expected responsibilities include:
+**Status:** Selected
+
+The project includes a web application as the primary MVP client.
+
+The web application will provide the main user-facing marketplace experience for the MVP.
+
+The web application is expected to support areas such as:
 
 * Authentication.
-* Authorization.
-* User and role management.
-* Artist and customer operations.
-* Artwork and service management.
-* Order management.
-* Requirements and revision management.
-* Delivery and approval workflows.
-* Payment integration.
+* Customer functionality.
+* Artist functionality.
+* Artwork discovery.
+* Artwork viewing.
+* Artwork publishing.
+* Artist profiles and portfolios.
+* Marketplace interactions.
+* Orders or requests where applicable.
 * Notifications.
-* Validation.
-* Error handling.
-* Audit-related operations where required.
+* Administrative interfaces where required.
 
-### Framework
-
-The backend framework has not been finalized.
-
-The final choice should be made after evaluating:
-
-* Project requirements.
-* Developer productivity.
-* API development capabilities.
-* Authentication and authorization support.
-* Database integration.
-* Testing capabilities.
-* Deployment requirements.
-* Long-term maintainability.
-
-### Status
-
-**TBD / Under Evaluation.**
+Detailed functionality is defined in the Requirements and later system-design phases.
 
 ---
 
-## 7. API
+## 4.2 Mobile Application
 
-The backend will expose a REST API.
+**Status:** Planned
+
+The project includes a mobile application as part of the Complete Project.
+
+The mobile application is outside the MVP implementation scope.
+
+It is therefore represented as:
+
+```text
+MVP
+    → Web Application
+
+Complete Project
+    → Web Application
+    → Mobile Application
+```
+
+The mobile application is not considered merely an optional future product feature.
+
+The mobile technology and implementation details may be refined during the mobile-development phase.
+
+---
+
+# 5. Frontend Technologies
+
+## 5.1 Web Frontend
+
+**Status:** Preferred / Planned
+
+The preferred web frontend direction is:
+
+* React.
+* TypeScript.
+
+The frontend will communicate with the backend primarily through the project's REST API.
+
+The frontend is responsible for:
+
+* User interface rendering.
+* Client-side interaction.
+* Form handling.
+* Client-side validation where appropriate.
+* API communication.
+* Authentication state handling.
+* User feedback and interface states.
+* Responsive web experience.
+
+Business rules and security-sensitive authorization must not rely solely on frontend implementation.
+
+---
+
+## 5.2 React
+
+**Status:** Preferred
+
+React is the preferred frontend framework/library direction for the web application.
+
+The final project structure, rendering strategy, routing approach, state management approach, and supporting libraries will be established during the relevant system-design and implementation phases.
+
+---
+
+## 5.3 TypeScript
+
+**Status:** Preferred
+
+TypeScript is the preferred language for the web frontend.
+
+Its use is intended to improve:
+
+* Type safety.
+* Maintainability.
+* API contract consistency.
+* Refactoring safety.
+* Developer experience.
+
+The exact TypeScript configuration will be defined during implementation.
+
+---
+
+# 6. Mobile Technologies
+
+## 6.1 Mobile Framework
+
+**Status:** Preferred / Planned
+
+Flutter and Dart are the preferred direction for the mobile application based on the project's planned mobile-development path.
+
+The mobile application will consume the same centralized backend/API layer used by the web application where appropriate.
+
+The final mobile architecture, state management, local storage, authentication handling, and platform-specific integrations will be defined during the mobile-development phase.
+
+---
+
+# 7. Backend
+
+## 7.1 Backend Architecture
+
+**Status:** Selected
+
+The project uses a centralized backend responsible for:
+
+* Business logic.
+* Authentication.
+* Authorization.
+* Data validation.
+* Marketplace rules.
+* Artist approval workflows.
+* Artwork management.
+* Orders and requests.
+* Payment-related records.
+* Commission tracking.
+* Notifications.
+* Moderation.
+* API access control.
+
+The backend is the authoritative enforcement layer for security-sensitive and business-critical rules.
+
+---
+
+## 7.2 Backend Language and Framework
+
+**Status:** Preferred / Planned
+
+PHP is the current backend language direction.
+
+Laravel is the preferred backend framework direction.
+
+The final Laravel architecture, package selection, folder structure, and implementation conventions will be established during the backend-development phase.
+
+---
+
+# 8. API
+
+## 8.1 API Style
+
+**Status:** Selected
+
+The project uses a REST API as the primary communication interface between client applications and the backend.
 
 The API is intended to serve:
 
-* The web frontend.
-* The future mobile application.
-* Potential future integrations where appropriate.
+* Web clients.
+* Mobile clients.
+* Authorized administrative interfaces.
+* Other approved internal or external integrations where required.
 
-API requirements, endpoint design, authentication, authorization, validation, error handling, pagination, filtering, and versioning will be documented in:
-
-```text
-05-api-backend/
-```
+Detailed endpoint definitions, request/response schemas, authentication mechanisms, validation rules, error formats, and versioning strategy belong in the API and backend documentation.
 
 ---
 
-## 8. Database
+## 8.2 API Responsibilities
 
-### Database Type
+The API layer is responsible for providing controlled access to backend capabilities.
 
-A relational database is the current architectural direction.
+Typical responsibilities include:
 
-### Preferred Database
+* Authentication.
+* Authorization.
+* Resource access.
+* Data validation.
+* Business operation requests.
+* Artwork management.
+* Marketplace interactions.
+* Order/request operations.
+* Notifications.
+* Administrative operations.
 
-**PostgreSQL**
+The API must not expose internal implementation details unnecessarily.
 
-PostgreSQL is currently preferred because the platform contains structured and relational transactional data such as:
+---
+
+# 9. Database
+
+## 9.1 Database Management System
+
+**Status:** Selected
+
+PostgreSQL is the project's relational database management system.
+
+PostgreSQL will be used for structured application data such as:
 
 * Users.
-* Roles.
-* Artists.
-* Customers.
-* Artwork.
-* Services.
-* Orders.
-* Requirements.
-* Deliverables.
-* Revisions.
-* Payments.
-* Reviews.
+* Roles and permissions.
+* Artist applications.
+* Artwork records.
+* Artwork metadata.
+* Categories.
+* Listings.
+* Orders and requests.
+* Payment records.
+* Commission obligations.
+* Social interactions.
 * Notifications.
-* Audit records.
+* Reports and moderation records.
+* Audit-related records where required.
 
-The final database design will be documented during:
-
-```text
-04-database/
-```
-
-### Status
-
-**Preferred.**
+The final schema will be defined in the Database phase.
 
 ---
 
-## 9. File and Object Storage
+## 9.2 Database Design Direction
 
-Large artwork files and other potentially large media should not be stored directly inside the relational database.
+The database should prioritize:
 
-The platform is expected to use external object/file storage.
+* Data integrity.
+* Referential integrity.
+* Appropriate normalization.
+* Clear relationships.
+* Appropriate indexing.
+* Secure access patterns.
+* Maintainability.
+* Traceability of important state changes.
 
-Potential stored content may include:
-
-* Artwork files.
-* Delivery files.
-* Preview images.
-* User-uploaded references.
-* Other platform-managed media.
-
-The final provider and storage architecture are TBD.
-
----
-
-## 10. Payment Integration
-
-Payment processing will use a third-party payment provider.
-
-The platform itself should not directly process or store sensitive payment credentials unless explicitly required and appropriately designed.
-
-The payment architecture should support:
-
-* Payment initiation.
-* Payment confirmation.
-* Payment status tracking.
-* Order-payment association.
-* Provider callbacks/webhooks where applicable.
-* Failure handling.
-* Refund-related operations where supported.
-* Transaction records.
-
-The final provider, payment model, supported methods, currency, refund rules, and fund-holding model remain subject to future validation.
+The technology-stack document does not define the final database schema.
 
 ---
 
-## 11. Authentication and Authorization
+# 10. File and Artwork Storage
 
-Authentication and authorization will be handled through the backend.
+## 10.1 Artwork Files
 
-The platform will use role-based access control where appropriate.
+**Status:** Planned
 
-Expected roles include:
+Artwork files are expected to require storage separate from ordinary relational database records.
+
+The database should store appropriate metadata and references to stored files rather than unnecessarily storing large artwork binaries directly in ordinary relational tables.
+
+The exact storage technology and provider remain subject to infrastructure and deployment decisions.
+
+---
+
+## 10.2 Storage Requirements
+
+The storage solution must support the project's requirements for:
+
+* Artwork uploads.
+* Artwork retrieval.
+* Access control.
+* File organization.
+* File validation.
+* Appropriate size limitations.
+* Secure file handling.
+* Backup and recovery considerations.
+* Future scalability.
+
+Specific storage-provider selection will be documented separately when finalized.
+
+---
+
+# 11. Authentication and Authorization
+
+## 11.1 Authentication
+
+**Status:** Planned
+
+The backend will provide centralized authentication for supported clients.
+
+Authentication design must support the project's user-account model and future web/mobile clients.
+
+The exact authentication mechanism and token/session strategy will be finalized during system design and backend development.
+
+---
+
+## 11.2 Authorization
+
+**Status:** Selected
+
+Authorization must be enforced by the backend.
+
+The system will distinguish permissions and capabilities based on the user's role and relevant resource ownership.
+
+The project includes role concepts such as:
 
 * Customer.
 * Artist.
+* Artist Reviewer.
 * Administrator.
 
-Authorization must be enforced on the server.
+A user may have Artist capabilities while continuing to act as a Customer.
 
-Resource ownership must also be verified before allowing access to private or user-owned resources.
-
----
-
-## 12. Development and Runtime Environments
-
-The project is expected to maintain separate environments for:
-
-* Development.
-* Testing.
-* Production.
-
-Environment-specific configuration should not be hardcoded into source code.
-
-Secrets and credentials must be provided through secure environment-specific configuration.
-
-Production secrets must never be committed to source control.
+Detailed role and permission matrices belong in the Requirements and backend phases.
 
 ---
 
-## 13. Containerization
+# 12. Payment-Related Technology
 
-**Docker** is planned as part of the infrastructure and deployment strategy.
+## 12.1 MVP Payment Model
 
-Potential uses include:
+**Status:** Selected
 
-* Consistent development environments.
-* Local database services.
-* Backend runtime.
-* Frontend development/build environments.
-* Testing environments.
-* Deployment reproducibility.
+The MVP does not use platform-mediated payment processing.
 
-Docker architecture will be defined during the Deployment phase.
+The MVP payment model supports direct bank transfer between the Customer and Artist where applicable.
 
-### Status
-
-**Planned.**
+Therefore, the MVP does not require a payment gateway or payment service provider to collect and process customer payments through the platform.
 
 ---
 
-## 14. CI/CD
+## 12.2 Commission Tracking
 
-A CI/CD pipeline is planned to automate appropriate parts of:
+**Status:** Selected
 
-* Code validation.
-* Automated testing.
-* Build processes.
-* Deployment.
-* Deployment verification.
+The platform tracks the Artist's 15% commission obligation.
 
-The exact platform and workflow are TBD.
+The backend and database must be capable of recording the information necessary to:
 
-### Status
+* Identify applicable transactions.
+* Calculate or record the applicable commission.
+* Track outstanding obligations.
+* Track settlement status.
+* Support commission-related business rules.
 
-**Planned.**
+Detailed commission calculations, enforcement thresholds, and related workflows belong in the Requirements and backend phases.
 
 ---
 
-## 15. Testing
+## 12.3 Platform-Mediated Payments
 
-The project will use multiple levels of testing where appropriate:
+**Status:** Future
+
+Platform-mediated payment processing may be introduced in a future version.
+
+This may require:
+
+* Payment provider integration.
+* Payment processing.
+* Payment status synchronization.
+* Refund handling.
+* Transaction security.
+* Additional compliance requirements.
+
+No specific future payment provider is selected by this document.
+
+---
+
+# 13. External Services and Integrations
+
+External services may be introduced when they provide functionality that should not be implemented directly by the platform.
+
+Potential integration categories include:
+
+* Payment providers.
+* Email services.
+* Notification services.
+* File/object storage.
+* Printing providers.
+* Delivery providers.
+* Other infrastructure services.
+
+The existence of an integration category does not mean that the integration is part of the MVP.
+
+Each external dependency should be evaluated according to:
+
+* Business necessity.
+* Security.
+* Cost.
+* Reliability.
+* Privacy.
+* Availability.
+* Technical compatibility.
+* Project scope.
+
+---
+
+# 14. Printing and Delivery Technology
+
+## 14.1 Printing
+
+**Status:** Future
+
+Printing-provider integration is outside the MVP.
+
+A future implementation may integrate external printing services where appropriate.
+
+The current technology foundation does not select a printing provider.
+
+---
+
+## 14.2 Delivery
+
+**Status:** Future
+
+Delivery-provider integration is outside the MVP.
+
+A future implementation may integrate external delivery services if physical artwork transactions become supported.
+
+The current technology foundation does not select a delivery provider.
+
+---
+
+# 15. Notifications
+
+**Status:** Planned
+
+The platform will support customizable notifications as part of the MVP product scope.
+
+Notification delivery may use application-level notification mechanisms and appropriate external services where required.
+
+The exact notification channels and provider integrations will be defined during Requirements and system design.
+
+Potential channels may include:
+
+* In-app notifications.
+* Email.
+* Push notifications for the mobile application.
+
+A specific external notification provider is not selected by this document.
+
+---
+
+# 16. Search and Discovery
+
+**Status:** Planned
+
+The platform requires artwork discovery capabilities.
+
+The initial implementation may use database-supported search, filtering, categorization, and metadata-based discovery.
+
+Dynamic artwork metadata may improve discovery without requiring AI.
+
+AI-based search or recommendation systems are outside the MVP.
+
+The exact search implementation will be defined during system design and backend development.
+
+---
+
+# 17. Security Technology Direction
+
+Security is treated as a cross-cutting concern across all application layers.
+
+The technology direction must support:
+
+* Secure authentication.
+* Backend authorization.
+* Input validation.
+* Secure file handling.
+* Protection against common web vulnerabilities.
+* Secure API communication.
+* Secret management.
+* Appropriate password handling.
+* Auditability where required.
+* Protection of sensitive user and transaction data.
+
+Security implementation details belong to the Security phase and relevant technical phases.
+
+---
+
+# 18. Development Tools
+
+The project may use the following development tools and technologies.
+
+### Version Control
+
+**Status:** Selected
+
+Git is used for source-code version control.
+
+GitHub is used as the project's repository and collaboration platform.
+
+### API Development and Testing
+
+**Status:** Planned
+
+API development and testing may use tools such as:
+
+* Postman.
+* API documentation tools.
+* Automated API testing frameworks.
+
+The final toolset may evolve during implementation.
+
+### Containerization
+
+**Status:** Planned
+
+Docker is planned as part of the project's development and deployment tooling.
+
+Its exact role, service definitions, and production usage will be defined during the DevOps and deployment phases.
+
+---
+
+# 19. Testing Technologies
+
+Testing is a core project area.
+
+The project is expected to use multiple testing levels, including where appropriate:
 
 * Unit testing.
 * Integration testing.
-* End-to-end testing.
-* System testing.
-* Regression testing.
 * API testing.
+* Feature testing.
+* End-to-end testing.
 * Security testing.
+* Usability testing.
+* Mobile testing.
 
-The exact testing frameworks and tools will be selected based on the final technology stack.
+The exact testing frameworks and tools will be selected during the Testing and QA phase.
 
-Testing strategy and implementation will be documented in:
+Testing technologies are not required to be completely finalized at the Foundation level.
 
-```text
-08-quality-assurance/
+---
+
+# 20. Deployment and Infrastructure
+
+## 20.1 Deployment Direction
+
+**Status:** Planned
+
+The complete project will include deployment of the web application, backend, database, and required supporting services.
+
+The deployment architecture will be defined later based on:
+
+* Application requirements.
+* Security requirements.
+* Expected workload.
+* Cost.
+* Availability.
+* Scalability.
+* Operational complexity.
+
+---
+
+## 20.2 Environments
+
+The project should distinguish between environments such as:
+
+```text id="o8p3gd"
+Development
+    ↓
+Testing / Staging
+    ↓
+Production
 ```
 
----
+The exact environment structure will be defined during the deployment phase.
 
-## 16. Security Technology Direction
-
-The platform should follow a security-by-design approach.
-
-The technical baseline includes:
-
-* HTTPS in production.
-* Secure authentication.
-* Server-side authorization.
-* Resource ownership validation.
-* Secure password handling.
-* Input validation.
-* Protection against common web vulnerabilities.
-* Secure secret management.
-* Environment separation.
-* Controlled access to private files.
-* Audit logging for important security-sensitive actions where required.
-
-Detailed security requirements and threat modeling will be handled in:
-
-```text
-09-cybersecurity/
-```
+Production credentials and secrets must not be committed to the source repository.
 
 ---
 
-## 17. Technology Status Definitions
+# 21. Architecture Principles
 
-The following status labels are used in this document:
+The technology direction follows these principles:
 
-### Selected
+### Separation of Concerns
 
-A technology or direction has been sufficiently decided for the current project baseline.
+Web, mobile, backend, database, storage, and external services should have clearly defined responsibilities.
 
-### Preferred
+### Backend Authority
 
-A technology is currently favored but has not yet received final technical approval.
+Business-critical rules and authorization must be enforced by the backend.
 
-### Planned
+### API-Centered Integration
 
-The technology or capability is expected to be introduced later in the project.
+Web and mobile clients should communicate with backend capabilities through controlled APIs.
 
-### Under Evaluation
+### Maintainability
 
-Multiple alternatives are still being considered.
+Technology choices should support readable, testable, and maintainable code.
 
-### TBD
+### Security by Design
 
-The decision requires additional information or validation.
+Security requirements should influence architecture and implementation from the beginning rather than being treated solely as a final testing activity.
 
-### Future
+### Extensibility
 
-The technology or capability belongs to a later project stage and is not required for the current MVP.
+The architecture should allow future capabilities without unnecessarily implementing them in the MVP.
 
----
+### Appropriate Simplicity
 
-## 18. Technologies Intentionally Not Finalized Yet
-
-The following decisions should remain open until the relevant project phases provide enough information:
-
-* Backend framework.
-* Hosting provider.
-* Cloud provider.
-* Object storage provider.
-* Payment provider.
-* Notification provider.
-* Web server/reverse proxy.
-* Mobile framework.
-* CI/CD platform.
-* Monitoring platform.
-* Final frontend supporting libraries.
-* Final backend supporting libraries.
-
-Keeping these decisions open prevents premature commitment and allows the technology stack to follow actual project requirements.
+The project should avoid unnecessary infrastructure complexity when a simpler solution satisfies the requirements.
 
 ---
 
-## 19. Technology Evolution
+# 22. Technology Boundaries
 
-The technology stack may evolve during the project.
+Technology choices must not independently expand the product scope.
 
-Changes should be evaluated against:
+For example:
 
-* Requirements.
-* Architecture.
-* Security.
-* Performance.
-* Maintainability.
-* Deployment complexity.
-* Project scope.
-* Future compatibility.
+* Adding a mobile framework does not make mobile an MVP requirement.
+* Adding a payment library does not make platform-mediated payment part of MVP.
+* Adding an AI library does not make AI functionality part of MVP.
+* Adding a storage provider does not make physical delivery part of MVP.
+* Adding an external service does not automatically make its associated future capability an MVP feature.
 
-A major technology change should be documented in the appropriate Architecture Decision Record or Decision Log.
+Product scope is defined by the project foundation and requirements, not by the availability of a technology.
 
 ---
 
-## 20. Relationship to Other Documents
+# 23. Technology Decisions That Remain Open
 
-This document provides the initial technology baseline.
+The following areas may require later technical decisions:
 
-More detailed decisions will be documented in:
+* Exact React project architecture.
+* Exact Laravel architecture and package selection.
+* API authentication mechanism.
+* State-management approach.
+* Exact mobile architecture.
+* Exact file/object storage provider.
+* Exact notification providers.
+* Search implementation details.
+* Deployment provider.
+* Infrastructure architecture.
+* CI/CD tooling.
+* Monitoring and observability tooling.
+* Production payment provider for future platform-mediated payments.
 
-```text
-02-system-design/
-
-04-database/
-
-05-api-backend/
-
-06-web-frontend/
-
-08-quality-assurance/
-
-09-cybersecurity/
-
-10-deployment/
-
-11-maintenance/
-```
-
-Technology decisions must remain consistent with project requirements and architectural constraints.
+Open technical decisions must be documented when they become sufficiently important to affect architecture, scope, or implementation.
 
 ---
 
-## 21. Current Status
+# 24. Relationship to Other Documentation
 
-**Phase:** Project Foundation
+This document defines technology direction at the Foundation level.
 
-**Status:** Technology direction established; detailed technology selection remains partially open.
+Detailed information belongs to the appropriate later documentation.
 
-**Next Validation Point:** System Design and implementation preparation.
-
-**Final Rule:** No technology should be considered permanently selected solely because it appears in this document. Final selections must be supported by project requirements and documented decisions where appropriate.
+| Topic                             | Primary Documentation Area     |
+| --------------------------------- | ------------------------------ |
+| Project-wide technology direction | `00-project-foundation/technol |

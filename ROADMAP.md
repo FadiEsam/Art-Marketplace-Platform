@@ -2,42 +2,88 @@
 
 ## 1. Purpose
 
-This roadmap defines the planned development path for the Art Marketplace Platform from initial project foundation through deployment and maintenance.
+This roadmap defines the planned development path of the Art Marketplace Platform from its initial foundation through implementation, mobile development, quality assurance, cybersecurity, deployment, and maintenance.
 
 It provides a high-level view of:
 
 * Project phases.
-* Major outcomes of each phase.
-* Dependencies between phases.
+* Major outputs.
+* Phase dependencies.
 * MVP boundaries.
-* Future development directions.
+* Complete project scope.
+* Post-project and future product directions.
+* Project progression.
 
-This roadmap is intentionally high-level.
+The roadmap intentionally remains high-level.
 
-Detailed requirements, implementation tasks, technical decisions, and test cases belong to the documentation of their respective phases.
-
----
-
-# 2. Roadmap Principles
-
-The project follows these principles:
-
-1. Development proceeds in defined phases.
-2. Requirements are established before implementation.
-3. Each major phase has a completion Gate.
-4. A failed Gate requires corrective work before progression.
-5. MVP scope remains controlled.
-6. Future features are not treated as MVP requirements.
-7. Important technical and business decisions are documented.
-8. Requirements should remain traceable to implementation and testing.
-9. The project should avoid premature overengineering.
-10. New scope must be evaluated before being added.
+Detailed requirements, business rules, architecture, database structures, API contracts, implementation details, and test cases belong to their respective documentation phases.
 
 ---
 
-# 3. High-Level Roadmap
+# 2. Scope Model
 
-```text id="1m3j0n"
+The project uses three related but distinct scope levels.
+
+## 2.1 MVP
+
+The MVP establishes the initial marketplace product.
+
+Its primary client is the **Web Application**.
+
+The MVP focuses on:
+
+* Customer functionality.
+* Artist functionality.
+* Digital artwork.
+* Marketplace workflows.
+* Approved social functionality.
+* Notifications.
+* Moderation.
+* MVP payment model.
+* Backend/API.
+* Database.
+* Web frontend.
+
+---
+
+## 2.2 Complete Project
+
+The complete project continues beyond the MVP.
+
+It includes all planned engineering phases, including:
+
+* Web Application.
+* Mobile Application.
+* Quality Assurance.
+* Cybersecurity.
+* Deployment.
+* Maintenance.
+
+The Mobile Application is therefore part of the complete project and learning path even though it is outside the MVP.
+
+---
+
+## 2.3 Future Product Development
+
+Some capabilities are intentionally deferred beyond the current project scope or initial implementation.
+
+Examples include:
+
+* Platform-mediated payment.
+* Printing integrations.
+* Delivery integrations.
+* AI functionality.
+* Advanced marketplace capabilities.
+
+These should not be confused with the Mobile Application.
+
+> **Mobile is a core project phase. Future product features are capabilities deferred beyond the current project scope.**
+
+---
+
+# 3. Complete Project Lifecycle
+
+```text
 00 Project Foundation
         ↓
 01 Requirements
@@ -52,6 +98,8 @@ The project follows these principles:
         ↓
 06 Web Frontend
         ↓
+07 Mobile Application
+        ↓
 08 Quality Assurance
         ↓
 09 Cybersecurity
@@ -61,15 +109,7 @@ The project follows these principles:
 11 Maintenance
 ```
 
-### Future Extension
-
-```text id="9h8b4q"
-07 Mobile Application
-        ↓
-Future Platform Expansion
-```
-
-The mobile application is intentionally separated from the initial web MVP implementation.
+All listed phases are part of the project's planned engineering and learning lifecycle.
 
 ---
 
@@ -79,713 +119,936 @@ The mobile application is intentionally separated from the initial web MVP imple
 
 **Directory:** `00-project-foundation/`
 
-### Objective
+### Purpose
 
-Establish the project's purpose, boundaries, stakeholders, assumptions, constraints, terminology, and initial decisions.
+Establish the stable conceptual foundation of the product.
 
-### Major Outputs
+### Main Areas
 
-* Project Charter
-* Project Scope
-* Project Objectives
-* Stakeholder Analysis
-* Assumptions
-* Constraints
-* Glossary
-* Decision Log
-* Foundation Gate
+* Project Charter.
+* Project Scope.
+* Project Objectives.
+* Stakeholders.
+* Assumptions.
+* Constraints.
+* Glossary.
+* Foundation Gate.
 
-### Completion Condition
+Project-wide decisions are maintained in the root `decision-log.md`.
 
-The project has a sufficiently clear foundation to begin detailed requirements analysis.
+### Outcome
 
-**Status:** In Progress
+A clear and internally consistent foundation for detailed requirements.
+
+### Status
+
+**In Progress**
 
 ---
 
-# Phase 01 — Requirements
+# 5. Phase 01 — Requirements
 
 **Directory:** `01-requirements/`
 
-### Objective
+### Purpose
 
-Transform the high-level project concept into detailed, testable, and traceable requirements.
+Define the detailed, testable behavior of the system.
 
-### Major Areas
+### Main Areas
 
-* Software Requirements Specification
-* Functional Requirements
-* Non-Functional Requirements
-* User Stories
-* Use Cases
-* Business Rules
-* Acceptance Criteria
-* Requirements Traceability
+* Functional Requirements.
+* Non-Functional Requirements.
+* User Stories.
+* Use Cases.
+* Business Rules.
+* Customer Workflows.
+* Artist Workflows.
+* Artwork Rules.
+* Marketplace Rules.
+* Order Rules.
+* Custom Request Rules.
+* Payment Rules.
+* Commission Rules.
+* Notification Rules.
+* Social Rules.
+* Moderation Rules.
+* Rights and Policy Requirements.
+* Acceptance Criteria.
+* Requirements Traceability.
 
-### Expected Outcome
+### Outcome
 
-A clear definition of what the system must do and the quality constraints it must satisfy.
+A sufficiently detailed definition of what the MVP must and must not do.
 
 ### Dependency
 
-Phase 00 must pass its Gate.
+Phase 00 must provide a sufficiently stable foundation.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 02 — System Design
+# 6. Phase 02 — System Design
 
 **Directory:** `02-system-design/`
 
-### Objective
+### Purpose
 
-Translate approved requirements into a coherent technical architecture and system design.
+Transform approved requirements into a coherent technical architecture.
 
-### Major Areas
+### Main Areas
 
-* System Architecture
-* System Context
-* Authentication Design
-* Authorization Design
-* Architecture Decisions
-* UML Models
-* Component Design
-* Deployment Architecture
+* System Architecture.
+* System Context.
+* Component Architecture.
+* Authentication.
+* Authorization.
+* Business Logic Boundaries.
+* External Service Boundaries.
+* UML.
+* Architecture Decisions.
+* Deployment Architecture.
 
-### Expected Outcome
+### Outcome
 
-A sufficiently detailed system design that can guide implementation without relying on undocumented assumptions.
+A technical design capable of guiding implementation.
 
 ### Dependency
 
-Phase 01 must pass its Gate.
+Requirements must be sufficiently defined.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 03 — UI/UX Design
+# 7. Phase 03 — UI/UX Design
 
 **Directory:** `03-ui-ux-design/`
 
-### Objective
+### Purpose
 
-Design the user experience and interface for the primary marketplace workflows.
+Design the user experience and interfaces required by the project.
 
-### Major Areas
+### Main Areas
 
-* UX Research
-* Personas
-* User Flows
-* Information Architecture
-* Wireframes
-* Visual Mockups
-* Prototypes
-* Design System
-* Accessibility
+* User Research.
+* Personas.
+* User Flows.
+* Information Architecture.
+* Wireframes.
+* Visual Design.
+* Prototypes.
+* Design System.
+* Accessibility.
+* Responsive Design.
+* Customer Experience.
+* Artist Experience.
+* Administrative Experience.
+* Mobile Experience.
 
-### Expected Outcome
+### Outcome
 
-A validated interface design covering the major customer, artist, and administrator workflows.
+A coherent design system and set of user flows for the project's client applications.
 
 ### Dependency
 
 Requirements and relevant system concepts must be sufficiently defined.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 04 — Database
+# 8. Phase 04 — Database
 
 **Directory:** `04-database/`
 
-### Objective
+### Purpose
 
-Design and implement the relational data model required by the approved requirements.
+Design and implement the relational data model required by the project.
 
-### Major Areas
+### Main Areas
 
-* Database Requirements
-* Database Architecture
-* Entity Relationships
-* Normalization
-* Constraints
-* Indexes
-* Performance Considerations
-* Security
-* ERD
-* Schema
-* Migrations
-* Seed Data
+* Database Requirements.
+* ERD.
+* Entity Relationships.
+* Normalization.
+* Constraints.
+* Indexes.
+* Security.
+* Schema.
+* Migrations.
+* Seed Data.
+* Performance Considerations.
 
 ### Current Direction
 
-PostgreSQL is the preferred database technology.
+PostgreSQL.
 
-### Expected Outcome
+### Outcome
 
-A consistent, secure, maintainable database structure capable of supporting the MVP.
+A maintainable database capable of supporting the approved system requirements.
 
 ### Dependency
 
-Requirements and system design must provide sufficient information for database modeling.
+Requirements and system design.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 05 — API / Backend
+# 9. Phase 05 — API / Backend
 
 **Directory:** `05-api-backend/`
 
 **Source Code:** `apps/api/`
 
-### Objective
+### Purpose
 
-Implement the backend application and API that provide the core business logic and data services of the platform.
+Implement the central backend and REST API.
 
-### Major Areas
+### Main Areas
 
-* API Architecture
-* REST API
-* Authentication
-* Authorization
-* Validation
-* Business Rules
-* Error Handling
-* Pagination
-* Filtering
-* API Versioning
-* External Service Integration
-* OpenAPI Documentation
-* API Testing
+* API Architecture.
+* REST API.
+* Authentication.
+* Authorization.
+* Validation.
+* Business Logic.
+* Marketplace Logic.
+* Artwork Management.
+* Order Management.
+* Custom Request Management.
+* Payment and Commission Logic.
+* Notifications.
+* Moderation.
+* Error Handling.
+* Pagination.
+* Filtering.
+* API Versioning.
+* External Services.
+* OpenAPI.
+* API Testing.
 
-### Expected Outcome
+### Outcome
 
-A secure and testable backend capable of supporting the web application and future clients.
+A secure backend capable of serving the Web Application and Mobile Application.
 
 ### Dependency
 
-Requirements, system design, and database design must provide sufficient implementation guidance.
+Requirements, system design, and database design.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 06 — Web Frontend
+# 10. Phase 06 — Web Frontend
 
 **Directory:** `06-web-frontend/`
 
 **Source Code:** `apps/web/`
 
-### Objective
+### Purpose
 
-Implement the web application that provides the primary user interface for the MVP.
+Implement the primary MVP client.
 
-### Major Areas
+### Main Areas
 
-* Frontend Architecture
-* Component Architecture
-* Routing
-* State Management
-* API Integration
-* Authentication UX
-* Customer Workflows
-* Artist Workflows
-* Administrator Workflows
-* Accessibility
-* Responsive Design
+* Frontend Architecture.
+* Component Architecture.
+* Routing.
+* State Management.
+* API Integration.
+* Authentication.
+* Customer Workflows.
+* Artist Workflows.
+* Artwork Discovery.
+* Artwork Management.
+* Marketplace Workflows.
+* Notifications.
+* Social Features.
+* Administration.
+* Accessibility.
+* Responsive Design.
 
-### Expected Outcome
+### MVP Position
 
-A complete web interface capable of supporting the core MVP marketplace workflow.
+The Web Application is the primary client of the initial MVP.
+
+### Outcome
+
+A functioning web application implementing the approved MVP workflows.
 
 ### Dependency
 
-Backend APIs and UI/UX design must be sufficiently ready for integration.
+Backend APIs and UI/UX design.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 07 — Mobile Application
+# 11. Phase 07 — Mobile Application
 
 **Directory:** `07-mobile-app/`
 
 **Source Code:** `apps/mobile/`
 
-### Objective
+### Purpose
 
-Provide a future mobile client consuming the same backend services.
-
-### Major Areas
-
-* Mobile Architecture
-* Screen Map
-* Navigation
-* State Management
-* API Integration
-* Local Storage
+Develop the project's Mobile Application as a core part of the complete system and software-engineering learning path.
 
 ### MVP Position
 
-The mobile application is **not required to validate the initial web MVP**.
+The Mobile Application is **outside the MVP**.
 
-It is therefore treated as a future extension unless project scope is formally changed.
+This does not make it a future idea or optional project phase.
 
-### Expected Outcome
+It is a planned and important stage of the complete project.
 
-A mobile application that consumes the existing backend API rather than introducing an independent business-logic layer.
+### Main Areas
+
+* Mobile Architecture.
+* Mobile UX.
+* Navigation.
+* Screen Structure.
+* State Management.
+* API Integration.
+* Authentication.
+* Customer Workflows.
+* Artist Workflows.
+* Notifications.
+* Social Features.
+* Mobile-specific capabilities.
+* Testing.
+
+### Architecture Principle
+
+The Mobile Application should consume the established backend API and share the project's business rules.
+
+It should not introduce an independent backend implementation of marketplace logic.
+
+### Learning Role
+
+This phase is an important part of the project's learning objectives, providing practical experience in:
+
+* Mobile application architecture.
+* API consumption.
+* Authentication.
+* State management.
+* Client-server communication.
+* Reusable backend services.
+* Mobile UX.
+* Cross-platform software engineering.
+
+### Outcome
+
+A functional mobile client integrated with the project's backend.
 
 ### Dependency
 
-The backend API must provide stable and appropriate interfaces for mobile consumption.
+The backend API must provide sufficiently stable interfaces for mobile development.
 
-**Status:** Future
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 08 — Quality Assurance
+# 12. Phase 08 — Quality Assurance
 
 **Directory:** `08-quality-assurance/`
 
 **Test Source:** `tests/`
 
-### Objective
+### Purpose
 
-Verify that the implemented system satisfies its requirements and operates correctly as an integrated product.
+Verify that the complete implemented system satisfies its requirements.
 
-### Major Areas
+### Main Areas
 
-* Test Strategy
-* Test Plan
-* Test Cases
-* Test Data
-* Integration Testing
-* End-to-End Testing
-* System Testing
-* Regression Testing
-* Bug Reports
-* Test Results
+* Test Strategy.
+* Test Plan.
+* Test Cases.
+* Unit Testing.
+* Integration Testing.
+* End-to-End Testing.
+* System Testing.
+* Regression Testing.
+* Mobile Testing.
+* Web Testing.
+* API Testing.
+* Test Data.
+* Defect Management.
+* Requirements Traceability.
 
-### Expected Outcome
+### Outcome
 
-Evidence that the MVP meets its approved requirements and identified quality expectations.
+Evidence that the implemented system satisfies the approved requirements and quality expectations.
 
 ### Dependency
 
-Core implementation must be available for meaningful verification.
+Sufficiently functional implementation across the relevant clients and backend.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 09 — Cybersecurity
+# 13. Phase 09 — Cybersecurity
 
 **Directory:** `09-cybersecurity/`
 
-### Objective
+### Purpose
 
-Assess and strengthen the security of the implemented system before production deployment.
+Assess and strengthen the security of the complete system.
 
-### Major Areas
+### Main Areas
 
-* Security Requirements
-* Threat Modeling
-* OWASP Review
-* Authentication Security
-* Authorization Security
-* API Security
-* Vulnerability Assessment
-* Security Testing
-* Security Findings
+* Security Requirements.
+* Threat Modeling.
+* OWASP Review.
+* Authentication Security.
+* Authorization Security.
+* API Security.
+* Web Security.
+* Mobile Security.
+* File Security.
+* Data Protection.
+* Vulnerability Assessment.
+* Security Testing.
+* Remediation.
 
-### Expected Outcome
+### Outcome
 
-A documented security assessment with identified vulnerabilities addressed or formally accepted according to their risk.
+A documented security assessment with important findings addressed or appropriately handled.
 
 ### Dependency
 
-A sufficiently functional implementation must exist for meaningful security testing.
+A sufficiently functional system must exist for meaningful security assessment.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 10 — Deployment
+# 14. Phase 10 — Deployment
 
 **Directory:** `10-deployment/`
 
 **Infrastructure:** `infrastructure/`
 
-### Objective
+### Purpose
 
-Deploy the application to a production environment using a controlled and reproducible process.
+Deploy the project to an appropriate production environment.
 
-### Major Areas
+### Main Areas
 
-* Infrastructure
-* Server Architecture
-* Domain and DNS
-* SSL/TLS
-* Environment Configuration
-* Backups
-* Monitoring
-* CI/CD
-* Deployment Runbook
+* Infrastructure.
+* Server Configuration.
+* Domain and DNS.
+* HTTPS.
+* Environment Configuration.
+* Secrets Management.
+* Database Deployment.
+* File Storage.
+* Backups.
+* Monitoring.
+* CI/CD.
+* Deployment Runbook.
+* Recovery Procedures.
 
-### Expected Outcome
+### Outcome
 
-A functioning production deployment with appropriate security, operational controls, and recovery procedures.
+A controlled and reproducible deployment process and operational environment.
 
 ### Dependency
 
-Quality Assurance and Cybersecurity requirements must be sufficiently satisfied before production release.
+Quality Assurance and Cybersecurity must reach the required readiness level.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# Phase 11 — Maintenance
+# 15. Phase 11 — Maintenance
 
 **Directory:** `11-maintenance/`
 
-### Objective
+### Purpose
 
-Define how the deployed system will be operated, monitored, maintained, and evolved.
+Define and demonstrate long-term operation and evolution of the deployed project.
 
-### Major Areas
+### Main Areas
 
-* Maintenance Planning
-* Monitoring
-* Backup and Restore
-* Incident Management
-* Performance
-* Technical Debt
-* Future Roadmap
+* Monitoring.
+* Backup and Restore.
+* Incident Management.
+* Dependency Updates.
+* Security Maintenance.
+* Performance.
+* Technical Debt.
+* Bug Fixes.
+* Maintenance Releases.
+* Future Development Planning.
 
-### Expected Outcome
+### Outcome
 
-A documented approach for keeping the platform operational and managing future changes.
+A maintainable project with a documented approach to ongoing operation and evolution.
 
 ### Dependency
 
-Production deployment must exist or be sufficiently defined.
+Deployment and operational infrastructure.
 
-**Status:** Not Started
+### Status
+
+**Not Started**
 
 ---
 
-# 5. MVP Roadmap
+# 16. MVP Roadmap
 
-The initial MVP focuses on the following capabilities:
+The MVP is primarily a web-based marketplace.
 
-```text id="f3j5y1"
-User Management
-     ↓
-Artist Profiles
-     ↓
-Artwork / Service Management
-     ↓
-Discovery
-     ↓
-Requests / Purchases
-     ↓
-Orders
-     ↓
-Requirements & Deliverables
-     ↓
-Payment Integration
-     ↓
-Production & Delivery
-     ↓
-Review
-     ↓
-Revisions
-     ↓
-Customer Approval
-     ↓
-Order Completion
+Its high-level progression is:
+
+```text
+Foundation
+    ↓
+Requirements
+    ↓
+System Design
+    ↓
+UI/UX
+    ↓
+Database
+    ↓
+Backend / API
+    ↓
+Web Frontend
+    ↓
+MVP Integration
+    ↓
+MVP Verification
 ```
 
-Supporting capabilities include:
+The MVP does not require the Mobile Application.
 
+However, the project continues after the MVP through Phase 07 and the remaining lifecycle phases.
+
+---
+
+# 17. MVP Functional Scope
+
+The MVP includes:
+
+### Users
+
+* Registration.
 * Authentication.
-* Authorization.
-* Notifications.
-* Administration.
-* Security.
-* Testing.
-* Deployment.
+* Customer capabilities.
+* Artist application.
+* Artist approval.
+* Profiles.
+
+### Artwork
+
+* Digital 2D-display artwork.
+* Ready-made digital artwork.
+* Supported custom digital artwork.
+* Artwork categories.
+* Dynamic optional metadata.
+* Search and filtering.
+
+### Social
+
+* Like.
+* Follow.
+* 1–5 star Rating.
+* Customizable Notifications.
+* Report.
+* Block.
+
+### Marketplace
+
+* Discovery.
+* Purchase.
+* Supported custom requests.
+* Order/request management.
+* Digital delivery/access.
+
+### Payment
+
+* Direct customer-to-artist bank transfer.
+* Platform commission tracking.
+* 15% applicable commission model.
+
+Platform-mediated payment is outside the MVP.
+
+### Administration
+
+* Artist review.
+* Content moderation.
+* Reports.
+* User management.
+* Commission administration.
 
 ---
 
-# 6. Post-MVP Roadmap
+# 18. MVP Explicit Exclusions
 
-Features below are potential future directions rather than MVP commitments.
+The MVP excludes:
 
-## Future Product Capabilities
+### Platform Payment
 
-* Mobile applications.
-* Advanced AI-assisted features.
+* Payment gateways.
+* PSP integration.
+* Platform-held funds.
+* Automated payment settlement.
+
+### Communication
+
+* User-to-user chat.
+* User-to-artist chat.
+* User-to-AI chat.
+
+### AI
+
+All AI functionality.
+
+### Social
+
+* Dislike.
+* Comments.
+* Spam as a social interaction feature.
+
+### Physical Marketplace
+
+* Platform-managed physical-art transactions.
+* Delivery integration.
+* Printing integration.
+
+### Mobile
+
+The Mobile Application is outside the MVP.
+
+**It is not outside the project.**
+
+---
+
+# 19. Complete Project After MVP
+
+After the Web MVP has established the core marketplace, the project continues with the remaining planned phases.
+
+A simplified view is:
+
+```text
+Web MVP
+   ↓
+Mobile Application
+   ↓
+Complete System QA
+   ↓
+Cybersecurity
+   ↓
+Deployment
+   ↓
+Maintenance
+```
+
+The exact sequencing may allow controlled overlap where dependencies permit.
+
+---
+
+# 20. Future Product Development
+
+Future product capabilities may include:
+
+* Platform-mediated payment.
+* Expanded physical-art marketplace support.
+* Printing-provider integration.
+* Delivery-provider integration.
+* AI-assisted capabilities.
+* Advanced discovery.
 * Recommendation systems.
-* Advanced search and discovery.
-* More sophisticated marketplace economics.
-* Advanced dispute resolution.
-* Expanded communication features.
 * Advanced analytics.
-* Additional marketplace categories.
-* Additional payment capabilities.
+* Additional marketplace functionality.
 
-Each future feature must be evaluated against actual business needs before implementation.
+These are separate from the core Mobile Application phase.
 
 ---
 
-# 7. AI Roadmap
+# 21. AI Roadmap
 
-AI is intentionally positioned as a **post-MVP capability**.
+AI is outside the MVP.
 
-Potential future applications may include:
+Potential future AI applications may include:
 
-* Artwork discovery assistance.
-* Search enhancement.
+* Search assistance.
+* Recommendation.
 * Artist/customer matching.
-* Content assistance.
-* Workflow automation.
 * Moderation assistance.
-* Other AI-assisted marketplace features.
+* Workflow automation.
+* Other AI-assisted marketplace functionality.
 
-AI must not become a dependency for validating the core MVP.
+AI must not become a dependency for validating the core marketplace.
 
 ---
 
-# 8. Technical Evolution
+# 22. Physical Artwork Roadmap
 
-The project is expected to evolve through several levels of technical maturity.
+## MVP
 
-### Level 1 — Core Product
+Physical artwork may be displayed under the applicable product rules, but physical marketplace transactions are not managed by the platform.
 
-```text id="9o0j6c"
+## Future
+
+Potential future capabilities include:
+
+* Platform-managed physical-art transactions.
+* Printing services.
+* Printing-provider integration.
+* Delivery-provider integration.
+
+These capabilities require separate requirements and technical design before implementation.
+
+Non-2D physical forms outside the project's supported final scope remain excluded.
+
+---
+
+# 23. Technical Evolution
+
+The project evolves through the following technical stages.
+
+## Stage 1 — Core Backend
+
+```text
+Database
+    +
+REST API
+    +
+Business Logic
+```
+
+## Stage 2 — Web Client
+
+```text
+Backend
+    +
 Web Application
-
-     +
-
-Backend API
-
-     +
-
-Relational Database
 ```
 
-### Level 2 — External Services
+This establishes the MVP.
 
-```text id="y4l8ns"
-Payment
+## Stage 3 — Mobile Client
 
-Storage
-
-Notifications
+```text
+Backend
+    +
+Web Application
+    +
+Mobile Application
 ```
 
-### Level 3 — Engineering Automation
+This is a core part of the complete project.
 
-```text id="5az3mw"
-Docker
+## Stage 4 — Quality and Security
 
-+
-
-Automated Testing
-
-+
-
-CI/CD
-```
-
-### Level 4 — Production Operations
-
-```text id="7x2p0k"
-Monitoring
-
-+
-
-Backups
-
-+
-
-Security Controls
-
-+
-
-Deployment Automation
-```
-
-### Level 5 — Future Expansion
-
-```text id="2r9c6v"
+```text
+Web
+ +
 Mobile
-
-+
-
-Advanced Integrations
-
-+
-
-AI
-
-+
-
-Advanced Marketplace Features
+ +
+API
+ +
+Database
+ ↓
+QA
+ +
+Cybersecurity
 ```
 
-The project should not implement a higher level merely because it is technically possible. Each level should be justified by project requirements.
+## Stage 5 — Production
+
+```text
+Complete Application
+       ↓
+Infrastructure
+       ↓
+Deployment
+       ↓
+Monitoring
+       ↓
+Maintenance
+```
+
+## Stage 6 — Future Product Expansion
+
+```text
+Platform Payment
+ +
+Physical Marketplace
+ +
+Printing
+ +
+Delivery
+ +
+AI
+ +
+Advanced Features
+```
 
 ---
 
-# 9. Gate-Based Progression
+# 24. Gate-Based Progression
 
-The project uses phase Gates to control progression.
+Each major phase contains a Gate or equivalent completion criteria.
 
-Conceptually:
+The general model is:
 
-```text id="k7p4e2"
+```text
 Phase Work
-
-   ↓
-
+    ↓
 Documentation
-
-   ↓
-
-Validation
-
-   ↓
-
+    ↓
+Implementation / Validation
+    ↓
 Gate
-
-   ↓
-
+    ↓
 PASS ─────────→ Next Phase
    │
-   ├── CONDITIONAL PASS → Resolve Conditions
+   ├── Conditional Pass → Resolve Conditions
    │
-   └── FAIL → Corrective Work → Re-evaluation
+   └── Fail → Corrective Work → Re-evaluation
 ```
 
-A Gate is therefore a quality checkpoint rather than a formality.
+A Gate is a quality checkpoint rather than a formality.
 
 ---
 
-# 10. Dependency Principles
-
-The following dependencies should generally be respected:
+# 25. Dependency Principles
 
 | Dependency                 | Principle                                                       |
 | -------------------------- | --------------------------------------------------------------- |
-| Foundation → Requirements  | Project boundaries must be sufficiently understood.             |
-| Requirements → Design      | Architecture should respond to requirements.                    |
-| Requirements → Database    | Data model should represent approved domain requirements.       |
-| Design → Backend           | Backend implementation should follow the approved architecture. |
-| Database → Backend         | Backend must integrate with the approved data model.            |
-| UI/UX → Frontend           | Frontend should implement approved user experience designs.     |
-| Backend → Frontend         | Frontend consumes defined backend interfaces.                   |
-| Implementation → QA        | Testing requires a sufficiently functional implementation.      |
-| Implementation → Security  | Meaningful security testing requires an implemented system.     |
-| QA + Security → Deployment | Production release requires acceptable quality and security.    |
-| Deployment → Maintenance   | Operational maintenance depends on the deployed system.         |
+| Foundation → Requirements  | Product boundaries must be sufficiently clear.                  |
+| Requirements → Design      | Architecture responds to approved requirements.                 |
+| Requirements → Database    | Data structures represent approved domain requirements.         |
+| Design → Backend           | Backend follows the approved system architecture.               |
+| Database → Backend         | Backend uses the approved data model.                           |
+| UI/UX → Web                | Web implements approved user experience.                        |
+| UI/UX → Mobile             | Mobile implements approved mobile experience.                   |
+| Backend → Web              | Web consumes defined backend APIs.                              |
+| Backend → Mobile           | Mobile consumes defined backend APIs.                           |
+| Implementation → QA        | Testing requires functional implementation.                     |
+| Implementation → Security  | Security assessment requires a sufficiently implemented system. |
+| QA + Security → Deployment | Production deployment requires acceptable quality and security. |
+| Deployment → Maintenance   | Maintenance depends on an operational deployment.               |
 
-These dependencies do not prohibit controlled parallel work when doing so reduces unnecessary waiting, provided that no phase makes unsupported assumptions about unfinished work.
+Controlled parallel work is allowed when it does not introduce unsupported assumptions or conflicting designs.
 
 ---
 
-# 11. Scope Change Management
+# 26. Scope Change Management
 
-If a new feature or requirement is proposed during development, it should first be evaluated.
+A proposed new feature should be evaluated before implementation.
 
-The evaluation should consider:
+Consider:
 
 * Business value.
 * MVP necessity.
+* Project importance.
 * Development effort.
 * Technical complexity.
 * Security impact.
 * Testing impact.
 * Maintenance cost.
-* Effect on project schedule.
-* Effect on existing requirements.
+* Legal impact.
+* Architecture impact.
+* Schedule impact.
 
-Possible outcomes:
+Possible outcomes include:
 
-```text id="0w6k8z"
-Keep in MVP
-
-     OR
-
-Move to Post-MVP
-
-     OR
-
-Reject
-
-     OR
-
-Formally Expand Scope
+```text
+MVP
+  OR
+Core Project
+  OR
+Future Product
+  OR
+Rejected
 ```
 
-A feature should not enter implementation merely because it appears useful.
+A feature should not become part of the MVP merely because it is technically interesting or potentially useful.
+
+Major scope changes should be reflected in the relevant project documentation and, where appropriate, the root decision log.
 
 ---
 
-# 12. Roadmap Status Legend
+# 27. Documentation Principles
 
-| Status      | Meaning                                            |
-| ----------- | -------------------------------------------------- |
-| Completed   | Phase has passed its Gate.                         |
-| In Progress | Active work is being performed.                    |
-| Not Started | Planned but work has not begun.                    |
-| Blocked     | Progress is prevented by an unresolved dependency. |
-| Future      | Intentionally deferred beyond the current MVP.     |
-| Superseded  | Replaced by a different project direction.         |
-
----
-
-# 13. Current Roadmap Status
-
-At the current project stage:
-
-```text id="v2n8s5"
-00 Project Foundation   → In Progress
-01 Requirements         → Not Started
-02 System Design        → Not Started
-03 UI/UX Design         → Not Started
-04 Database             → Not Started
-05 API / Backend        → Not Started
-06 Web Frontend         → Not Started
-07 Mobile App           → Future
-08 Quality Assurance    → Not Started
-09 Cybersecurity        → Not Started
-10 Deployment           → Not Started
-11 Maintenance          → Not Started
-```
-
-The next active phase after completion of the Foundation Gate is:
-
-**`01-requirements/`**
+1. Root documentation describes project-wide information.
+2. Phase documentation describes phase-specific information.
+3. Project-wide decisions belong in the root `decision-log.md`.
+4. The same business rule should not be independently redefined in multiple documents.
+5. References may be used instead of duplicating canonical information.
+6. Phase documents must not track temporary project status.
+7. Root documentation tracks project progression.
+8. Historical decisions remain traceable.
+9. Superseded decisions should be marked rather than silently deleted.
+10. Future capabilities must not silently become MVP requirements.
+11. Documentation should support developers, contributors, clients, maintainers, and AI systems.
 
 ---
 
-# 14. Roadmap Maintenance
+# 28. Roadmap Status
 
-This roadmap should be updated when there is a meaningful change to:
+The current project status is maintained here and in other appropriate Root documentation.
 
-* Project phase status.
+| Phase                   | Status      |
+| ----------------------- | ----------- |
+| 00 — Project Foundation | In Progress |
+| 01 — Requirements       | Not Started |
+| 02 — System Design      | Not Started |
+| 03 — UI/UX Design       | Not Started |
+| 04 — Database           | Not Started |
+| 05 — API / Backend      | Not Started |
+| 06 — Web Frontend       | Not Started |
+| 07 — Mobile Application | Not Started |
+| 08 — Quality Assurance  | Not Started |
+| 09 — Cybersecurity      | Not Started |
+| 10 — Deployment         | Not Started |
+| 11 — Maintenance        | Not Started |
+
+The current active work is the Project Foundation re-baseline.
+
+After the Foundation Gate is satisfied, the roadmap proceeds to Requirements.
+
+---
+
+# 29. Roadmap Maintenance
+
+This file should be updated when there is a meaningful change to:
+
+* Phase status.
+* Project sequencing.
 * MVP scope.
-* Major future capabilities.
-* Development sequencing.
+* Complete project scope.
 * Major dependencies.
-* Project direction.
+* Major future directions.
 
-Minor implementation details should not be added to this file.
+Detailed implementation tasks should remain in their appropriate phase documentation, issue tracking, or source-code documentation.
 
-Detailed work belongs in the relevant phase documentation, issue tracker, changelog, or implementation files.
+The roadmap should remain understandable at a high level and should not become a replacement for detailed engineering documentation.

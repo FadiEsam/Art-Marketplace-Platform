@@ -2,295 +2,538 @@
 
 ## 1. Project Information
 
-| Item             | Details                        |
-| ---------------- | ------------------------------ |
-| Project Name     | Art Marketplace Platform       |
-| Project Type     | Web-based Marketplace Platform |
-| Project Status   | Planning                       |
-| Current Phase    | Project Foundation             |
-| Project Version  | 0.1.0                          |
-| Document Status  | Draft                          |
-| Primary Platform | Web                            |
-| Future Platforms | Mobile Application             |
-| Target Release   | TBD                            |
+| Item                     | Details                                                                                        |
+| ------------------------ | ---------------------------------------------------------------------------------------------- |
+| Project Name             | Art Marketplace Platform                                                                       |
+| Project Type             | Full-Stack Art Marketplace Platform                                                            |
+| Primary MVP Client       | Web Application                                                                                |
+| Complete Project Clients | Web Application + Mobile Application                                                           |
+| Project Purpose          | Educational software engineering project with potential commercial evolution                   |
+| Project Lifecycle        | Foundation → Requirements → Design → Implementation → QA → Security → Deployment → Maintenance |
+| Current Document Role    | Project Foundation Charter                                                                     |
 
 ---
 
-## 2. Project Overview
+# 2. Project Overview
 
-The Art Marketplace Platform is a digital marketplace designed to connect artists with customers through a structured platform for discovering, purchasing, and commissioning artwork.
+The Art Marketplace Platform is a full-stack software project intended to provide a structured environment for customers and artists to discover, present, request, purchase, and manage supported artwork.
 
-The platform will provide artists with the ability to create profiles, publish their artwork, define available services, receive customer requests, and manage orders.
+The platform is designed around a unified user account model.
 
-Customers will be able to discover artists and artwork, review artist profiles and portfolios, submit requests, place orders, communicate with artists through the platform, and track the progress of their orders.
+Every user begins with customer capabilities and may later apply for artist capabilities through an approval process.
 
-The platform will also provide mechanisms for managing payments, order agreements, revisions, delivery, and customer approval in a structured manner.
+The initial MVP focuses on a web-based marketplace for supported digital artwork.
 
-The initial release will focus on a controlled Minimum Viable Product (MVP). Advanced capabilities and integrations that are not essential to the core marketplace workflow will be considered for future releases.
+The complete project continues beyond the MVP and includes development of a Mobile Application as an important project phase and learning objective.
 
----
+The project therefore distinguishes between:
 
-## 3. Problem Statement
-
-Artists and customers may currently rely on fragmented communication channels and informal processes when arranging artwork commissions or purchasing custom artwork.
-
-This can create difficulties such as:
-
-* Lack of a centralized marketplace for discovering artists.
-* Limited visibility into artist portfolios and services.
-* Unstructured communication between customers and artists.
-* Ambiguity regarding project requirements and deliverables.
-* Difficulty managing revisions and approval.
-* Lack of a structured order lifecycle.
-* Unclear payment and delivery processes.
-* Difficulty resolving disagreements regarding project requirements.
-
-The proposed platform aims to provide a structured environment that organizes these interactions into a defined marketplace and order-management workflow.
+* **MVP Scope** — the initial product required to validate the core marketplace.
+* **Complete Project Scope** — the broader software engineering project, including the Mobile Application and subsequent engineering phases.
+* **Future Product Scope** — capabilities intentionally deferred beyond the current project scope.
 
 ---
 
-## 4. Project Vision
+# 3. Problem Statement
 
-To build a reliable digital marketplace that makes discovering, purchasing, and commissioning artwork easier for customers while providing artists with structured tools to present and manage their work.
+Artists and customers may rely on fragmented platforms and informal processes when discovering artwork, presenting artistic work, requesting custom artwork, and managing transactions.
 
-The long-term vision is to establish a scalable platform capable of supporting multiple artwork categories, artists, customers, payment methods, order workflows, and future digital services.
+This can result in:
+
+* Difficulty discovering suitable artists.
+* Limited structured artist portfolios.
+* Inconsistent artwork information.
+* Difficulty comparing and filtering artwork.
+* Unstructured custom-artwork requests.
+* Lack of a consistent marketplace workflow.
+* Difficulty managing orders and requests.
+* Limited structured interaction and notification mechanisms.
+* Unclear responsibilities between customers, artists, and the platform.
+
+The proposed platform aims to provide a structured marketplace that organizes these activities into defined workflows while maintaining controlled MVP scope.
 
 ---
 
-## 5. Project Purpose
+# 4. Project Vision
 
-The purpose of the project is to design and implement a complete marketplace platform while applying a structured software development lifecycle.
+The vision is to build a structured art marketplace that allows customers to discover artists and artwork while giving approved artists tools to present, manage, and offer supported creative work.
 
-The project will cover the major stages of software engineering, including:
+The long-term product direction is to evolve the platform into a broader marketplace capable of supporting additional artwork types, transaction mechanisms, services, clients, and integrations.
 
-1. Project foundation.
-2. Requirements engineering.
-3. System design.
-4. UI/UX design.
-5. Database design.
-6. API and backend development.
-7. Web frontend development.
-8. Mobile application planning and development.
-9. Quality assurance.
+The initial implementation deliberately focuses on a controlled MVP rather than attempting to implement the complete long-term product immediately.
+
+---
+
+# 5. Project Purpose
+
+The project has two closely related purposes.
+
+## 5.1 Product Purpose
+
+To design and build a functional art marketplace platform with clearly defined customer, artist, marketplace, moderation, and administrative workflows.
+
+## 5.2 Engineering and Learning Purpose
+
+To demonstrate the complete software engineering lifecycle through a realistic multi-phase project.
+
+The project covers:
+
+1. Project Foundation.
+2. Requirements Engineering.
+3. System Design.
+4. UI/UX Design.
+5. Database Design.
+6. API and Backend Development.
+7. Web Frontend Development.
+8. Mobile Application Development.
+9. Quality Assurance.
 10. Cybersecurity.
 11. Deployment.
-12. Maintenance and future evolution.
+12. Maintenance and Evolution.
 
-Each stage will have documented deliverables and a defined completion gate before the project proceeds to the next stage.
+The Mobile Application is an important part of the learning and engineering objectives even though it is outside the MVP.
 
 ---
 
-## 6. Project Goals
+# 6. Project Objectives
 
 The project aims to:
 
-* Build a functional marketplace connecting artists and customers.
-* Provide a structured workflow for artwork purchases and commissions.
-* Establish clear requirements before implementation begins.
-* Apply professional software engineering and system design practices.
-* Design a scalable database architecture.
-* Develop a secure RESTful backend API.
-* Develop a responsive web application.
-* Establish a foundation for a future mobile application.
-* Apply systematic quality assurance and security practices.
-* Deploy the platform using a reproducible deployment process.
-* Document technical and architectural decisions throughout the project.
-* Produce a maintainable and extensible software system.
+* Establish a clear and controlled product scope.
+* Define detailed and traceable requirements.
+* Design a maintainable system architecture.
+* Build a secure REST API.
+* Design and implement a relational database.
+* Build a functional web marketplace.
+* Develop a mobile client using the established backend services.
+* Apply professional UI/UX practices.
+* Apply systematic testing and quality assurance.
+* Apply cybersecurity practices.
+* Deploy the system using documented procedures.
+* Establish maintainable project documentation.
+* Document important technical and product decisions.
+* Demonstrate the ability to develop a software product through a complete engineering lifecycle.
 
 ---
 
-## 7. MVP Definition
+# 7. Product Scope Model
 
-The first release will be intentionally limited to the functionality required to validate the core marketplace workflow.
+The project is divided conceptually into three scope levels.
 
-The MVP will primarily focus on:
+## 7.1 MVP
+
+The MVP is the initial web-based marketplace.
+
+It focuses on:
 
 * User registration and authentication.
+* Customer capabilities.
+* Artist application and approval.
 * Artist profiles.
-* Customer profiles.
-* Artist portfolio management.
-* Artwork/service listings.
-* Artwork discovery and browsing.
-* Artwork details.
-* Customer requests and orders.
-* Order status management.
-* Defined project requirements.
-* Revision management according to the agreed order terms.
-* Artwork delivery.
-* Customer approval.
-* Basic notifications.
-* Basic administrative management.
-
-Payment processing architecture will be designed to support future integration with a third-party payment provider.
-
-The platform may support holding customer funds within the platform according to the final business and payment-provider model, but the exact payment provider, settlement mechanism, fees, refund process, and regulatory requirements remain **TBD** at this stage.
-
-Advanced functionality such as AI-assisted artwork services, recommendation engines, advanced analytics, and other non-essential capabilities will not be considered mandatory MVP functionality.
+* Digital artwork.
+* Artwork discovery.
+* Search and filtering.
+* Ready-made digital artwork.
+* Supported custom digital artwork.
+* Artwork metadata.
+* Marketplace workflows.
+* Orders and requests.
+* Approved social features.
+* Notifications.
+* Reporting and blocking.
+* Administration and moderation.
+* Direct customer-to-artist payment.
+* Platform commission tracking.
 
 ---
 
-## 8. High-Level Product Concept
+## 7.2 Complete Project
 
-The platform will operate around several primary actors:
+The complete project includes the MVP and the remaining planned engineering phases.
 
-### Customer
+The complete project includes:
 
-A customer can:
+* Web Application.
+* Mobile Application.
+* Backend/API.
+* Database.
+* Quality Assurance.
+* Cybersecurity.
+* Deployment.
+* Maintenance.
 
-* Create an account.
-* Browse artists.
-* Browse artwork and services.
-* View artist portfolios.
-* Request custom artwork.
-* Define project requirements.
-* Place orders.
-* Monitor order progress.
-* Request revisions according to the agreed terms.
-* Review delivered work.
-* Approve the final delivery.
-* Manage their order history.
-
-### Artist
-
-An artist can:
-
-* Create and manage an artist profile.
-* Publish artwork.
-* Publish available services.
-* Manage portfolio content.
-* Receive customer requests.
-* Review project requirements.
-* Accept or reject orders.
-* Update order progress.
-* Submit work for review.
-* Manage revisions according to the agreed terms.
-* Deliver final artwork.
-* View order and earnings information.
-
-### Administrator
-
-An administrator can:
-
-* Manage users.
-* Manage artists and customers.
-* Manage artwork and services.
-* Monitor orders.
-* Handle platform-level issues.
-* Manage reported content.
-* Monitor platform activity.
-* Perform administrative actions according to defined authorization rules.
-
-The exact permissions of each role will be defined during the Requirements and System Design phases.
+The Mobile Application is therefore part of the project scope even though it is outside the MVP.
 
 ---
 
-## 9. Expected Business Model
+## 7.3 Future Product Scope
 
-The platform is expected to operate as a marketplace where the platform facilitates transactions between customers and artists.
+Potential future product capabilities include:
 
-The initial business model is expected to involve a platform fee or commission associated with completed transactions.
+* Platform-mediated payment.
+* Expanded physical-art marketplace support.
+* Printing integrations.
+* Delivery integrations.
+* AI-assisted capabilities.
+* Advanced marketplace features.
+* Additional external-service integrations.
 
-The exact:
-
-* Commission percentage.
-* Payment processing fees.
-* Artist payout rules.
-* Refund rules.
-* Cancellation rules.
-* Tax treatment.
-* Currency model.
-* Payment-provider integration.
-
-are considered **TBD** and will be defined before implementation of the production payment system.
+These capabilities are not current MVP commitments.
 
 ---
 
-## 10. Project Success Criteria
+# 8. User Model
 
-The project will be considered successful when:
+The platform uses a unified account model.
 
-1. The MVP requirements have been clearly defined and approved.
-2. The system architecture supports the defined MVP.
-3. The database correctly represents the required business entities and relationships.
-4. The backend API implements the required business operations.
-5. The web application provides the required user workflows.
-6. Authentication and authorization are correctly implemented.
-7. Core marketplace workflows operate successfully from beginning to end.
-8. Required security controls have been implemented.
-9. The system passes the defined quality assurance criteria.
-10. The application can be deployed using documented procedures.
-11. Technical documentation is sufficient for another developer to understand and operate the system.
-12. Known limitations and future improvements are documented.
+## 8.1 Base User
+
+Every registered user begins with customer capabilities.
+
+A user may apply for artist capabilities without creating a separate account.
+
+Conceptually:
+
+```text id="5j5kqk"
+User
+├── Customer capabilities
+└── Artist capabilities
+       └── Granted after approval
+```
+
+An approved artist can continue to use the platform as a customer.
 
 ---
 
-## 11. Major Deliverables
+## 8.2 Artist Approval
 
-The project is expected to produce the following major deliverables:
+Artist capabilities are granted through an approval process.
 
-### Planning and Analysis
+The intended high-level process is:
+
+```text id="r0t9y7"
+User
+ ↓
+Artist Application
+ ↓
+Select Artistic Category
+ ↓
+Submit 5 Self-Owned Samples
+ ↓
+Specialist Review
+ ↓
+Approval / Rejection
+ ↓
+Artist Capabilities
+```
+
+An approved artist may publish artwork within the approved artistic category subject to the platform's rules.
+
+Detailed approval, rejection, resubmission, similarity, and moderation rules belong to Requirements.
+
+---
+
+# 9. Artwork Scope
+
+## 9.1 MVP Marketplace Artwork
+
+The MVP marketplace focuses on digital artwork that can be represented and displayed as 2D visual content.
+
+Examples include:
+
+* Character drawings.
+* Digital drawings and paintings.
+* Engineering drawings.
+* Nature artwork.
+* Photography.
+* Arabic calligraphy.
+* Other supported digital 2D artwork.
+
+The exact artwork categories and metadata requirements are defined in Requirements.
+
+---
+
+## 9.2 Ready-Made Artwork
+
+Ready-made artwork is an existing completed artwork offered by an artist.
+
+Its detailed purchase and delivery workflow will be defined in Requirements and System Design.
+
+---
+
+## 9.3 Custom Artwork
+
+Custom artwork represents work created according to a customer's request.
+
+Custom artwork may differ from ready-made artwork in:
+
+* Request workflow.
+* Payment conditions.
+* Production stages.
+* Revision rules.
+* Ownership.
+* Usage rights.
+* Completion conditions.
+
+The exact custom-artwork MVP scope will be determined during Requirements based on the capabilities and limitations of the MVP payment model.
+
+---
+
+# 10. Physical Artwork
+
+Physical artwork is not supported as a platform-managed marketplace transaction in the MVP.
+
+Physical artworks may be displayed where permitted by the product rules.
+
+Display and marketplace transaction are separate concepts.
+
+If a customer and artist independently agree to sell a physical artwork:
+
+* The transaction occurs outside the platform.
+* Payment occurs outside the platform.
+* Delivery is arranged outside the platform.
+* The platform does not manage the physical delivery.
+* The platform does not process the physical transaction.
+* The platform does not apply the marketplace commission to that external physical sale.
+
+A future version may introduce platform-managed support for selected physical artwork.
+
+Physical forms that cannot be reasonably represented within the project's supported 2D-display model, such as sculpture, pottery, sewing, and carving, remain outside the project's final scope.
+
+---
+
+# 11. Social and Communication Scope
+
+The approved MVP social functionality includes:
+
+* Like.
+* Follow.
+* 1–5 star Rating.
+* Customizable Notifications.
+* Report.
+* Block User.
+
+The following are not part of the MVP:
+
+* Dislike.
+* Comments.
+* User-to-user Chat.
+* User-to-AI Chat.
+
+These exclusions are intentional product-scope decisions rather than temporary implementation omissions.
+
+---
+
+# 12. Payment Model
+
+## 12.1 MVP Payment Model
+
+The MVP does not include platform-mediated payment processing.
+
+The intended payment mechanism for applicable marketplace transactions is direct bank transfer from the customer to the artist.
+
+Conceptually:
+
+```text id="42wz98"
+Customer
+    │
+    │ Direct Bank Transfer
+    ▼
+Artist
+    │
+    │ 15% Platform Commission
+    ▼
+Platform
+```
+
+The intended platform commission is **15% of applicable marketplace sales**.
+
+The platform may apply restrictions when an artist has outstanding commission obligations.
+
+Exact calculation, settlement, thresholds, and enforcement rules belong to Requirements.
+
+---
+
+## 12.2 Future Payment Model
+
+A future product version may introduce platform-mediated payment.
+
+Such functionality may require:
+
+* Payment provider integration.
+* Payment security.
+* Financial reconciliation.
+* Refund handling.
+* Settlement rules.
+* Additional legal and regulatory review.
+
+These requirements are outside the MVP.
+
+---
+
+# 13. Dynamic Artwork Metadata
+
+The MVP may use a dynamic question and metadata mechanism to improve artwork information and discovery.
+
+The system may present optional questions based on:
+
+* Artwork category.
+* Previously selected options.
+* Relevant artwork characteristics.
+
+The artist reviews and controls the resulting information.
+
+This mechanism is intended to operate through predefined system rules and does not require AI.
+
+Detailed behavior and implementation belong to Requirements and later technical phases.
+
+---
+
+# 14. Administration and Moderation
+
+The platform requires administrative and moderation capabilities.
+
+High-level responsibilities include:
+
+* User management.
+* Artist application review.
+* Artist approval.
+* Artwork moderation.
+* Report handling.
+* Blocking-related administration.
+* Marketplace administration.
+* Commission administration.
+* Security-related administration.
+* Operational management.
+
+Exact roles, permissions, and authorization rules belong to Requirements and System Design.
+
+---
+
+# 15. Project Lifecycle
+
+The project follows the complete planned lifecycle:
+
+```text id="k0g8d6"
+00 Project Foundation
+        ↓
+01 Requirements
+        ↓
+02 System Design
+        ↓
+03 UI/UX Design
+        ↓
+04 Database
+        ↓
+05 API / Backend
+        ↓
+06 Web Frontend
+        ↓
+07 Mobile Application
+        ↓
+08 Quality Assurance
+        ↓
+09 Cybersecurity
+        ↓
+10 Deployment
+        ↓
+11 Maintenance
+```
+
+Each phase has defined outputs and completion criteria.
+
+The project may return to an earlier phase when newly discovered information requires changes to an approved artifact or decision.
+
+---
+
+# 16. Major Deliverables
+
+The project is expected to produce documentation and implementation artifacts across the lifecycle.
+
+## Foundation
 
 * Project Charter.
 * Project Scope.
 * Project Objectives.
 * Stakeholder Analysis.
-* Assumptions and Constraints.
+* Assumptions.
+* Constraints.
+* Glossary.
+* Foundation Gate.
+
+## Requirements
+
 * Requirements Specification.
 * User Stories.
 * Use Cases.
 * Business Rules.
+* Acceptance Criteria.
+* Requirements Traceability.
 
-### System Design
+## System Design
 
 * System Architecture.
 * System Context.
+* Component Design.
 * Authentication Design.
 * Authorization Design.
-* UML diagrams.
-* Architecture Decision Records.
+* UML.
+* Architecture Decisions.
 
-### UI/UX
+## UI/UX
 
 * User Flows.
 * Information Architecture.
-* Design System.
 * Wireframes.
-* High-Fidelity Mockups.
+* High-Fidelity Designs.
 * Prototypes.
+* Design System.
 * Accessibility specifications.
+* Web and Mobile UX specifications.
 
-### Database
+## Database
 
 * Database Requirements.
-* Database Architecture.
 * ERD.
 * Relational Schema.
-* Normalization documentation.
-* Index strategy.
-* Migration scripts.
-* Seed data.
+* Normalization.
+* Constraints.
+* Index Strategy.
+* Migrations.
+* Seed Data.
 
-### Backend
+## Backend
 
 * REST API.
 * API Documentation.
 * OpenAPI Specification.
-* Authentication and Authorization.
+* Authentication.
+* Authorization.
 * Validation.
+* Business Logic.
 * Error Handling.
-* Pagination and Filtering.
-* Postman Collection.
+* API Testing.
 
-### Frontend
+## Web
 
 * Responsive Web Application.
 * Component Architecture.
 * Routing.
 * State Management.
 * API Integration.
-* Accessibility implementation.
+* Accessibility.
 
-### Quality and Security
+## Mobile
+
+* Mobile Application.
+* Mobile Architecture.
+* Navigation.
+* State Management.
+* API Integration.
+* Authentication.
+* Mobile UX implementation.
+
+## Quality and Security
 
 * Test Strategy.
 * Test Plan.
@@ -299,201 +542,183 @@ The project is expected to produce the following major deliverables:
 * End-to-End Tests.
 * Security Requirements.
 * Threat Model.
-* OWASP-based security review.
+* Security Review.
 * Security Test Results.
 
-### Deployment and Operations
+## Deployment and Maintenance
 
 * Infrastructure Configuration.
 * Environment Configuration.
 * Deployment Runbook.
-* CI/CD Pipeline.
+* CI/CD.
 * Backup Strategy.
-* Monitoring Strategy.
+* Monitoring.
+* Recovery Procedures.
+* Maintenance Documentation.
 
 ---
 
-## 12. Project Lifecycle
+# 17. Project Success Criteria
 
-The project will follow a sequential but iterative lifecycle.
+The project should be considered successful when the following have been achieved:
 
-```text
-Project Foundation
-        ↓
-Requirements
-        ↓
-System Design
-        ↓
-UI/UX Design
-        ↓
-Database Design
-        ↓
-API & Backend
-        ↓
-Web Frontend
-        ↓
-Mobile Application
-        ↓
-Quality Assurance
-        ↓
-Cybersecurity
-        ↓
-Deployment
-        ↓
-Maintenance
+1. The project foundation is coherent and documented.
+2. MVP requirements are clearly defined and traceable.
+3. The system architecture supports the approved requirements.
+4. The database correctly represents the required domain.
+5. The backend implements the required business operations.
+6. The Web Application implements the approved MVP workflows.
+7. The Mobile Application is implemented as a client of the established backend services.
+8. Authentication and authorization are appropriately implemented.
+9. Required quality assurance activities are completed.
+10. Required cybersecurity activities are completed.
+11. The system can be deployed using documented procedures.
+12. Operational and maintenance documentation exists.
+13. Important technical and product decisions are traceable.
+14. Known limitations and future capabilities are documented.
+15. The resulting project demonstrates a complete software engineering lifecycle.
+
+---
+
+# 18. Scope Control
+
+The project will maintain controlled scope.
+
+A proposed feature should be evaluated before being added.
+
+Evaluation should consider:
+
+* Product value.
+* MVP necessity.
+* Complete-project importance.
+* Development effort.
+* Technical complexity.
+* Security implications.
+* Testing implications.
+* Maintenance cost.
+* Legal considerations.
+* Architectural impact.
+* Schedule impact.
+
+A feature may therefore be classified as:
+
+```text id="m3l8p1"
+MVP
+  OR
+Core Project
+  OR
+Future Product
+  OR
+Rejected
 ```
 
-Each phase must satisfy its corresponding **Gate** before the project proceeds to the next phase.
-
-A phase may return to an earlier phase when newly discovered information requires a change to an approved decision or artifact.
+The classification should be documented where appropriate.
 
 ---
 
-## 13. Project Governance
+# 19. Key Risks
 
-Project decisions will be documented rather than relying on undocumented assumptions.
+The project has several high-level risks.
 
-Significant architectural, technical, business, and scope decisions will be recorded in:
+| Risk                               | Initial Consideration |
+| ---------------------------------- | --------------------- |
+| Scope expansion                    | High                  |
+| Complex marketplace workflows      | High                  |
+| Payment and commission rules       | High                  |
+| Custom artwork workflow complexity | High                  |
+| Rights and policy ambiguity        | High                  |
+| Marketplace moderation             | Medium/High           |
+| Security and privacy               | High                  |
+| Mobile scope and integration       | Medium                |
+| Third-party service dependency     | Medium                |
+| Production operational complexity  | Medium                |
+| Future scalability                 | Medium                |
 
-`00-project-foundation/decision-log.md`
-
-Architecture-specific decisions will additionally be documented as Architecture Decision Records (ADRs) under:
-
-`02-system-design/architecture-decisions/`
-
-Changes to approved requirements or project scope must be documented and traceable.
-
----
-
-## 14. Scope Control
-
-The project will prioritize the MVP and avoid unnecessary expansion of the initial release.
-
-A feature should be considered for MVP inclusion only when it contributes directly to the core marketplace workflow or is required for security, legal, operational, or technical reasons.
-
-Features that provide additional value but are not required for the core workflow should be documented as future enhancements rather than automatically added to the MVP.
+Detailed risk analysis belongs to the relevant project phases.
 
 ---
 
-## 15. Key Risks
+# 20. Key Dependencies
 
-The project currently recognizes the following high-level risks:
+The project may depend on:
 
-| Risk                                    | Initial Impact |
-| --------------------------------------- | -------------- |
-| Unclear payment model                   | High           |
-| Scope expansion                         | High           |
-| Complex order/revision workflow         | High           |
-| Payment-provider integration complexity | High           |
-| Security and privacy requirements       | High           |
-| Marketplace moderation requirements     | Medium         |
-| Dispute and refund handling             | High           |
-| Future scalability requirements         | Medium         |
-| Mobile application scope expansion      | Medium         |
-| Third-party service dependency          | Medium         |
+* Cloud hosting.
+* Domain and DNS services.
+* File/object storage.
+* Email or notification services.
+* External services required by approved requirements.
+* Development and deployment infrastructure.
 
-Detailed risk analysis will be performed during the relevant project phases.
+Platform payment providers are **future dependencies**, not MVP dependencies.
+
+Specific providers should be selected only after requirements and technical constraints have been evaluated.
 
 ---
 
-## 16. Key Dependencies
+# 21. Technology Direction
 
-The project may depend on external services and technologies, including:
-
-* Payment service provider.
-* Email or notification service.
-* Cloud hosting provider.
-* Domain and DNS provider.
-* Object/file storage provider.
-* Authentication-related services where applicable.
-
-Specific providers will not be selected until the relevant requirements and technical constraints have been evaluated.
-
----
-
-## 17. Initial Technology Direction
-
-The project will use technologies selected based on the requirements, scalability, maintainability, security, developer productivity, and learning objectives of the project.
-
-The final technology stack will be formally documented during the System Design phase.
-
-Potential technologies may include:
+The project currently has the following general technology direction:
 
 * PostgreSQL for relational data.
-* RESTful API architecture.
-* Modern web frontend technologies.
-* Containerized development and deployment.
+* REST API architecture.
+* Web client.
+* Mobile client.
+* Containerized development/deployment where appropriate.
 * Git and GitHub for version control.
 * Automated testing.
 * CI/CD.
 
-Technology choices are not considered final until they are documented and approved through the appropriate Architecture Decision Records.
+The final technology choices are documented through the appropriate technical phases and architecture decisions.
 
 ---
 
-## 18. Documentation Principles
+# 22. Documentation and Governance
 
-Project documentation will follow these principles:
+Project-wide decisions are recorded in:
 
-* Requirements must be traceable to implementation and testing.
-* Important decisions must be documented.
-* Architecture must be documented before implementation.
-* Changes must be recorded.
-* Sensitive information must never be committed to the repository.
-* Documentation should remain synchronized with the implemented system.
-* Each project phase must have a clear completion criterion.
+`decision-log.md`
+
+The Decision Log is located at the repository root because project-wide decisions may affect multiple phases.
+
+Architecture-specific decisions may additionally be documented in:
+
+`02-system-design/architecture-decisions/`
+
+Documentation should follow the project's Single Source of Truth principle.
+
+Temporary phase status information should not be embedded in Phase 00 documents.
 
 ---
 
-## 19. Definition of Project Completion
+# 23. Definition of Complete Project
 
-The project will not be considered complete merely because the application runs.
+The complete project is not considered finished merely because the MVP Web Application runs.
 
-Completion requires:
+The broader project completion target includes:
 
-* Functional implementation of the approved MVP.
-* Successful completion of defined tests.
-* Security validation.
+* Functional MVP.
+* Mobile Application.
+* Quality Assurance.
+* Cybersecurity validation.
 * Production deployment.
 * Operational documentation.
 * Backup and recovery procedures.
-* Monitoring capability.
-* Known issues documented.
-* Technical debt documented.
-* Future improvements documented.
+* Monitoring.
+* Maintenance documentation.
+* Known limitations.
+* Technical debt documentation.
+* Future development documentation.
+
+The exact completion criteria for each phase are defined by its Gate and supporting documentation.
 
 ---
 
-## 20. Open Decisions
+# 24. Approval
 
-The following decisions remain open and must be resolved during later phases:
+This Project Charter establishes the project-level foundation.
 
-* Final payment provider.
-* Payment settlement/holding model.
-* Platform commission model.
-* Refund and cancellation policy.
-* Dispute resolution workflow.
-* Supported currencies.
-* Supported countries.
-* Final technology stack.
-* Hosting provider.
-* File/object storage provider.
-* Notification providers.
-* Mobile application technology.
-* Exact MVP feature boundaries.
+It defines the project's purpose, vision, scope model, major objectives, lifecycle, and high-level boundaries.
 
-These items must not be treated as finalized requirements until formally decided and documented.
+Detailed business requirements, technical architecture, database design, API contracts, UI/UX specifications, testing procedures, security controls, and implementation details are intentionally defined in their respective project phases.
 
----
-
-## 21. Approval
-
-This Project Charter establishes the initial foundation of the project.
-
-Approval of this document does not mean that all product, business, technical, or implementation decisions have been finalized.
-
-Those decisions will be progressively defined and documented in the subsequent project phases.
-
-**Current Status:** Draft
-
-**Next Phase:** Project Scope Definition
+Changes to project-wide scope or major decisions should be recorded in the root `decision-log.md`.
