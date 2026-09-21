@@ -393,24 +393,31 @@ Advanced recommendation capabilities may be considered as future product functio
 
 The MVP includes a limited set of social features.
 
-The approved MVP social capabilities are:
+The approved MVP social functionality includes:
 
-* Like.
-* Follow.
-* 1–5 star Rating.
-* Customizable Notifications.
-* Report.
-* Block User.
+Like.
+Follow.
+1–5 star Rating.
+Customizable Notifications.
+Report.
+Block User.
 
-The following are explicitly excluded from the MVP:
+The following features are outside the MVP and outside the scope of the project entirely:
 
-* Dislike.
-* Comments.
-* Spam functionality.
-* User-to-user chat.
-* User-to-AI chat.
+Dislike.
+Comments.
+Live.
+Posts.
+Videos.
+Community.
+Spamming.
 
-The platform is not intended to become a general-purpose social network.
+The following communication features are outside the MVP but remain within the scope of the project's planned final version:
+
+User-to-user Chat.
+User-to-AI Chat.
+
+These exclusions and inclusions are intentional product-scope decisions. Features listed as outside the project entirely must not be designed, implemented, or treated as planned functionality unless the project scope is explicitly revised. Features listed as outside the MVP but within the final project scope are deferred to later development stages and must not be included in the MVP.
 
 ---
 
@@ -863,48 +870,70 @@ The MVP is an important product milestone within the complete project, but it do
 
 # 26. Future Product Development
 
-Future product development may extend the platform after the approved MVP and core project foundations.
+Future product development may extend the platform beyond the approved MVP and its initial project scope. These capabilities represent planned or potential future directions and are not part of the MVP unless explicitly moved into MVP scope through a formal project decision.
 
-Future areas may include:
+## Payments
 
-### Payments
+Future payment capabilities may include:
 
-* Platform-mediated payments.
-* Payment-provider integrations.
-* Automated settlements.
-* Refunds.
-* Payment protection.
-* Automated commission collection.
+- Platform-mediated payments.
+- Payment-provider integrations.
+- Automated settlements.
+- Refunds.
+- Payment protection.
+- Automated commission collection.
 
-### Physical Artwork
+These capabilities would replace the MVP's direct buyer-to-artist payment approach and may be introduced after the required business, technical, and operational foundations are established.
 
-* Managed physical-art transactions.
-* Printing and print-on-demand.
-* Physical order management.
-* Delivery and logistics.
-* Shipment tracking.
+## Physical Artwork
 
-### AI
+Physical-artwork capabilities are outside the MVP and may be introduced in later development stages for eligible and supported artwork types.
 
-* Personalized recommendations.
-* Artist/customer matching.
-* Artwork analysis.
-* AI-assisted metadata.
-* AI-generated descriptions.
-* AI-assisted moderation.
-* AI customer assistance.
-* AI-assisted creation.
+Future capabilities may include:
 
-### Advanced Marketplace Capabilities
+- Managed physical-art transactions.
+- Printing of eligible digital artworks.
+- Print-on-demand services.
+- Physical order management.
+- Delivery and logistics.
+- Shipment tracking.
+- Integration with printing providers.
+- Integration with delivery and logistics providers.
 
-* Advanced discovery.
-* Advanced personalization.
-* Advanced analytics.
-* Expanded operational tooling.
-* Other capabilities approved through future scope decisions.
+The platform may therefore support a future workflow in which an eligible digital artwork can be printed and delivered as a physical product. Such capabilities would require separate requirements, operational processes, provider integrations, and scope decisions before implementation.
 
-Future features remain subject to separate requirements, technical evaluation, and project decisions.
+Artwork forms that are explicitly excluded from the project scope remain excluded unless the project scope is formally revised.
 
+## AI
+
+AI functionality is outside the MVP and may be introduced in later development stages.
+
+Future AI capabilities may include:
+
+- Personalized recommendations.
+- Artist/customer matching.
+- Artwork analysis.
+- AI-assisted metadata.
+- AI-generated descriptions.
+- AI-assisted moderation.
+- AI customer assistance.
+- AI-assisted creation.
+
+AI functionality remains subject to separate requirements, technical evaluation, responsible-use considerations, and future scope decisions.
+
+## Advanced Marketplace Capabilities
+
+Future marketplace development may include:
+
+- Advanced discovery.
+- Advanced personalization.
+- Advanced analytics.
+- Expanded operational tooling.
+- Additional marketplace capabilities approved through future scope decisions.
+
+These capabilities are not commitments to specific future implementations. Their inclusion depends on future requirements, technical feasibility, business needs, and explicit project decisions.
+
+Future features remain subject to separate requirements, technical evaluation, business and operational considerations, and project decisions. Features described in this section must not be treated as part of the MVP unless they are explicitly moved into MVP scope through a formal project decision.
 ---
 
 # 27. Scope Change Management

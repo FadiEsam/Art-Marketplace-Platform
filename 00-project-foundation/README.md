@@ -33,7 +33,6 @@ The Foundation phase aims to:
 | `assumptions.md`        | Documents assumptions made during project planning.                                 |
 | `constraints.md`        | Documents known technical, business, legal, operational, and project constraints.   |
 | `glossary.md`           | Defines important terms and terminology used throughout the project.                |
-| `decision-log.md`       | Records important decisions and their rationale.                                    |
 | `gate.md`               | Defines the completion criteria and approval conditions for the Foundation phase.   |
 
 ---

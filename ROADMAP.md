@@ -48,7 +48,6 @@ The project is organized into the following core phases:
 
 These phases represent the intended **core project lifecycle**.
 
-Phase 07 — Mobile Application — is a core project phase. It is outside the initial MVP, but it is part of the intended complete project and is not classified as an optional future extension.
 
 ---
 
@@ -345,9 +344,6 @@ The MVP is primarily a **Web-based digital art marketplace**.
 * AI recommendations.
 * AI chat.
 * User-to-user chat.
-* User-to-AI chat.
-* Comments.
-* Dislike.
 * Spam functionality.
 * Auction functionality.
 * Advanced machine-learning personalization.
@@ -713,7 +709,5 @@ Future Product Evolution
 ```
 
 The **MVP is a product milestone**, while the roadmap represents the broader project lifecycle.
-
-The Mobile Application is part of that broader core lifecycle.
 
 Future product capabilities such as AI, platform-mediated payments, printing, delivery, and expanded physical-art marketplace functionality remain separate from the MVP unless the scope is formally changed.

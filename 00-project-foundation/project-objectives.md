@@ -150,22 +150,39 @@ Artists can provide richer artwork information through a relevant and manageable
 
 ## OBJ-P08 — Provide Controlled Social Interaction
 
-Provide a limited set of social features that support interaction between users and Artists without turning the platform into a general-purpose social network.
+[svg](https://github.com/FadiEsam/Art-Marketplace-Platform/blob/main/00-project-foundation/project-objectives.md#obj-p08--provide-controlled-social-interaction)
+
+Provide a controlled set of social and communication features that support interaction between users and Artists without turning the platform into a general-purpose social network.
 
 The MVP social features include:
 
-* Like.
-* Follow.
-* 1–5 star rating.
-* Customizable notifications.
-* Report.
-* Block user.
+- Like.
+- Follow.
+- 1–5 star rating.
+- Customizable notifications.
+- Report.
+- Block user.
 
-The project does not include comments, dislike, spam functionality, or user-to-user chat within the current scope.
+The following features are outside the MVP and outside the scope of the project entirely:
+
+- Dislike.
+- Comments.
+- Live.
+- Posts.
+- Videos.
+- Community.
+- Spamming.
+
+The following communication features are outside the MVP but remain within the scope of the project's planned final version:
+
+- User-to-user chat.
+- User-to-AI chat.
+
+These scope boundaries are intentional product decisions. Features outside the project scope must not be designed or implemented unless the project scope is formally revised. Features outside the MVP but within the final project scope may be addressed in later development stages.
 
 **Success Indicator:**
 
-Users can perform the approved social interactions while the platform maintains appropriate moderation and privacy controls.
+Users can perform the approved MVP social interactions while the platform maintains appropriate moderation, privacy, and access controls. Future communication capabilities can be introduced independently in later development stages without changing the approved MVP scope.
 
 ---
 

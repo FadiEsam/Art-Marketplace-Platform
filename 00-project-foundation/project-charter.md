@@ -313,14 +313,22 @@ The approved MVP social functionality includes:
 * Report.
 * Block User.
 
-The following are not part of the MVP:
+The following features are outside the MVP and outside the scope of the project entirely:
 
 * Dislike.
 * Comments.
+* Live.
+* Posts.
+* Videos.
+* Community.
+* Spamming.
+
+The following communication features are outside the MVP but remain within the scope of the project's planned final version:
+
 * User-to-user Chat.
 * User-to-AI Chat.
 
-These exclusions are intentional product-scope decisions rather than temporary implementation omissions.
+These exclusions and inclusions are intentional product-scope decisions. Features listed as outside the project entirely must not be designed, implemented, or treated as planned functionality unless the project scope is explicitly revised. Features listed as outside the MVP but within the final project scope are deferred to later development stages and must not be included in the MVP.
 
 ---
 
@@ -624,7 +632,7 @@ The project has several high-level risks.
 | ---------------------------------- | --------------------- |
 | Scope expansion                    | High                  |
 | Complex marketplace workflows      | High                  |
-| Payment and commission rules       | High                  |
+| Payment and commission rules       | Very High             |
 | Custom artwork workflow complexity | High                  |
 | Rights and policy ambiguity        | High                  |
 | Marketplace moderation             | Medium/High           |

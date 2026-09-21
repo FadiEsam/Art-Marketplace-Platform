@@ -397,14 +397,6 @@ This includes:
 * AI-generated artwork.
 * AI chat.
 
-## Social
-
-The following are not part of the approved social scope:
-
-* Dislike.
-* Comments.
-* Spam as a social interaction feature.
-
 ## Physical Marketplace
 
 * Platform-managed physical artwork transactions.

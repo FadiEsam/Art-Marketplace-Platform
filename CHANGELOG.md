@@ -1,4 +1,4 @@
-\# Changelog
+# Changelog
 
 
 
@@ -10,81 +10,80 @@ The changelog records meaningful project-level changes. Detailed historical deci
 
 
 
-\---
+---
 
 
 
-\## \[Unreleased]
+## \[Unreleased]
 
 
 
-\### Documentation
+### Documentation
 
 
 
-\* Re-baselining the Project Foundation documentation.
+* Re-baselining the Project Foundation documentation.
 
-\* Aligning the project documentation with the current MVP scope.
+* Aligning the project documentation with the current MVP scope.
 
-\* Clarifying the distinction between MVP scope and the complete project scope.
+* Clarifying the distinction between MVP scope and the complete project scope.
 
-\* Clarifying the role of the Mobile Application as a core project phase while remaining outside the MVP.
+* Clarifying the role of the Mobile Application as a core project phase while remaining outside the MVP.
 
-\* Moving the project-wide Decision Log from `00-project-foundation/` to the repository root.
+* Moving the project-wide Decision Log from `00-project-foundation/` to the repository root.
 
-\* Removing temporary project-status information from phase-specific documentation.
+* Removing temporary project-status information from phase-specific documentation.
 
-\* Establishing clearer separation between project-wide concepts, requirements, technical design, and implementation details.
+* Establishing clearer separation between project-wide concepts, requirements, technical design, and implementation details.
 
-\* Reviewing outdated payment, social, communication, artwork, and future-scope descriptions.
-
-
-
-\### Scope Clarifications
+* Reviewing outdated payment, social, communication, artwork, and future-scope descriptions.
 
 
 
-\* MVP marketplace transactions focus on supported digital artwork.
-
-\* Platform-mediated payment integration is outside the MVP.
-
-\* Direct customer-to-artist bank transfer is the intended MVP payment model for applicable marketplace transactions.
-
-\* The platform commission model is based on a 15% commission on applicable marketplace transactions.
-
-\* Artist capabilities are granted through an approval process rather than being a separate account type.
-
-\* Like, Follow, 1–5 star Rating, customizable Notifications, Report, and Block are part of the MVP.
-
-\* User-to-user Chat is outside the MVP.
-
-\* User-to-AI Chat is outside the MVP.
-
-\* AI functionality is outside the MVP.
-
-\* Comments, Dislike, and Spam are not part of the approved social scope.
-
-\* Physical artwork is not supported as a platform-managed marketplace transaction in the MVP.
-
-\* Physical artwork may be displayed under the applicable MVP rules without becoming a platform-managed physical sale.
-
-\* Delivery and printing integrations are outside the MVP.
-
-\* Dynamic artwork metadata/question flows may be included in the MVP without requiring AI.
-
-\* Mobile Application development is outside the MVP but remains a core project phase and an important part of the project's final form and learning path.
+### Scope Clarifications
 
 
 
-\---
+* MVP marketplace transactions focus on supported digital artwork.
+
+* Platform-mediated payment integration is outside the MVP.
+
+* Direct customer-to-artist bank transfer is the intended MVP payment model for applicable marketplace transactions.
+
+* The platform commission model is based on a 15% commission on applicable marketplace transactions.
+
+* Artist capabilities are granted through an approval process rather than being a separate account type.
+
+* Like, Follow, 1–5 star Rating, customizable Notifications, Report, and Block are part of the MVP.
+
+* User-to-user Chat is outside the MVP.
+
+* User-to-AI Chat is outside the MVP.
+
+* AI functionality is outside the MVP.
+
+* Comments, Dislike, and Spam are not part of the approved social scope.
+
+* Physical artwork is not supported as a platform-managed marketplace transaction in the MVP.
+
+* Physical artwork may be displayed under the applicable MVP rules without becoming a platform-managed physical sale.
+
+* Delivery and printing integrations are outside the MVP.
+
+* Dynamic artwork metadata/question flows may be included in the MVP without requiring AI.
+
+* Mobile Application development is outside the MVP but remains a core project phase and an important part of the project's final form and learning path.
+
+
+---
 
 
 
-\## Changelog Conventions
+## Changelog Conventions
 
 
 
-\### Categories
+### Categories
 
 
 
@@ -92,23 +91,23 @@ Changes may be grouped under:
 
 
 
-\* \*\*Added\*\* — New functionality, documentation, or project capability.
+* **Added** — New functionality, documentation, or project capability.
 
-\* \*\*Changed\*\* — Modification to existing behavior, scope, or documentation.
+* **Changed** — Modification to existing behavior, scope, or documentation.
 
-\* \*\*Deprecated\*\* — Functionality or direction that is being phased out.
+* **Deprecated** — Functionality or direction that is being phased out.
 
-\* \*\*Removed\*\* — Functionality or content explicitly removed from the project.
+* **Removed** — Functionality or content explicitly removed from the project.
 
-\* \*\*Fixed\*\* — Correction of an identified problem.
+* **Fixed** — Correction of an identified problem.
 
-\* \*\*Security\*\* — Security-related changes.
+* **Security** — Security-related changes.
 
-\* \*\*Documentation\*\* — Documentation-only changes.
+* **Documentation** — Documentation-only changes.
 
 
 
-\### Scope of Entries
+### Scope of Entries
 
 
 
@@ -120,15 +119,15 @@ Minor wording corrections do not normally require a changelog entry unless they 
 
 
 
-\### Relationship to Decision Log
+### Relationship to Decision Log
 
 
 
-The changelog records \*\*what changed\*\*.
+The changelog records **what changed**.
 
 
 
-The root `decision-log.md` records \*\*important project decisions, their rationale, and their historical status\*\*.
+The root `decision-log.md` records **important project decisions, their rationale, and their historical status**.
 
 
 
@@ -136,17 +135,17 @@ A major scope decision may therefore appear in both files:
 
 
 
-\* `CHANGELOG.md` records the resulting project change.
+* `CHANGELOG.md` records the resulting project change.
 
-\* `decision-log.md` records the decision and its reasoning.
-
-
-
-\---
+* `decision-log.md` records the decision and its reasoning.
 
 
 
-\## Versioning
+---
+
+
+
+## Versioning
 
 
 
@@ -164,7 +163,7 @@ Until then, changes may be grouped under:
 
 ```text
 
-\[Unreleased]
+[Unreleased]
 
 ```
 

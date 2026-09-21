@@ -34,7 +34,7 @@ The project should follow these principles:
 
 # 3. Product Constraints
 
-## C-P01 — MVP Must Remain Focused
+## C-PROD01 — MVP Must Remain Focused
 
 The MVP must remain focused on the approved core marketplace functionality.
 
@@ -44,7 +44,7 @@ This constraint exists to prevent unnecessary scope expansion and premature comp
 
 ---
 
-## C-P02 — MVP Is Primarily Web-Based
+## C-PROD02 — MVP Is Primarily Web-Based
 
 The initial MVP is delivered primarily through the Web application.
 
@@ -54,7 +54,7 @@ Therefore, MVP implementation must not require the complete Mobile Application t
 
 ---
 
-## C-P03 — Digital Marketplace Focus
+## C-PROD03 — Digital Marketplace Focus
 
 The MVP marketplace is focused on supported digital artwork intended for digital/2D display.
 
@@ -71,7 +71,7 @@ Physical artwork may be displayed or listed for portfolio purposes under approve
 
 ---
 
-## C-P04 — Supported Artwork Representation
+## C-PROD04 — Supported Artwork Representation
 
 Artwork supported by the MVP marketplace must be representable through the platform's approved digital/2D visual model.
 
@@ -256,9 +256,9 @@ Only fields explicitly defined as required by the applicable product rules shoul
 
 # 8. Social Feature Constraints
 
-## C-S01 — Limited Social Scope
+## C-SO01 — Limited Social Scope
 
-The MVP social model is intentionally limited.
+The MVP social scope is intentionally limited to the features explicitly approved for the MVP.
 
 The approved MVP features are:
 
@@ -269,29 +269,34 @@ The approved MVP features are:
 * Report.
 * Block user.
 
-The project must not introduce additional social features without an approved scope change.
+The project must not introduce additional social features into the MVP without an approved scope change.
 
 ---
 
-## C-S02 — No General-Purpose Chat
+## C-SO02 — No General-Purpose Chat
 
-The platform must not depend on user-to-user chat for its MVP workflows.
+The MVP must not depend on general-purpose communication between users.
 
-User-to-user chat is outside the current scope.
+User-to-user chat is not part of the MVP scope.
 
-User-to-AI chat is also outside the current scope.
+User-to-AI chat is also not part of the MVP scope.
+
+These features may be considered for future development and must not be treated as MVP requirements.
 
 ---
 
-## C-S03 — No Comments, Dislike, or Spam
+## C-SO03 — Excluded Social Features
 
-The project must not introduce:
+The following features are outside the planned product scope:
 
 * Comments.
 * Dislike.
 * Spam functionality.
+* live
+* Post
 
-These are outside the current product scope.
+These features must not be introduced into the MVP or later project scope unless explicitly approved through a scope change.
+
 
 ---
 
@@ -417,7 +422,7 @@ Printing must not become an implicit MVP dependency.
 
 # 13. Rights and Legal Constraints
 
-## C-L01 — Platform Rules Must Respect Applicable Law
+## C-LE01 — Platform Rules Must Respect Applicable Law
 
 The project must not intentionally design workflows that contradict applicable legal requirements.
 
@@ -425,13 +430,13 @@ Legal requirements affecting the final commercial platform should be reviewed ap
 
 ---
 
-## C-L02 — Product Rules Are Not a Substitute for Legal Advice
+## C-LE02 — Product Rules Are Not a Substitute for Legal Advice
 
 Project documentation may define intended product behavior and rights rules, but it must not be treated as final legal advice or a legally sufficient contract by itself.
 
 ---
 
-## C-L03 — Rights Must Be Considered Before Final Commercial Launch
+## C-LE03 — Rights Must Be Considered Before Final Commercial Launch
 
 Ownership, licensing, usage, intellectual-property, privacy, and marketplace responsibilities should receive appropriate legal review before the platform is operated as a public commercial service where such review is required.
 
